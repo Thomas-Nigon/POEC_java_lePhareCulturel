@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "✨ Linting the code... ✨"
+npx lint-staged && echo "✅ Linting and formatting complete! Your code is beautiful!"

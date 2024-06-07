@@ -1,0 +1,6 @@
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "vs-code-prettier-eslint.prettierLast": true,
+  "files.eol": "\n"
+}
