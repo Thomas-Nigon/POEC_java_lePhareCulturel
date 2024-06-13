@@ -13,7 +13,7 @@ $mainFont: 'Yaldevi', sans-serif;
 }
 
 body {
-  font-family: 'Yaldevi';
+  font-family: $mainFont;
   font-weight: 400;
 }
 
@@ -22,7 +22,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Oxygen';
+  font-family: $titleFont;
   font-weight: 700;
 }
 
