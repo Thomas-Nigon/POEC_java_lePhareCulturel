@@ -1,0 +1,75 @@
+@import '../../../variables.scss';
+@import './gradient.scss';
+
+.titleBar {
+  background-image: $gradient;
+  display: flex;
+  justify-content: center;
+}
+.titleBar-title {
+  margin: 1rem;
+  padding: 0.5rem;
+  color: $test;
+  border-bottom: 3px solid $test;
+  border-top: 3px solid $test;
+}
+.titleBar_nav {
+  display: none;
+}
+.titleBar_nav-item {
+  list-style: none;
+}
+
+@media screen and (min-width: 900px) {
+  .titleBar-title {
+    display: none;
+  }
+  .titleBar_nav {
+    margin: 1rem 2rem 2rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $test;
+  }
+  .titleBar_nav-title {
+    border-top: 1px solid $test;
+    color: $test;
+  }
+  .titleBar_nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .titleBar_nav-item {
+    margin-left: 1.4rem;
+    cursor: pointer;
+  }
+  .titleBar_nav-link {
+    all: unset;
+    color: $test;
+    font-family: $titleFont;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  a::after {
+    content: '';
+    display: block;
+    position: relative;
+    top: 4px;
+    width: 0;
+    height: 2px;
+    background: $test;
+    transition: width 0.1s ease-in;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1300px) {
+    .titleBar_nav-link {
+      font-size: 2rem;
+    }
+  }
+}
