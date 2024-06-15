@@ -9,9 +9,9 @@
 .titleBar-title {
   margin: 1rem;
   padding: 0.5rem;
-  color: $test;
-  border-bottom: 3px solid $test;
-  border-top: 3px solid $test;
+  color: $accent;
+  border-bottom: 3px solid $accent;
+  border-top: 3px solid $accent;
 }
 .titleBar_nav {
   display: none;
@@ -30,11 +30,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $test;
+    border-bottom: 1px solid $accent;
   }
   .titleBar_nav-title {
-    border-top: 1px solid $test;
-    color: $test;
+    border-top: 1px solid $accent;
+    color: $accent;
   }
   .titleBar_nav-container {
     display: flex;
@@ -47,20 +47,71 @@
   }
   .titleBar_nav-link {
     all: unset;
-    color: $test;
+    color: $accent;
     font-family: $titleFont;
     font-size: 1.4rem;
     font-weight: bold;
   }
+  .active {
+    animation: myAnim 0.8s ease 0s 1 normal forwards;
+    border-bottom: 2px solid;
+  }
+
   a::after {
     content: '';
     display: block;
     position: relative;
-    top: 4px;
+    top: -30px;
     width: 0;
     height: 2px;
-    background: $test;
+    background: $accent;
     transition: width 0.1s ease-in;
+  }
+
+  @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      transform: translateY(-24px);
+    }
+
+    24% {
+      opacity: 1;
+    }
+
+    40% {
+      animation-timing-function: ease-in;
+      transform: translateY(-12px);
+    }
+
+    65% {
+      animation-timing-function: ease-in;
+      transform: translateY(-6px);
+    }
+
+    82% {
+      animation-timing-function: ease-in;
+      transform: translateY(-3px);
+    }
+
+    93% {
+      animation-timing-function: ease-in;
+      transform: translateY(-2px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+      animation-timing-function: ease-out;
+      transform: translateY(0px);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 
   a:hover::after {
