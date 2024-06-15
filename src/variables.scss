@@ -4,7 +4,8 @@
 $primaryColor: #eb5027;
 $primaryColortransparent: hsla(13, 83%, 54%, 0.3);
 $secondaryColor: #f4f1e0;
-$accent: #acb288;
+$accent: #153614;
+$test: black;
 
 $titleFont: 'Oxygen', sans-serif;
 $mainFont: 'Yaldevi', sans-serif;
@@ -53,7 +54,7 @@ small {
   font-size: 0.75rem; /* 12px */
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   html {
     font-size: 100%;
   } /* 16px */
