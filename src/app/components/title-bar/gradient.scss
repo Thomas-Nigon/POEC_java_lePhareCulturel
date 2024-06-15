@@ -1,0 +1,25 @@
+$gradient: linear-gradient(
+    315deg,
+    transparent 0%,
+    transparent 17%,
+    rgba(255, 126, 38, 0.59) 17%,
+    rgba(255, 126, 38, 0.59) 59%,
+    transparent 59%,
+    transparent 64%,
+    rgba(235, 80, 39, 0.7) 64%,
+    rgba(235, 80, 39, 0.7) 100%
+  ),
+  linear-gradient(
+    225deg,
+    transparent 0%,
+    transparent 2%,
+    rgb(229, 152, 102) 2%,
+    rgb(229, 152, 102) 46%,
+    rgb(235, 80, 39) 46%,
+    rgb(235, 80, 39) 54%,
+    transparent 54%,
+    transparent 63%,
+    rgba(235, 80, 39, 0.7) 63%,
+    rgba(235, 80, 39, 0.7) 100%
+  ),
+  linear-gradient(270deg, rgb(240, 210, 187), rgb(240, 210, 187));
