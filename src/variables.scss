@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen:700|Yaldevi:400');
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap');
 
 $primaryColor: #eb5027;
+$primaryColortransparent: hsla(13, 83%, 54%, 0.3);
 $secondaryColor: #f4f1e0;
 $accent: #acb288;
 
@@ -10,6 +12,7 @@ $mainFont: 'Yaldevi', sans-serif;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {

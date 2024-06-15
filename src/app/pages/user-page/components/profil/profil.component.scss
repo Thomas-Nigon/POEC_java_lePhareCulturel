@@ -1,0 +1,53 @@
+@import '../../../../../variables.scss';
+@import './animations.scss';
+
+.profil {
+  background-color: $primaryColortransparent;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+.profil_image-container {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profil-image {
+  animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+  width: 40vw;
+  height: 40vw;
+}
+
+.profil-item {
+  display: flex;
+  margin-bottom: 1rem;
+  list-style: none;
+  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+}
+.profil-item:nth-child(1) {
+  color: black;
+  font-weight: bold;
+}
+.profil-item:nth-child(2) {
+  color: black;
+  font-weight: 200;
+}
+
+.profil p {
+  margin-top: 2rem;
+  animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
+}
+@media screen and (min-width: 768px) {
+  .profil {
+    flex-direction: row;
+    align-items: center;
+  }
+  .profil p {
+    margin-left: 2rem;
+  }
+}
