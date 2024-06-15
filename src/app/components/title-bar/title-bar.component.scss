@@ -122,5 +122,8 @@
     .titleBar_nav-link {
       font-size: 2rem;
     }
+    a::after {
+      top: -40px;
+    }
   }
 }

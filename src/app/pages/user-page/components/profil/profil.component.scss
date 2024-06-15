@@ -1,18 +1,24 @@
 @import '../../../../../variables.scss';
 @import './animations.scss';
 
+.profil-title {
+  margin: 1rem 0 0 5%;
+}
 .profil {
   background-color: $primaryColortransparent;
-  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   width: 90%;
+  max-width: 900px;
   margin: 0 auto;
+  margin-top: 1rem;
+  padding: 1rem 0.5rem;
   border-radius: 0.5rem;
 }
-.profil_image-container {
+.profil_userDescription {
   padding: 1rem 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
@@ -21,21 +27,32 @@
   animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
   width: 40vw;
   height: 40vw;
+  max-width: 240px;
+  max-height: 240px;
+}
+
+.profil_listContainer {
+  display: flex;
 }
 
 .profil-item {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
   list-style: none;
   animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
-.profil-item:nth-child(1) {
-  color: black;
+.userName {
+  color: $primaryColor;
   font-weight: bold;
 }
-.profil-item:nth-child(2) {
-  color: black;
+.userEmail {
+  color: $primaryColor;
   font-weight: 200;
+}
+
+.profil_details {
+  display: none;
 }
 
 .profil p {
@@ -43,6 +60,15 @@
   animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
 }
 @media screen and (min-width: 768px) {
+  .profil_details {
+    display: block;
+  }
+  .profil_listContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+  }
   .profil {
     flex-direction: row;
     align-items: center;
