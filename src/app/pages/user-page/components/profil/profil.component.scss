@@ -100,10 +100,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: end;
+    align-items: center;
+  }
+  .profil-bg {
+    display: block;
+    height: 100%;
+    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
   }
 }
 @media screen and (min-width: 1200px) {
+  .profilContainer {
+    align-items: end;
+  }
   .profil-bg {
     display: block;
     height: 100%;
