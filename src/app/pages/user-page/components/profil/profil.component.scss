@@ -7,8 +7,8 @@
   color: $accent;
 }
 .profil {
-  //background-image: $gradient;
-  background-color: $primaryColortransparent;
+  background-image: $gradient;
+  background-blend-mode: overlay, overlay, overlay, normal;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -27,13 +27,16 @@
   align-items: center;
   justify-content: space-around;
 }
+.profil-bg {
+  display: none;
+}
 
 .profil-image {
   animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
   width: 40vw;
   height: 40vw;
-  max-width: 240px;
-  max-height: 240px;
+  max-width: 180px;
+  max-height: 180px;
 }
 
 .profil_listContainer {
@@ -77,8 +80,37 @@
   .profil {
     flex-direction: row;
     align-items: center;
+    max-height: 355px;
   }
   .profil p {
     margin-left: 2rem;
+  }
+  .profil-image {
+    width: 12vw;
+    height: 12vw;
+  }
+  .profil-bg {
+    display: none;
+    width: 50vw;
+    max-width: 792px;
+  }
+
+  .profilContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .profil-bg {
+    display: block;
+    height: 100%;
+    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
+  }
+  .profil-image {
+    width: 8vw;
+    height: 8vw;
   }
 }
