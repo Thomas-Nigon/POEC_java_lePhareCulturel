@@ -1,7 +1,12 @@
 @import '../../../variables.scss';
 .userPage {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
+}
+
+.userPage-title {
+  color: $accent;
 }
