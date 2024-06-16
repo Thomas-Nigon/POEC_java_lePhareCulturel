@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserInterface } from '../../../../models/user.model';
 
 @Component({
   selector: 'app-profil',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.scss',
 })
-export class ProfilComponent {}
+export class ProfilComponent {
+  @Input() userId!: number;
+  @Input() userList!: UserInterface[];
+}

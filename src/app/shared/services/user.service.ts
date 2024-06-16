@@ -10,6 +10,6 @@ export class UserService {
   private http = inject(HttpClient);
 
   getAllUser(): Observable<UserInterface[]> {
-    return this.http.get<UserInterface[]>(`/assets/MOCK_DATA_users.json`);
+    return this.http.get<UserInterface[]>(`assets/MOCK_DATA_users.json`);
   }
 }
