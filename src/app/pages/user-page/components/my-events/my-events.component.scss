@@ -1,0 +1,72 @@
+@import '../../../../../variables.scss';
+
+.myEvent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.myEvent_eventContainer {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 50vh;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.myEvent_eventContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.myEvent-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.myEvent-button {
+  all: unset;
+  padding: 1rem;
+  color: $accent;
+  font-weight: 200;
+  font-family: $titleFont;
+}
+.myEvent-button:hover {
+  color: $primaryColor;
+  font-size: 1.5rem;
+  font-weight: 700;
+  filter: drop-shadow(3px 5px 3px $primaryColorTransparent);
+}
+.active {
+  color: $primaryColor;
+  font-size: 1.5rem;
+  font-weight: 700;
+  filter: drop-shadow(3px 3px 3px $primaryColorTransparent);
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eventCard-img {
+  width: 50%;
+}
+
+.myEvent-illustration {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .myEvent {
+    flex-direction: row;
+  }
+  .myEvent-illustration {
+    display: block;
+    width: 50%;
+  }
+}
