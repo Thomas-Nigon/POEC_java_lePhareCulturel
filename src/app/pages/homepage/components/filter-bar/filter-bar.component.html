@@ -1,0 +1,9 @@
+<main class="filterBar">
+  <h3 class="filterBar-title">Les évènement de Lille et ses alentours:</h3>
+  <Ul class="filterBar-list">
+    <li class="filterBar-item" *ngFor="let category of categoryList">
+      <img class="filterBar-icon" src="{{ category.img }}" alt="" />
+      <p class="filterBar-name">{{ category.name }}</p>
+    </li>
+  </Ul>
+</main>
