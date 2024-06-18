@@ -21,7 +21,7 @@
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid $accent;
-  box-shadow: 5px 5px 15px -5px rgba(21, 54, 20, 0.64);
+  box-shadow: 5px 5px 15px -5px $accent;
 }
 .profil_userDescription {
   padding: 1rem 0;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.profil-bg {
+.profil-illustration {
   display: none;
 }
 
@@ -92,11 +92,12 @@
     width: 12vw;
     height: 12vw;
   }
-  .profil-bg {
+  .profil-illustration {
     margin-left: 2rem;
     display: none;
     width: 50vw;
     max-width: 792px;
+    //  box-shadow: 5px 5px 15px -5px $accent;
   }
 
   .profilContainer {
@@ -106,9 +107,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  .profil-bg {
+  .profil-illustration {
     display: block;
-    height: 100%;
+    width: 50%;
     animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
   }
 }
@@ -118,7 +119,7 @@
     justify-content: space-between;
     max-width: 1300px;
   }
-  .profil-bg {
+  .profil-illustration {
     display: block;
     height: 100%;
     animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;

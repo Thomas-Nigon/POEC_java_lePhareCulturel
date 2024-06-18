@@ -24,7 +24,7 @@
   max-width: 500px;
   border-radius: 0.5rem;
   border: 1px solid $accent;
-  box-shadow: 5px 5px 15px -5px rgba(21, 54, 20, 0.64);
+  box-shadow: 5px 5px 15px -5px $accent;
   overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -75,11 +75,13 @@
   .myEvent {
     flex-direction: row;
     max-width: 1300px;
+    align-items: end;
   }
   .myEvent-illustration {
     margin-left: 2rem;
     display: block;
     width: 50%;
     animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
+    // box-shadow: 5px 5px 15px -5px $accent;
   }
 }

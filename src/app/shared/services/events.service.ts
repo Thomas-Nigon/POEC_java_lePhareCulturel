@@ -9,6 +9,6 @@ export class EventsService {
   private http = inject(HttpClient);
 
   getAllEvents() {
-    return this.http.get<EventInterface[]>('mokarooEvents.json');
+    return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
   }
 }
