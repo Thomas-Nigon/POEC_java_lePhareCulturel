@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen:700|Yaldevi:400');
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 $primaryColor: #eb5027;
+$primaryColortransparent: hsla(13, 83%, 54%, 0.1);
+$dropShadow: hsla(13, 83%, 54%, 0.6);
 $secondaryColor: #f4f1e0;
-$accent: #153614;
+$accent: #061105;
 $test: black;
 
 $titleFont: 'Oxygen', sans-serif;
@@ -11,6 +15,7 @@ $mainFont: 'Yaldevi', sans-serif;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {

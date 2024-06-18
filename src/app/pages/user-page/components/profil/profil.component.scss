@@ -1,0 +1,131 @@
+@import '../../../../../variables.scss';
+@import './animations.scss';
+@import './gradient.scss';
+
+.profilContainer {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  //background-image: $gradient;
+  //background-blend-mode: overlay, overlay, overlay, normal;
+}
+.profil {
+  // background-image: $gradient;
+  //background-blend-mode: overlay, overlay, overlay, normal;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  margin-top: 1rem;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid $accent;
+  box-shadow: 5px 5px 15px -5px $accent;
+}
+.profil_userDescription {
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.profil-illustration {
+  display: none;
+}
+
+.profil-image {
+  animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+  width: 40vw;
+  height: 40vw;
+  max-width: 180px;
+  max-height: 180px;
+}
+
+.profil_listContainer {
+  display: flex;
+}
+
+.profil-item {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+
+  list-style: none;
+  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+}
+.userName {
+  color: $primaryColor;
+  font-weight: bold;
+}
+.userEmail {
+  color: $primaryColor;
+  font-weight: 200;
+}
+
+.profil_details {
+  display: none;
+}
+
+.profil p {
+  padding: 0.5rem 1rem;
+  animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
+}
+@media screen and (min-width: 768px) {
+  .profil_details {
+    display: block;
+  }
+  .profil_listContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+  }
+  .profil {
+    flex-direction: row;
+    align-items: center;
+    max-height: 355px;
+  }
+
+  .profil-image {
+    width: 12vw;
+    height: 12vw;
+  }
+  .profil-illustration {
+    margin-left: 2rem;
+    display: none;
+    width: 50vw;
+    max-width: 792px;
+    //  box-shadow: 5px 5px 15px -5px $accent;
+  }
+
+  .profilContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profil-illustration {
+    display: block;
+    width: 50%;
+    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .profilContainer {
+    align-items: end;
+    justify-content: space-between;
+    max-width: 1300px;
+  }
+  .profil-illustration {
+    display: block;
+    height: 100%;
+    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
+  }
+  .profil-image {
+    width: 8vw;
+    height: 8vw;
+  }
+}
