@@ -6,7 +6,7 @@
   justify-content: center;
   color: $secondaryColor;
   width: 90vw;
-  padding: 5vw;
+  padding: 0;
 }
 .calendar-title {
   display: flex;
@@ -52,4 +52,10 @@ button {
 .material-symbols-outlined {
   margin-left: 1rem;
   font-size: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .calendar_title_container {
+    padding: 1rem;
+  }
 }
