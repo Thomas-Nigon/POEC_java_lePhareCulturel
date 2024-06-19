@@ -4,35 +4,35 @@
     "first_name": "Lissi",
     "last_name": "Hospital",
     "email": "lhospital0@dropbox.com",
-    "picture": "https://robohash.org/illumlaborelaboriosam.png?size=50x50&set=set1"
+    "picture": "/assets/images/avatars/avatar1.svg"
   },
   {
     "id": 2,
     "first_name": "Mariquilla",
     "last_name": "McSaul",
     "email": "mmcsaul1@slate.com",
-    "picture": "https://robohash.org/nisiperspiciatiscumque.png?size=50x50&set=set1"
+    "picture": "/assets/images/avatars/avatar1.svg"
   },
   {
     "id": 3,
     "first_name": "Adam",
     "last_name": "Ovitts",
     "email": "aovitts2@twitter.com",
-    "picture": "https://robohash.org/rationemaximevel.png?size=50x50&set=set1"
+    "picture": "/assets/images/avatars/avatar2.svg"
   },
   {
     "id": 4,
     "first_name": "Udale",
     "last_name": "Siviter",
     "email": "usiviter3@dot.gov",
-    "picture": "https://robohash.org/aperiamaplaceat.png?size=50x50&set=set1"
+    "picture": "/assets/images/avatars/avatar3.svg"
   },
   {
     "id": 5,
     "first_name": "Lonnard",
     "last_name": "MacGorman",
     "email": "lmacgorman4@wunderground.com",
-    "picture": "https://robohash.org/inciduntenimearum.png?size=50x50&set=set1"
+    "picture": "/assets/images/avatars/avatar4.svg"
   },
   {
     "id": 6,

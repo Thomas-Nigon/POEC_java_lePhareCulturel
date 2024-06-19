@@ -2,10 +2,15 @@
 .userPage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
+  //justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  height: 100%;
+  // min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(
+  background-color: $background;
+  /*  background-image: linear-gradient(
       112.5deg,
       rgb(247, 185, 168) 0%,
       rgb(247, 185, 168) 10%,
@@ -57,9 +62,18 @@
       rgb(235, 80, 39) 100%
     ),
     linear-gradient(90deg, rgb(245, 167, 147), rgb(228, 228, 228));
-  background-blend-mode: overlay, overlay, overlay, normal;
+  background-blend-mode: overlay, overlay, overlay, normal; */
 }
 
 .userPage-title {
   color: $accent;
+}
+@media screen and (min-width: 768px) {
+  .userPage {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+  }
 }

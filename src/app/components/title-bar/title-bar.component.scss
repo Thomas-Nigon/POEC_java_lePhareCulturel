@@ -2,16 +2,17 @@
 @import './gradient.scss';
 
 .titleBar {
-  background-image: $gradient;
+  background-color: $primaryT;
+  // background-image: $gradient;
   display: flex;
   justify-content: center;
 }
 .titleBar-title {
   margin: 1rem;
   padding: 0.5rem;
-  color: $accent;
-  border-bottom: 3px solid $accent;
-  border-top: 3px solid $accent;
+  color: $text;
+  border-bottom: 3px solid $text;
+  border-top: 3px solid $text;
 }
 .titleBar_nav {
   display: none;
@@ -30,11 +31,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $accent;
+    border-bottom: 1px solid $text;
   }
   .titleBar_nav-title {
-    border-top: 1px solid $accent;
-    color: $accent;
+    border-top: 1px solid $text;
+    color: $text;
   }
   .titleBar_nav-container {
     display: flex;
@@ -47,7 +48,7 @@
   }
   .titleBar_nav-link {
     all: unset;
-    color: $accent;
+    color: $text;
     font-family: $titleFont;
     font-size: 1.4rem;
     font-weight: bold;
@@ -64,7 +65,7 @@
     top: -30px;
     width: 0;
     height: 2px;
-    background: $accent;
+    background: $text;
     transition: width 0.1s ease-in;
   }
 

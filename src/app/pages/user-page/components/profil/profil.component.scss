@@ -5,6 +5,7 @@
 .profilContainer {
   padding: 2rem 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   //background-image: $gradient;
   //background-blend-mode: overlay, overlay, overlay, normal;
@@ -12,16 +13,27 @@
 .profil {
   // background-image: $gradient;
   //background-blend-mode: overlay, overlay, overlay, normal;
-  background-color: white;
+  background-color: $secondaryT;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70vh;
   max-width: 500px;
-  margin-top: 1rem;
-  padding: 1rem 0.5rem;
+  //margin-top: 1rem;
+  // padding: 1rem 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid $accent;
-  box-shadow: 5px 5px 15px -5px $accent;
+  // box-shadow: 5px 5px 15px -5px $accent;
+}
+
+.profil_title_container {
+  padding: 1rem;
+  display: flex;
+  background-color: $secondary;
+  width: 100%;
+  height: 160px;
 }
 .profil_userDescription {
   padding: 1rem 0;
@@ -51,18 +63,20 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-
   list-style: none;
   animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
-.userName {
+.profil_item-span {
+  color: $primary;
+}
+/* .userName {
   color: $primaryColor;
   font-weight: bold;
 }
 .userEmail {
   color: $primaryColor;
   font-weight: 200;
-}
+} */
 
 .profil_details {
   display: none;
@@ -83,9 +97,8 @@
     width: 300px;
   }
   .profil {
-    flex-direction: row;
     align-items: center;
-    max-height: 355px;
+    // max-height: 355px;
   }
 
   .profil-image {

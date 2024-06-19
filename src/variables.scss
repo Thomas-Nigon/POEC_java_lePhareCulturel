@@ -12,6 +12,15 @@ $accentColor: #a647fc;
 $accent: #061105;
 $dark: 061105;
 
+$text: #180312;
+$background: #fefafd;
+$primary: #e41fa4;
+$primaryT: hsla(319, 78%, 51%, 0.5);
+$secondary: #82f087;
+$secondaryT: hsla(123, 79%, 73%, 0.3);
+
+$accent: #58e1eb;
+
 $titleFont: 'Oxygen', sans-serif;
 $mainFont: 'Yaldevi', sans-serif;
 
@@ -22,9 +31,10 @@ $mainFont: 'Yaldevi', sans-serif;
 }
 
 body {
+  color: $text;
   font-family: $mainFont;
   font-weight: 400;
-  background-color: $backgroundColor;
+  background-color: $background;
 }
 
 h1,
