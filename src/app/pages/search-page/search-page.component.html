@@ -1,13 +1,13 @@
 <main class="calendar">
-  <article class="calendar-title">
-    <h4>
-      Une date en particulier?
+  <article class="calendar_title_container">
+    <h3 class="calendar-title">
+      {{ displayDate }}
       <button (click)="onClick()">
-        <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_drop_up </span>
-        <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_drop_down </span>
+        <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_circle_up </span>
+        <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_circle_down </span>
       </button>
-    </h4>
-    <h2>{{ displayDate }}</h2>
+    </h3>
+    <!--     <h2>{{ displayDate }}</h2> -->
   </article>
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>

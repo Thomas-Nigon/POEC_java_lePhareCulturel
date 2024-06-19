@@ -17,7 +17,7 @@ export class SearchPageComponent implements OnInit {
   isOpen = true;
   clickedDate!: string;
   date!: Date;
-  displayDate!: string;
+  displayDate = 'Une date en Particulier?';
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -57,13 +57,13 @@ export class SearchPageComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.displayDate = new Intl.DateTimeFormat('fr-FR', {
+    /*  this.displayDate = new Intl.DateTimeFormat('fr-FR', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     }).format(new Date());
-    this.displayDate = this.displayDate.charAt(0).toUpperCase() + this.displayDate.slice(1);
+    this.displayDate = this.displayDate.charAt(0).toUpperCase() + this.displayDate.slice(1); */
   }
 
   onClick() {

@@ -1,5 +1,17 @@
 @import '../../../variables.scss';
 
+.calendar_title_container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  color: $secondaryColor;
+  width: 90vw;
+  padding: 5vw;
+}
+.calendar-title {
+  display: flex;
+}
+
 .calendar-container {
   display: flex;
   width: 100%;
@@ -8,7 +20,7 @@
   align-items: space-between;
   padding: 1rem;
   max-width: 800px;
-  color: $accentColor;
+  color: $primaryColor;
   height: 100%;
   opacity: 1;
   cursor: pointer;
@@ -16,7 +28,6 @@
 }
 
 .close {
-  // padding: 0;
   overflow: hidden;
   animation: myAnim 0.1s ease 0s 1 normal forwards;
 }
@@ -30,11 +41,15 @@
   100% {
     height: 0;
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-10px);
   }
 }
 button {
-  width: 2rem;
   all: unset;
+  width: 2rem;
   cursor: pointer;
+}
+.material-symbols-outlined {
+  margin-left: 1rem;
+  font-size: 2.5rem;
 }
