@@ -7,7 +7,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomepageComponent },
+  { path: '', component: HomepageComponent },
   { path: 'event/:id', component: EventPageComponent },
   { path: 'user/:id', component: UserPageComponent },
   { path: 'search', component: SearchPageComponent },
@@ -15,6 +15,6 @@ export const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: '',
   },
 ];

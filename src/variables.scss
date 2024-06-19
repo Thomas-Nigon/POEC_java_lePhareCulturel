@@ -5,9 +5,11 @@
 $primaryColor: #eb5027;
 $primaryColortransparent: hsla(13, 83%, 54%, 0.1);
 $dropShadow: hsla(13, 83%, 54%, 0.6);
-$secondaryColor: #f4f1e0;
+$backgroundColor: #f4f1e0;
+$secondaryColor: #7ca5fd;
+$accentColor: #a647fc;
 $accent: #061105;
-$test: black;
+$dark: 061105;
 
 $titleFont: 'Oxygen', sans-serif;
 $mainFont: 'Yaldevi', sans-serif;
@@ -21,6 +23,7 @@ $mainFont: 'Yaldevi', sans-serif;
 body {
   font-family: $mainFont;
   font-weight: 400;
+  background-color: $backgroundColor;
 }
 
 h1,
@@ -56,7 +59,48 @@ small {
   font-size: 0.75rem; /* 12px */
 }
 
+:root {
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: pink;
+  --fc-neutral-bg-color: hsla(0, 100%, 50%, 0.3);
+  --fc-neutral-text-color: lime;
+  --fc-border-color: #{$secondaryColor};
+
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: #{$secondaryColor};
+  --fc-button-hover-bg-color: #{$accentColor};
+  --fc-button-hover-border-color: #{$accentColor};
+  --fc-button-active-bg-color: #1a252f;
+  --fc-button-active-border-color: #151e27;
+
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #3788d8;
+  --fc-event-text-color: #ffffff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: hsla(0, 0%, 84%, 0.3);
+  --fc-bg-event-color: #8fdf82;
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: red;
+}
+.fc .fc-button {
+  padding: 0.1rem;
+}
+
 @media screen and (min-width: 992px) {
+  .fc .fc-button {
+    padding: 0.5rem;
+  }
+
   html {
     font-size: 100%;
   } /* 16px */

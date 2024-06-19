@@ -1,1 +1,15 @@
-<p>search-page works!</p>
+<main class="calendar">
+  <article class="calendar-title">
+    <h4>
+      Une date en particulier?
+      <button (click)="onClick()">
+        <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_drop_up </span>
+        <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_drop_down </span>
+      </button>
+    </h4>
+    <h2>{{ displayDate }}</h2>
+  </article>
+  <div class="calendar-container" [ngClass]="{ close: !isOpen }">
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </div>
+</main>

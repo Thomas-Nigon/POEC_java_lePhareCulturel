@@ -7,6 +7,7 @@ import { EventPageComponent } from './pages/event-page/event-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     TitleBarComponent,
     RouterLink,
     RouterLinkActive,
+    FullCalendarModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
