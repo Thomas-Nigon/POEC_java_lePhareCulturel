@@ -3,6 +3,7 @@
 @import './gradient.scss';
 
 .myEvent {
+  box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -14,18 +15,22 @@
   // padding: 2rem 1rem;
 }
 .myEvent_nav-container {
+  background: linear-gradient(to bottom, #df3462 0%, #ebec87 100%);
+  color: $text;
   padding: 1rem;
-  background-color: $secondary;
-  border-bottom: 2px solid $accent;
+  justify-content: center;
+  //background-color: $primary;
+  //background: linear-gradient(45deg, #df3462 0%, #ebec87 100%);
+  // border-bottom: 2px solid $accent;
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1;
+  /*   z-index: 1; */
 }
 
 .myEvent_eventContainer {
-  background-color: $secondaryT;
+  background-color: $secondary;
   //padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
@@ -33,7 +38,7 @@
   max-height: 70vh;
   max-width: 500px;
   border-radius: 0.5rem;
-  border: 1px solid $accent;
+  // border: 1px solid $accent;
   // box-shadow: 5px 5px 15px -5px $accent;
   overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
@@ -57,16 +62,16 @@
   font-family: $titleFont;
 }
 .myEvent-button:hover {
-  color: $primary;
+  color: $text;
   font-size: 1.5rem;
   font-weight: 700;
-  filter: drop-shadow(3px 5px 3px $secondary);
+  filter: drop-shadow(3px 5px 3px $accent);
 }
 .active {
-  color: $primary;
+  color: $text;
   font-size: 1.5rem;
   font-weight: 700;
-  filter: drop-shadow(3px 3px 3px $secondary);
+  filter: drop-shadow(3px 3px 3px $accent);
 }
 
 .eventCard {

@@ -2,8 +2,9 @@
 @import './gradient.scss';
 
 .titleBar {
-  background-color: $primaryT;
-  // background-image: $gradient;
+  background-color: $primary;
+  color: $text;
+  //  background-image: $gradient;
   display: flex;
   justify-content: center;
 }
@@ -26,7 +27,7 @@
     display: none;
   }
   .titleBar_nav {
-    margin: 1rem 2rem 2rem 2rem;
+    margin: 1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,7 +56,7 @@
   }
   .active {
     animation: myAnim 0.8s ease 0s 1 normal forwards;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid $accent;
   }
 
   a::after {
@@ -120,9 +121,9 @@
   }
 
   @media screen and (min-width: 1300px) {
-    .titleBar_nav-link {
+    /*    .titleBar_nav-link {
       font-size: 2rem;
-    }
+    } */
     a::after {
       top: -40px;
     }

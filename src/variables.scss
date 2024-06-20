@@ -12,14 +12,13 @@ $accentColor: #a647fc;
 $accent: #061105;
 $dark: 061105;
 
-$text: #180312;
-$background: #fefafd;
-$primary: #e41fa4;
-$primaryT: hsla(319, 78%, 51%, 0.5);
-$secondary: #82f087;
-$secondaryT: hsla(123, 79%, 73%, 0.3);
-
-$accent: #58e1eb;
+$text: #110307;
+$background: #f3e8eb;
+$primary: #df3462;
+$primaryT: hsla(344, 73%, 54%, 0.3);
+$secondary: #ebec87;
+$secondaryT: hsla(61, 73%, 73%, 0.6);
+$accent: #a7e664;
 
 $titleFont: 'Oxygen', sans-serif;
 $mainFont: 'Yaldevi', sans-serif;
@@ -107,36 +106,35 @@ small {
   padding: 0.1rem;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .fc .fc-button {
     padding: 0.5rem;
   }
-
   html {
     font-size: 100%;
   } /* 16px */
 
   h1 {
-    font-size: 4.21rem; /* 67.36px */
+    font-size: 3.053rem; /* 48.8px */
   }
 
   h2 {
-    font-size: 3.158rem; /* 50.56px */
+    font-size: 2.442rem; /* 39.04px */
   }
 
   h3 {
-    font-size: 2.369rem; /* 37.92px */
+    font-size: 1.954rem; /* 31.2px */
   }
 
   h4 {
-    font-size: 1.777rem; /* 28.48px */
+    font-size: 1.563rem; /* 24.96px */
   }
 
   h5 {
-    font-size: 1.333rem; /* 21.28px */
+    font-size: 1.25rem; /* 20px */
   }
 
   small {
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.8rem; /* 12.8px */
   }
 }
