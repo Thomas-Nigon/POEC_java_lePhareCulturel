@@ -1,30 +1,27 @@
 <main class="myEvent">
-  <div>
-    <nav class="myEvent-nav">
-      <button class="myEvent-button" [ngClass]="{ active: incomingEvents }" (click)="onClickIncoming()">
-        Ça approche !
-      </button>
-      <button class="myEvent-button" [ngClass]="{ active: !incomingEvents }" (click)="onClickpast()">
-        Historique:
-      </button>
-    </nav>
-    <div class="myEvent_eventContainer">
-      <section class="myEvent_incoming" *ngIf="incomingEvents">
-        <article class="eventCard" *ngFor="let event of eventList">
-          <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
-          <h4>{{ event.id }}{{ event.event_name }}</h4>
-          <p>{{ event.event_date }} {{ event.event_time }}</p>
-        </article>
-      </section>
-      <section class="myEvent_past" *ngIf="!incomingEvents">
-        <article class="eventCard" *ngFor="let event of eventList">
-          <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
-          <h4>{{ event.event_name }}</h4>
-          <p>{{ event.event_date }} {{ event.event_time }}</p>
-        </article>
-      </section>
+  <div class="myEvent_eventContainer">
+    <div class="myEvent_nav-container">
+      <h2>Mes évènements:</h2>
+      <nav class="myEvent-nav">
+        <button class="myEvent-button" [ngClass]="{ active: incomingEvents }" (click)="onClickIncoming()">
+          En approche !
+        </button>
+        <button class="myEvent-button" [ngClass]="{ active: !incomingEvents }" (click)="onClickpast()">Passés</button>
+      </nav>
     </div>
+    <section class="myEvent_incoming" *ngIf="incomingEvents">
+      <article class="eventCard" *ngFor="let event of eventList">
+        <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
+        <h4>{{ event.id }}{{ event.event_name }}</h4>
+        <p>{{ event.event_date }} {{ event.event_time }}</p>
+      </article>
+    </section>
+    <section class="myEvent_past" *ngIf="!incomingEvents">
+      <article class="eventCard" *ngFor="let event of eventList">
+        <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
+        <h4>{{ event.event_name }}</h4>
+        <p>{{ event.event_date }} {{ event.event_time }}</p>
+      </article>
+    </section>
   </div>
-
-  <img class="myEvent-illustration" src="assets/images/orangeEventIllustration.svg" alt="" />
 </main>

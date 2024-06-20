@@ -83,7 +83,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/variables.scss"],
             "scripts": [
               "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
               "node_modules/ionicons/dist/ionicons/ionicons.js"

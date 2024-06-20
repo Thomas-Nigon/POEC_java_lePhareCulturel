@@ -11,13 +11,14 @@
 }
 .filterBar-title {
   padding: 1rem;
+  color: $primary;
 }
 .filterBar-h4 {
   font-family: $mainFont;
 }
 .filterBar-list {
-  border-top: 1px solid $primaryColor;
-  border-bottom: 1px solid $primaryColor;
+  border-top: 1px solid $primary;
+  border-bottom: 1px solid $primary;
   padding: 1rem;
   width: 100%;
   max-width: 100vw;
@@ -33,7 +34,7 @@
   display: none;
 }
 .filterBar-item {
-  color: $primaryColor;
+  color: $primary;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,10 +42,11 @@
   padding: 1rem;
 }
 .filterBar-item:hover {
-  filter: drop-shadow(0px 8px 8px $primaryColor);
+  filter: drop-shadow(0px 8px 8px $secondary);
   transform: scale(1.2);
   font-weight: 400;
   cursor: pointer;
+  color: $primary;
 }
 .filterBar-icon {
   width: 125px;

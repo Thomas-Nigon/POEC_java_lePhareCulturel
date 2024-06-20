@@ -1,1 +1,16 @@
-<p>search-page works!</p>
+<main class="searchPage">
+  <article class="calendar_title_container">
+    <h3 class="calendar-title">
+      {{ displayDate }}
+      <button (click)="onClick()">
+        <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_circle_up </span>
+        <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_circle_down </span>
+      </button>
+    </h3>
+  </article>
+  <div class="calendar-container" [ngClass]="{ close: !isOpen }">
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </div>
+
+  <app-filter-bar></app-filter-bar>
+</main>

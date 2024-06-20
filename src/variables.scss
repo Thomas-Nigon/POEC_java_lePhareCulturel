@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
-$primaryColor: #eb5027;
-$primaryColortransparent: hsla(13, 83%, 54%, 0.1);
-$dropShadow: hsla(13, 83%, 54%, 0.6);
-$secondaryColor: #f4f1e0;
-$accent: #061105;
-$test: black;
+$text: #110307;
+$background: #f3e8eb;
+$primary: #df3462;
+$primaryT: hsla(344, 73%, 54%, 0.3);
+$secondary: #e0e1a6;
+$secondaryT: hsla(61, 73%, 73%, 0.6);
+$accent: #a7e664;
 
 $titleFont: 'Oxygen', sans-serif;
 $mainFont: 'Yaldevi', sans-serif;
@@ -19,8 +20,10 @@ $mainFont: 'Yaldevi', sans-serif;
 }
 
 body {
+  color: $text;
   font-family: $mainFont;
   font-weight: 400;
+  background-color: $background;
 }
 
 h1,
@@ -56,32 +59,72 @@ small {
   font-size: 0.75rem; /* 12px */
 }
 
-@media screen and (min-width: 992px) {
+:root {
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: pink;
+  --fc-neutral-bg-color: hsla(0, 100%, 50%, 0.3);
+  --fc-neutral-text-color: lightgray;
+  --fc-border-color: #{$text};
+
+  --fc-button-text-color: #{$background};
+  --fc-button-bg-color: #{$text};
+  --fc-button-hover-bg-color: #{$primary};
+  --fc-button-hover-border-color: #{$primary};
+  --fc-button-active-bg-color: #1a252f;
+  --fc-button-active-border-color: #151e27;
+
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #3788d8;
+  --fc-event-text-color: #ffffff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: hsla(0, 0%, 84%, 0.3);
+  --fc-bg-event-color: #8fdf82;
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: red;
+}
+.fc .fc-button {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .fc .fc-button {
+    padding: 0.5rem;
+  }
   html {
     font-size: 100%;
   } /* 16px */
 
   h1 {
-    font-size: 4.21rem; /* 67.36px */
+    font-size: 3.053rem; /* 48.8px */
   }
 
   h2 {
-    font-size: 3.158rem; /* 50.56px */
+    font-size: 2.442rem; /* 39.04px */
   }
 
   h3 {
-    font-size: 2.369rem; /* 37.92px */
+    font-size: 1.954rem; /* 31.2px */
   }
 
   h4 {
-    font-size: 1.777rem; /* 28.48px */
+    font-size: 1.563rem; /* 24.96px */
   }
 
   h5 {
-    font-size: 1.333rem; /* 21.28px */
+    font-size: 1.25rem; /* 20px */
   }
 
   small {
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.8rem; /* 12.8px */
   }
 }

@@ -1,0 +1,70 @@
+@import '../../../variables.scss';
+
+.searchPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.calendar_title_container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  color: $primary;
+  width: 90vw;
+  padding: 0;
+}
+.calendar-title {
+  display: flex;
+}
+
+.calendar-container {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 1rem;
+  max-width: 800px;
+  color: $primary;
+  height: 100%;
+  opacity: 1;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.close {
+  overflow: hidden;
+  animation: myAnim 0.1s ease 0s 1 normal forwards;
+  display: none;
+}
+@keyframes myAnim {
+  0% {
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+  }
+
+  100% {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+button {
+  all: unset;
+  width: 2rem;
+  cursor: pointer;
+}
+.material-symbols-outlined {
+  margin-left: 1rem;
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .calendar_title_container {
+    padding: 1rem;
+  }
+}
