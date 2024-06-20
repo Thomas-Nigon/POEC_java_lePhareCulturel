@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CommonModule, NgClass } from '@angular/common';
 import interactionPlugin from '@fullcalendar/interaction';
 import { CalendarDate } from '../../models/calendarDate.model';
+import { FilterBarComponent } from '../homepage/components/filter-bar/filter-bar.component';
 
 @Component({
   selector: 'app-search-page',
   standalone: true,
-  imports: [FullCalendarModule, CommonModule, NgClass],
+  imports: [FullCalendarModule, CommonModule, NgClass, FilterBarComponent],
   templateUrl: './search-page.component.html',
   styleUrl: './search-page.component.scss',
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
   isOpen = true;
   clickedDate!: string;
   date!: Date;
@@ -56,16 +57,6 @@ export class SearchPageComponent implements OnInit {
     plugins: [dayGridPlugin, interactionPlugin],
   };
 
-  ngOnInit(): void {
-    /*  this.displayDate = new Intl.DateTimeFormat('fr-FR', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }).format(new Date());
-    this.displayDate = this.displayDate.charAt(0).toUpperCase() + this.displayDate.slice(1); */
-  }
-
   onClick() {
     this.isOpen = !this.isOpen;
   }
@@ -78,5 +69,6 @@ export class SearchPageComponent implements OnInit {
       day: 'numeric',
     }).format(this.date);
     this.displayDate = this.clickedDate.charAt(0).toUpperCase() + this.clickedDate.slice(1);
+    this.isOpen = false;
   }
 }

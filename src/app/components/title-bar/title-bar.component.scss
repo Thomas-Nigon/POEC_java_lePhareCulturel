@@ -3,17 +3,16 @@
 
 .titleBar {
   background-color: $primary;
-  color: $text;
-  //  background-image: $gradient;
+  color: $background;
   display: flex;
   justify-content: center;
 }
 .titleBar-title {
   margin: 1rem;
   padding: 0.5rem;
-  color: $text;
-  border-bottom: 3px solid $text;
-  border-top: 3px solid $text;
+  color: $background;
+  border-bottom: 3px solid $background;
+  border-top: 3px solid $background;
 }
 .titleBar_nav {
   display: none;
@@ -32,11 +31,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $text;
+    border-bottom: 1px solid $background;
   }
   .titleBar_nav-title {
-    border-top: 1px solid $text;
-    color: $text;
+    border-top: 1px solid $background;
+    color: $background;
   }
   .titleBar_nav-container {
     display: flex;
@@ -49,25 +48,17 @@
   }
   .titleBar_nav-link {
     all: unset;
-    color: $text;
+    color: $background;
     font-family: $titleFont;
     font-size: 1.4rem;
     font-weight: bold;
   }
+  .titleBar_nav-link:hover {
+    color: $text;
+  }
   .active {
     animation: myAnim 0.8s ease 0s 1 normal forwards;
     border-bottom: 2px solid $accent;
-  }
-
-  a::after {
-    content: '';
-    display: block;
-    position: relative;
-    top: -30px;
-    width: 0;
-    height: 2px;
-    background: $text;
-    transition: width 0.1s ease-in;
   }
 
   @keyframes myAnim {
@@ -118,14 +109,5 @@
 
   a:hover::after {
     width: 100%;
-  }
-
-  @media screen and (min-width: 1300px) {
-    /*    .titleBar_nav-link {
-      font-size: 2rem;
-    } */
-    a::after {
-      top: -40px;
-    }
   }
 }

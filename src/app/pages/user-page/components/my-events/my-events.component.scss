@@ -7,40 +7,31 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  // padding: 2rem 1rem;
 }
 .myEvent_nav-container {
-  // background: linear-gradient(to bottom, #df3462 0%, #ebec87 100%);
   background: linear-gradient(to bottom, #df3462 0%, #e0e1a6 100%);
   color: $text;
   padding: 1rem;
   justify-content: center;
-  //background-color: $primary;
-  //background: linear-gradient(45deg, #df3462 0%, #ebec87 100%);
-  // border-bottom: 2px solid $accent;
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
-  /*   z-index: 1; */
 }
 
 .myEvent_eventContainer {
   background-color: $secondary;
-  //padding: 1rem 1rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   max-height: 70vh;
   max-width: 500px;
   border-radius: 0.5rem;
-  // border: 1px solid $accent;
-  // box-shadow: 5px 5px 15px -5px $accent;
   overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -90,18 +81,16 @@
 @media screen and (min-width: 768px) {
   .myEvent_eventContainer {
     max-height: 70vh;
+    max-width: 800px;
     height: 70vh;
   }
   .myEvent {
-    //flex-direction: row;
     max-width: 1300px;
-    //align-items: end;
   }
   .myEvent-illustration {
     margin-left: 2rem;
     display: block;
     width: 50%;
     animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
-    // box-shadow: 5px 5px 15px -5px $accent;
   }
 }
