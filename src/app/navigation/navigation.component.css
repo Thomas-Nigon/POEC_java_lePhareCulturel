@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=poppins:100,200,300,400,500,600,700,800,900');
-@media (min-width: 768px) {
-  app-navigation {
-    display: none;
-  }
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -125,4 +121,9 @@ body {
 }
 .navigation ul li:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));
+}
+@media (min-width: 768px) {
+  .navigation {
+    display: none;
+  }
 }
