@@ -4,7 +4,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit } from '@angular/core'
   selector: 'app-navigation',
   standalone: true,
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css'],
+  styleUrls: ['./navigation.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NavigationComponent implements AfterViewInit {

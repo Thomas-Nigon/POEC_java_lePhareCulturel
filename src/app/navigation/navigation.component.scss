@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=poppins:100,200,300,400,500,600,700,800,900');
+@import '../../variables.scss';
 
 * {
   margin: 0;
@@ -6,35 +7,39 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
+
 :root {
   --clr: #312a2a;
 }
+
 body {
   display: flex;
-
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: black;
+  background: var(--clr);
 }
+
 .navigation {
-  position: absolute;
-  top: 0x;
-  z-index: 1000; /* Assurez-vous que le menu reste au-dessus des autres éléments */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  background: #f6fbd3;
+  height: 70px;
+  background-color: $secondary;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour le menu */
-  margin: 0; /* Supprimez les marges pour que le menu colle aux bords */
+  border-radius: 10px;
 }
 
 .navigation ul {
   display: flex;
   width: 350px;
+  justify-content: space-between;
 }
+
 .navigation ul li {
   position: relative;
   list-style: none;
@@ -42,6 +47,7 @@ body {
   height: 70px;
   z-index: 1;
 }
+
 .navigation ul li a {
   position: relative;
   display: flex;
@@ -52,6 +58,7 @@ body {
   text-align: center;
   font-weight: 500;
 }
+
 .navigation ul li a .icon {
   position: relative;
   display: block;
@@ -61,10 +68,12 @@ body {
   transition: 0.5s;
   color: black;
 }
+
 .navigation ul li.active a .icon {
   transform: translateY(-35px);
   color: white;
 }
+
 .navigation ul li a .text {
   position: absolute;
   color: var(--clr);
@@ -79,16 +88,18 @@ body {
 .navigation ul li:hover a .text {
   transform: translateY(-10px);
 }
+
 .indicator {
   position: absolute;
   top: -50%;
   width: 70px;
   height: 70px;
-  background: #741ddf;
+  background: #df3462;
   border-radius: 50%;
-  border: 6px solid black;
+  border: 6px solid #f2e8eb;
   transition: 0.5s;
 }
+
 .indicator::before {
   content: '';
   position: absolute;
@@ -100,6 +111,7 @@ body {
   border-top-right-radius: 20px;
   box-shadow: 1px -10px 0 0 var(--clr);
 }
+
 .indicator::after {
   content: '';
   position: absolute;
@@ -111,21 +123,19 @@ body {
   border-top-left-radius: 20px;
   box-shadow: -1px -10px 0 0 var(--clr);
 }
+
 .navigation ul li:nth-child(1).active ~ .indicator {
-  transform: translateX(calc(70px * 0));
+  transform: translateX(calc(140px * 0));
 }
+
 .navigation ul li:nth-child(2).active ~ .indicator {
-  transform: translateX(calc(70px * 1));
+  transform: translateX(calc(140px * 1));
 }
+
 .navigation ul li:nth-child(3).active ~ .indicator {
-  transform: translateX(calc(70px * 2));
+  transform: translateX(calc(140px * 2));
 }
-.navigation ul li:nth-child(4).active ~ .indicator {
-  transform: translateX(calc(70px * 3));
-}
-.navigation ul li:nth-child(5).active ~ .indicator {
-  transform: translateX(calc(70px * 4));
-}
+
 @media (min-width: 768px) {
   .navigation {
     display: none;
