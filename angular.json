@@ -20,9 +20,7 @@
             "outputPath": "dist/angular-boilerplate",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -76,10 +74,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -88,22 +83,17 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-           "scripts": [
-        "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
-        "node_modules/ionicons/dist/ionicons/ionicons.js"
-      ]
+            "styles": ["src/styles.scss"],
+            "scripts": [
+              "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
+              "node_modules/ionicons/dist/ionicons/ionicons.js"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "ionic-cordova-serve": {
@@ -134,10 +124,7 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics",
-      "@ionic/angular-toolkit"
-    ],
+    "schematicCollections": ["@angular-eslint/schematics", "@ionic/angular-toolkit"],
     "analytics": "68f8c3bd-eab0-4233-840c-51fafb290096"
   },
   "schematics": {

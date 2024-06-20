@@ -1,0 +1,55 @@
+@import '../../../../../variables.scss';
+
+.filterBar {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+}
+.filterBar-title {
+  padding: 1rem;
+}
+.filterBar-h4 {
+  font-family: $mainFont;
+}
+.filterBar-list {
+  border-top: 1px solid $primaryColor;
+  border-bottom: 1px solid $primaryColor;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.myEvent_eventContainer::-webkit-scrollbar {
+  display: none;
+}
+.filterBar-item {
+  color: $primaryColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 1rem;
+}
+.filterBar-item:hover {
+  filter: drop-shadow(0px 8px 8px $primaryColor);
+  transform: scale(1.2);
+  font-weight: 400;
+  cursor: pointer;
+}
+.filterBar-icon {
+  width: 125px;
+  height: 125px;
+}
+.filterBar-name {
+  margin-top: 0.5rem;
+}

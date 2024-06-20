@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Culinaire",
+    "img": "/assets/images/categories/food.svg"
+  },
+  {
+    "id": 2,
+    "name": "Musique",
+    "img": "/assets/images/categories/musicV2.svg"
+  },
+  {
+    "id": 3,
+    "name": "Arts",
+    "img": "/assets/images/categories/art.svg"
+  },
+  {
+    "id": 4,
+    "name": "Sport",
+    "img": "/assets/images/categories/sportV2.svg"
+  },
+  {
+    "id": 5,
+    "name": "Nature",
+    "img": "/assets/images/categories/natureV2.svg"
+  }
+]

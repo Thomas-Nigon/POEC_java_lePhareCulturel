@@ -1,63 +1,50 @@
+<div class="navigation">
+  <ul>
+    <li class="list active">
+      <a href="#">
+        <span class="icon">
+          <ion-icon name="home-outline"></ion-icon>
+        </span>
+        <span class="text">Accueil</span>
+      </a>
+    </li>
 
+    <li class="list">
+      <a href="#">
+        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+        <span class="text">Message</span>
+      </a>
+    </li>
 
-    <div class="navigation">
-    <ul>
-        <li class="list active">
-            <a href="#">
-                <span class="icon">
-                    <ion-icon name="home-outline"></ion-icon>
-                </span>
-                <span class="text">Accueil</span>
-               
-            </a>
-        </li>
+    <li class="list">
+      <a href="#">
+        <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+        <span class="text">Chercher</span>
+      </a>
+    </li>
 
-      
-
-        <li class="list">
-            <a href="#">
-                <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                <span class="text">Message</span>
-               
-            </a>
-        </li>
-
-        <li class="list">
-            <a href="#">
-                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-                <span class="text">Chercher</span>
-               
-            </a>
-        </li>
-
-        <li class="list">
-            <a href="#">
-                <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
-                <span class="text">Agenda</span>
-               
-            </a>
-        </li>
-        <li class="list">
-            <a href="#">
-                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                <span class="text">Profile</span>
-               
-            </a>
-        </li>
-            <div class="indicator"></div>
-    </ul>
+    <li class="list">
+      <a href="#">
+        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+        <span class="text">Agenda</span>
+      </a>
+    </li>
+    <li class="list">
+      <a href="#">
+        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+        <span class="text">Profile</span>
+      </a>
+    </li>
+    <div class="indicator"></div>
+  </ul>
 </div>
 <script>
-    const list = document.querySelectorAll('.list');
-    function activeLink(){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        this.classList.add('active');
-    }
-    list.forEach((item) =>
-    item.addEventListener('click',activeLink));
+  const list = document.querySelectorAll('.list');
+  function activeLink() {
+    list.forEach(item => item.classList.remove('active'));
+    this.classList.add('active');
+  }
+  list.forEach(item => item.addEventListener('click', activeLink));
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-

@@ -11,22 +11,26 @@
 }
 body {
   display: flex;
+
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: black;
 }
 .navigation {
-  position: relative;
-  width: 400px;
-  height: 70px;
-  background: #fff;
+  position: absolute;
+  top: 0x;
+  z-index: 1000; /* Assurez-vous que le menu reste au-dessus des autres éléments */
+  width: 100%;
+  background: #f6fbd3;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  margin: 50px;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour le menu */
+  margin: 0; /* Supprimez les marges pour que le menu colle aux bords */
 }
+
 .navigation ul {
   display: flex;
   width: 350px;
