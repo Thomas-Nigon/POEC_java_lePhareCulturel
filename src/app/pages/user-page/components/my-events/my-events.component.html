@@ -11,16 +11,20 @@
     </div>
     <section class="myEvent_incoming" *ngIf="incomingEvents">
       <article class="eventCard" *ngFor="let event of eventList">
-        <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
-        <h4>{{ event.id }}{{ event.event_name }}</h4>
-        <p>{{ event.event_date }} {{ event.event_time }}</p>
+        <img class="eventCard-img" src="{{ event.event_pic }}" alt="" />
+        <div class="eventCard_cardDescription">
+          <h5>{{ event.event_name }}</h5>
+          <p>{{ event.event_date }} {{ event.event_time }}</p>
+          <p>{{ event.event_desc }}</p>
+        </div>
       </article>
     </section>
     <section class="myEvent_past" *ngIf="!incomingEvents">
       <article class="eventCard" *ngFor="let event of eventList">
-        <img class="EventCard-img" src="{{ event.event_pic }}" alt="" />
+        <img class="eventCard-img" src="{{ event.event_pic }}" alt="" />
         <h4>{{ event.event_name }}</h4>
         <p>{{ event.event_date }} {{ event.event_time }}</p>
+        <p>{{ event.event_desc }}</p>
       </article>
     </section>
   </div>
