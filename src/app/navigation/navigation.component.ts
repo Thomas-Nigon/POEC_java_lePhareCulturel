@@ -1,7 +1,9 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
+  imports: [RouterLink],
   standalone: true,
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
