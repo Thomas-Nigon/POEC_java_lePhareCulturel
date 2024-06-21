@@ -1,23 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=poppins:100,200,300,400,500,600,700,800,900');
 @import '../../variables.scss';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
-}
-
-:root {
-  --clr: #312a2a;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--clr);
+  background: $background;
 }
 
 .navigation {
@@ -66,17 +55,17 @@ body {
   font-size: 1.5em;
   text-align: center;
   transition: 0.5s;
-  color: black;
+  color: $text;
 }
 
 .navigation ul li.active a .icon {
   transform: translateY(-35px);
-  color: white;
+  color: $background;
 }
 
 .navigation ul li a .text {
   position: absolute;
-  color: var(--clr);
+  color: $text;
   font-weight: 400;
   font-size: 0.75em;
   letter-spacing: 0.05em;
@@ -94,9 +83,9 @@ body {
   top: -50%;
   width: 70px;
   height: 70px;
-  background: #df3462;
+  background: $primary;
   border-radius: 50%;
-  border: 6px solid #f2e8eb;
+  border: 6px solid $background;
   transition: 0.5s;
 }
 
