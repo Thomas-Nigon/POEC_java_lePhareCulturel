@@ -117,4 +117,11 @@
     height: 100%;
     animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
   }
+
+  .profil-image {
+    animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+    width: 50%;
+    max-width: 225px;
+    max-height: 225px;
+  }
 }
