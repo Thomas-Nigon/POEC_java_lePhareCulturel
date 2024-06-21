@@ -1,0 +1,54 @@
+<!-- <main class="register__container">
+  <h1 class="register-title">Create a new account:</h1>
+  <form class="register__form" [formGroup]="registerForm" (submit)="OnGetSubmitForm()">
+    <input
+      class="register__Form-input"
+      [ngClass]="{
+        invalid: registerForm.get('username')?.invalid,
+      }"
+      id="username"
+      type="text"
+      placeholder="Username:"
+      formControlName="username"
+      required />
+    <div class="register__Form-credentials" formGroupName="credentials">
+      <input
+        class="register__Form-input"
+        [ngClass]="{
+          invalid: registerForm.get('credentials.email')?.invalid,
+        }"
+        type="email"
+        placeholder="Email:"
+        formControlName="email"
+        required
+        email />
+      <article class="input-container">
+        <input
+          class="register__Form-input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.password')?.invalid,
+          }"
+          [type]="pwdHidden ? 'password' : 'text'"
+          placeholder="Password:"
+          formControlName="password"
+          autocomplete="on"
+          required />
+      </article>
+      <article class="input-container">
+        <input
+          class="register__Form-input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.confirmPassword')?.invalid,
+          }"
+          [type]="confirmPwdHidden ? 'password' : 'text'"
+          placeholder="Confirm password:"
+          formControlName="confirmPassword"
+          autocomplete="on"
+          required />
+      </article>
+    </div>
+
+    <button class="registerForm-button" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</main>
+ -->
