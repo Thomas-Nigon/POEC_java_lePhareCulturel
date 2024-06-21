@@ -8,18 +8,21 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f3f3f3;
+  background-color: $primary;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   background-color: $primary;
   border-radius: 15px;
   overflow: hidden;
   max-width: 900px;
   width: 100%;
-  color: white;
+  color: $background;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 0 auto;
 }
 
 .text-block {
@@ -32,8 +35,7 @@ body {
 
 .text-block h2 {
   margin-top: 0;
-  font-size: 24px;
-  color: black;
+  color: $secondary;
 }
 
 .text-block p {
@@ -52,4 +54,9 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
 }
