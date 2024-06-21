@@ -27,8 +27,8 @@
     "id": 4,
     "event_name": "Le Refugee Food Festival",
     "event_pic": "/assets/images/Resto.png",
-    "event_time": "6:41 AM",
-    "event_date": "6/17/2024 au 22/06/2024",
+    "event_time": "19:00",
+    "event_date": "17/06/2024 au 22/06/2024",
     "event_desc": "Le Refugee Food Festival ouvre une nouvelle page pour nous rappeler que rien ne rapproche plus les humains que la cuisine. Un festival solidaire où les restaurateurs lillois ouvrent leurs fourneaux à des cuisiniers réfugiés pour des collaborations éphémères."
   },
   {
@@ -77,6 +77,6 @@
     "event_pic": "/assets/images/Sport.png",
     "event_time": "6:00 PM",
     "event_date": "7/21/2024",
-    "event_desc": "ur la Grand’Place, la Batucada Capanga va te faire danser dans une ambiance de carnaval de Bahia, avec 45 percussionnistes et surtout de la bonne humeur !"
+    "event_desc": "Sur la Grand’Place, la Batucada Capanga va te faire danser dans une ambiance de carnaval de Bahia, avec 45 percussionnistes et surtout de la bonne humeur !"
   }
 ]
