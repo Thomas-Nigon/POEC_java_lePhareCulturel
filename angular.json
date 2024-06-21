@@ -84,7 +84,10 @@
               }
             ],
             "styles": ["src/variables.scss"],
-            "scripts": []
+            "scripts": [
+              "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
+              "node_modules/ionicons/dist/ionicons/ionicons.js"
+            ]
           }
         },
         "lint": {
@@ -92,11 +95,44 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "angular-boilerplate:ionic-cordova-build",
+            "devServerTarget": "angular-boilerplate:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "angular-boilerplate:ionic-cordova-build:production",
+              "devServerTarget": "angular-boilerplate:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "angular-boilerplate:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-boilerplate:build:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": ["@angular-eslint/schematics", "@ionic/angular-toolkit"],
+    "analytics": "68f8c3bd-eab0-4233-840c-51fafb290096"
+  },
+  "schematics": {
+    "@ionic/angular-toolkit:component": {
+      "styleext": "scss"
+    },
+    "@ionic/angular-toolkit:page": {
+      "styleext": "scss"
+    }
   }
 }
