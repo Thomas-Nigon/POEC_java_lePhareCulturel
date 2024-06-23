@@ -62,3 +62,18 @@
 .invalid {
   border-color: red;
 }
+
+.loginForm__wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.loginForm__wrapper span {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  font-size: 26px;
+}
+.loginForm__passwordViewButton {
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 <main class="loginForm__container">
-  <h2>Page de connection</h2>
+  <h2>Connexion</h2>
   <form class="login__form" [formGroup]="loginForm" (submit)="onSubmit()">
     <input
       class="loginForm__input"
@@ -14,8 +14,18 @@
       (focus)="onFocus()"
       (blur)="onBlur()" />
     <span *ngIf="loginForm.get('email')?.invalid && isFocused"> Entrez une addresse mail valide. </span>
-    <input class="loginForm__input" type="text" placeholder="Mot de passe..." formControlName="password" required />
-    <button class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">Connection</button>
+    <div class="loginForm__wrapper">
+      <input
+        class="loginForm__input"
+        [type]="pwdHidden ? 'password' : 'text'"
+        placeholder="Mot de passe..."
+        formControlName="password"
+        required />
+      <button class="loginForm__passwordViewButton" (click)="togglePasswordView()" (keydown)="togglePasswordView()">
+        <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
+      </button>
+    </div>
+    <button class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">Connexion</button>
     <p>Pas encore de compte? <a routerLink="/register"> cliquez ici</a></p>
   </form>
 </main>

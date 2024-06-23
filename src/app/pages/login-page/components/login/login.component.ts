@@ -14,7 +14,7 @@ export class LoginComponent {
   fb: FormBuilder = inject(FormBuilder);
   pwdHidden = true;
   isFocused = false;
-  toggleConfirPwdView() {
+  togglePasswordView() {
     this.pwdHidden = !this.pwdHidden;
   }
 
