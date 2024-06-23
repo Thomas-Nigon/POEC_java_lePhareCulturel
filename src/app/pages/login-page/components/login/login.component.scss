@@ -7,10 +7,10 @@
   align-items: center;
   margin-top: 25vh;
   margin: 20vh auto;
-  width: 80vw;
+  width: 90vw;
   max-width: 600px;
   border: 2px solid $primary;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
 }
 .login__form {
@@ -76,4 +76,10 @@
 }
 .loginForm__passwordViewButton {
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .loginForm__container {
+    padding: 2rem;
+  }
 }
