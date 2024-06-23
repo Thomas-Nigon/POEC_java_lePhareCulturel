@@ -1,54 +1,21 @@
-<!-- <main class="register__container">
-  <h1 class="register-title">Create a new account:</h1>
-  <form class="register__form" [formGroup]="registerForm" (submit)="OnGetSubmitForm()">
+<main class="loginForm__container">
+  <h2>Page de connection</h2>
+  <form class="login__form" [formGroup]="loginForm" (submit)="onSubmit()">
     <input
-      class="register__Form-input"
+      class="loginForm__input"
       [ngClass]="{
-        invalid: registerForm.get('username')?.invalid,
+        invalid: loginForm.get('email')?.invalid && isFocused,
       }"
-      id="username"
-      type="text"
-      placeholder="Username:"
-      formControlName="username"
-      required />
-    <div class="register__Form-credentials" formGroupName="credentials">
-      <input
-        class="register__Form-input"
-        [ngClass]="{
-          invalid: registerForm.get('credentials.email')?.invalid,
-        }"
-        type="email"
-        placeholder="Email:"
-        formControlName="email"
-        required
-        email />
-      <article class="input-container">
-        <input
-          class="register__Form-input"
-          [ngClass]="{
-            invalid: registerForm.get('credentials.password')?.invalid,
-          }"
-          [type]="pwdHidden ? 'password' : 'text'"
-          placeholder="Password:"
-          formControlName="password"
-          autocomplete="on"
-          required />
-      </article>
-      <article class="input-container">
-        <input
-          class="register__Form-input"
-          [ngClass]="{
-            invalid: registerForm.get('credentials.confirmPassword')?.invalid,
-          }"
-          [type]="confirmPwdHidden ? 'password' : 'text'"
-          placeholder="Confirm password:"
-          formControlName="confirmPassword"
-          autocomplete="on"
-          required />
-      </article>
-    </div>
-
-    <button class="registerForm-button" [disabled]="!registerForm.valid">Register</button>
+      type="email"
+      placeholder="Email..."
+      formControlName="email"
+      required
+      email
+      (focus)="onFocus()"
+      (blur)="onBlur()" />
+    <span *ngIf="loginForm.get('email')?.invalid && isFocused"> Entrez une addresse mail valide. </span>
+    <input class="loginForm__input" type="text" placeholder="Mot de passe..." formControlName="password" required />
+    <button class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">Connection</button>
+    <p>Pas encore de compte? <a routerLink="/register"> cliquez ici</a></p>
   </form>
 </main>
- -->
