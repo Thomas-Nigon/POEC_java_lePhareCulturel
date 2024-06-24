@@ -1,0 +1,72 @@
+<main class="registerForm__container">
+  <h2 class="register__title">Créez votre compte:</h2>
+  <form class="register__form" [formGroup]="registerForm" (submit)="onSubmit()">
+    <input
+      class="register__form__input"
+      [ngClass]="{
+        invalid: registerForm.get('username')?.invalid,
+      }"
+      id="username"
+      type="text"
+      placeholder="Username:"
+      formControlName="username"
+      required />
+    <div class="register__form__credentials" formGroupName="credentials">
+      <input
+        class="register__form__input"
+        [ngClass]="{
+          invalid: registerForm.get('credentials.email')?.invalid,
+        }"
+        type="email"
+        placeholder="Email:"
+        formControlName="email"
+        required
+        email
+        (focus)="onFocus()"
+        (blur)="onBlur()" />
+      <span *ngIf="registerForm.get('credentials.email')?.invalid && isFocused">
+        Entrez une addresse mail valide.
+      </span>
+      <div class="registerForm__wrapper">
+        <input
+          class="register__form__input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.password')?.invalid,
+          }"
+          [type]="pwdHidden ? 'password' : 'text'"
+          placeholder="Password:"
+          formControlName="password"
+          autocomplete="on"
+          required />
+        <button
+          class="registerForm__passwordViewButton"
+          (click)="togglePasswordView()"
+          (keydown)="togglePasswordView()">
+          <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
+        </button>
+      </div>
+
+      <div class="registerForm__wrapper">
+        <input
+          class="register__form__input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.confirmPassword')?.invalid,
+          }"
+          [type]="confirmPwdHidden ? 'password' : 'text'"
+          placeholder="Confirm password:"
+          formControlName="confirmPassword"
+          autocomplete="on"
+          required />
+
+        <button
+          class="registerForm__passwordViewButton"
+          (click)="toggleConfirPwdView()"
+          (keydown)="toggleConfirPwdView()">
+          <span class="material-symbols-outlined">{{ confirmPwdHidden ? 'visibility' : 'visibility_off' }}</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="register__form__button" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</main>
