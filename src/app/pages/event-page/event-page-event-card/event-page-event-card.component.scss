@@ -1,0 +1,124 @@
+@import '../../../../variables.scss';
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 16px;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.event-title {
+  margin: 16px 0 8px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  color: $primary;
+}
+
+.event-description {
+  margin-bottom: 16px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.event-subtitle {
+  margin: 16px 0 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: $primary;
+}
+
+.event-paragraph {
+  margin-bottom: 16px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.event-button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $background;
+  background-color: $primary;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.event-button:hover {
+  background-color: $text;
+  color: white;
+  box-shadow:
+    0 6px 8px rgba(0, 0, 0, 0.2),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .event-card {
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 32px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .event-title {
+    font-size: 32px;
+    color: $primary;
+  }
+
+  .event-description,
+  .event-paragraph {
+    font-size: 18px;
+  }
+
+  .event-subtitle {
+    font-size: 24px;
+    color: $primary;
+  }
+
+  .event-button {
+    align-self: flex-end;
+    font-size: 18px;
+  }
+}
