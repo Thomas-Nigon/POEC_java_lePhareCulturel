@@ -2,7 +2,6 @@
 .userPage {
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   align-items: center;
   padding: 2rem;
   gap: 2rem;
@@ -10,6 +9,7 @@
   min-height: calc(100vh - 104.5px);
   width: 100%;
   background-color: $background;
+  background-image: url('/assets/memphisBackground.svg');
 }
 
 .userPage-title {

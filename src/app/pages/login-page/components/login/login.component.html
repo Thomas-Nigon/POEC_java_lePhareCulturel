@@ -1,0 +1,31 @@
+<main class="loginForm__container">
+  <h2>Connexion</h2>
+  <form class="login__form" [formGroup]="loginForm" (submit)="onSubmit()">
+    <input
+      class="loginForm__input"
+      [ngClass]="{
+        invalid: loginForm.get('email')?.invalid && isFocused,
+      }"
+      type="email"
+      placeholder="Email..."
+      formControlName="email"
+      required
+      email
+      (focus)="onFocus()"
+      (blur)="onBlur()" />
+    <span *ngIf="loginForm.get('email')?.invalid && isFocused"> Entrez une addresse mail valide. </span>
+    <div class="loginForm__wrapper">
+      <input
+        class="loginForm__input"
+        [type]="pwdHidden ? 'password' : 'text'"
+        placeholder="Mot de passe..."
+        formControlName="password"
+        required />
+      <button class="loginForm__passwordViewButton" (click)="togglePasswordView()" (keydown)="togglePasswordView()">
+        <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
+      </button>
+    </div>
+    <button class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">Connexion</button>
+    <p>Pas encore de compte? <a routerLink="/register"> cliquez ici</a></p>
+  </form>
+</main>

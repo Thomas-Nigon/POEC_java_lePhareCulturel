@@ -1,0 +1,25 @@
+@import '../../../variables.scss';
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  background-image: url('/assets/memphisBackground.svg');
+  min-height: calc(100vh - 104.5px);
+}
+
+@media screen and (min-width: 768px) {
+  .loginPage {
+    min-height: calc(100vh - 104.5px);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .loginPage {
+    min-height: calc(100vh - 84.5px);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .loginPage {
+    min-height: calc(100vh - 95.5px);
+  }
+}
