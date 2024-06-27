@@ -10,7 +10,7 @@
 }
 .profil {
   box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
-  background-color: $secondary;
+  background-color: $background;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,9 +24,9 @@
 .profil_title_container {
   justify-content: center;
   border-radius: 0.5rem 0.5rem 0 0;
-  background: linear-gradient(to bottom, #df3462 0%, #e0e1a6 100%);
+  //background: linear-gradient(to bottom, #df3462 0%, #e0e1a6 100%);
   backdrop-filter: blur(10px);
-  color: $text;
+  color: $secondary;
   padding: 1rem;
   display: flex;
   background-color: $primary;
