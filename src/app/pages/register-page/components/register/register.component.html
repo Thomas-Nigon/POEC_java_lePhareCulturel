@@ -8,7 +8,7 @@
       }"
       id="username"
       type="text"
-      placeholder="Username:"
+      placeholder="Nom d'utilisateur..."
       formControlName="username"
       required />
     <div class="register__form__credentials" formGroupName="credentials">
@@ -18,13 +18,11 @@
           invalid: registerForm.get('credentials.email')?.invalid,
         }"
         type="email"
-        placeholder="Email:"
+        placeholder="Email..."
         formControlName="email"
         required
-        email
-        (focus)="onFocus()"
-        (blur)="onBlur()" />
-      <span *ngIf="registerForm.get('credentials.email')?.invalid && isFocused">
+        email />
+      <span *ngIf="registerForm.get('credentials.email')?.invalid && registerForm.get('credentials.email')?.dirty">
         Entrez une addresse mail valide.
       </span>
       <div class="registerForm__wrapper">
@@ -34,17 +32,23 @@
             invalid: registerForm.get('credentials.password')?.invalid,
           }"
           [type]="pwdHidden ? 'password' : 'text'"
-          placeholder="Password:"
+          placeholder="Mot de passe..."
           formControlName="password"
           autocomplete="on"
           required />
         <button
+          type="button"
           class="registerForm__passwordViewButton"
           (click)="togglePasswordView()"
           (keydown)="togglePasswordView()">
           <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
         </button>
       </div>
+      <span
+        class="small"
+        *ngIf="registerForm.get('credentials.password')?.invalid && registerForm.get('credentials.password')?.dirty"
+        >Le mot de passe doit contenir au moins 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère special</span
+      >
 
       <div class="registerForm__wrapper">
         <input
@@ -53,12 +57,13 @@
             invalid: registerForm.get('credentials.confirmPassword')?.invalid,
           }"
           [type]="confirmPwdHidden ? 'password' : 'text'"
-          placeholder="Confirm password:"
+          placeholder="Confirmez votre mot de passe..."
           formControlName="confirmPassword"
           autocomplete="on"
           required />
 
         <button
+          type="button"
           class="registerForm__passwordViewButton"
           (click)="toggleConfirPwdView()"
           (keydown)="toggleConfirPwdView()">
@@ -66,7 +71,14 @@
         </button>
       </div>
     </div>
-
+    <span
+      class="small"
+      *ngIf="
+        registerForm.get('credentials.confirmPassword')?.invalid &&
+        registerForm.get('credentials.confirmPassword')?.dirty
+      "
+      >Attention le mot de passe ne correspond pas</span
+    >
     <button class="register__form__button" [disabled]="!registerForm.valid">Register</button>
   </form>
 </main>

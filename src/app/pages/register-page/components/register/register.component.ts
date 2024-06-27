@@ -14,7 +14,6 @@ import { matchPasswordValidator } from '../../../../shared/validators/matchPassw
 export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
-  isFocused = false;
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
@@ -25,12 +24,7 @@ export class RegisterComponent {
       confirmPassword: ['', [Validators.required, matchPasswordValidator()]],
     }),
   });
-  onFocus() {
-    this.isFocused = true;
-  }
-  onBlur() {
-    this.isFocused = false;
-  }
+
   togglePasswordView() {
     this.pwdHidden = !this.pwdHidden;
   }
