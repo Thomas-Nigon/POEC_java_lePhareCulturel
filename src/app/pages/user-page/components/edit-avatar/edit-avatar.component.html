@@ -1,1 +1,9 @@
-<p>edit-avatar works!</p>
+<article class="avatar">
+  <h3>Mon avatar:</h3>
+  <p>Choisissez un avatar pour votre profil.</p>
+  <div class="avatar__list">
+    <button class="avatar__list__button" *ngFor="let avatar of avatarList">
+      <img class="avatar__list__image" [src]="avatar.url" alt="Avatar" />
+    </button>
+  </div>
+</article>
