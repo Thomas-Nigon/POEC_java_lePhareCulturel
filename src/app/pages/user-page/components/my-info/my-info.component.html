@@ -1,0 +1,29 @@
+<section class="myInfo">
+  <img class="myInfo-image" src="{{ userList[userId].picture }}" alt="la photo de profil d'un utilisateur" />
+
+  <ul>
+    <li class="myInfo-item">
+      <h5 class="myInfo__item__title">
+        <span class="material-symbols-outlined"> id_card </span>
+        Nom:
+      </h5>
+      {{ userList[userId].first_name }}
+    </li>
+    <li class="myInfo-item userEmail">
+      <h5 class="myInfo__item__title">
+        <span class="material-symbols-outlined"> mail </span>
+        Email:
+      </h5>
+      {{ userList[userId].email }}
+    </li>
+    <li class="myInfo-item userEmail"></li>
+    <h5 class="myInfo__aboutMe__title">
+      <span class="material-symbols-outlined"> description </span>
+      A propos de moi:
+    </h5>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe
+      pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio.
+    </p>
+  </ul>
+</section>

@@ -4,9 +4,13 @@
       <h2>Mes évènements:</h2>
       <nav class="myEvent-nav">
         <button class="myEvent-button" [ngClass]="{ active: incomingEvents }" (click)="onClickIncoming()">
-          En approche !
+          <span class="material-symbols-outlined"> event_upcoming </span>
+          <h4>A venir!</h4>
         </button>
-        <button class="myEvent-button" [ngClass]="{ active: !incomingEvents }" (click)="onClickpast()">Passés</button>
+        <button class="myEvent-button" [ngClass]="{ active: !incomingEvents }" (click)="onClickpast()">
+          <span class="material-symbols-outlined"> history </span>
+          <h4>passés</h4>
+        </button>
       </nav>
     </div>
     <section class="myEvent_incoming" *ngIf="incomingEvents">

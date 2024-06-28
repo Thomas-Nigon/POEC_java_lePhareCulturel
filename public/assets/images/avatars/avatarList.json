@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "avatar1",
+    "url": "assets/images/avatars/avatar1.svg"
+  },
+  {
+    "id": 2,
+    "name": "avatar2",
+    "url": "assets/images/avatars/avatar2.svg"
+  },
+  {
+    "id": 3,
+    "name": "avatar3",
+    "url": "assets/images/avatars/avatar3.svg"
+  },
+  {
+    "id": 4,
+    "name": "avatar4",
+    "url": "assets/images/avatars/avatar4.svg"
+  }
+]

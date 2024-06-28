@@ -18,6 +18,8 @@
   padding: 1rem;
   justify-content: center;
   width: 100%;
+  min-height: 135px;
+  max-height: 135px;
   position: sticky;
   top: 0;
   left: 0;
@@ -42,16 +44,22 @@
 
 .myEvent-nav {
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   width: 100%;
 }
 
 .myEvent-button {
   all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   color: $secondary;
   font-weight: 200;
   font-family: $titleFont;
+}
+.myEvent-button span {
+  margin-right: 0.5rem;
 }
 .myEvent-button:hover {
   color: $secondary;
