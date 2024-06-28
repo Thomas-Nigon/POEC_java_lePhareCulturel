@@ -22,9 +22,16 @@
   list-style: none;
   animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
-.myInfo_item-span {
+.myInfo__item__title {
   color: $primary;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.myInfo__aboutMe__title {
+  display: flex;
+  color: $primary;
+  padding: 0.5rem 1rem;
+  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
 .profil_details {
   display: none;
