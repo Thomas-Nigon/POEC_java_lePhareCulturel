@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="event-page-event-card.component.scss" />
+<div class="event-card">
+  <img class="event-image" src="{{ eventList[eventId].event_pic }}" alt="{{ eventList[eventId].event_pic }}" />
+  <h2 class="event-title">{{ eventList[eventId].event_name }}</h2>
+
+  {{ eventList[eventId].event_desc }}
+  {{ eventList[eventId].event_date }}
+  <h3 class="event-subtitle">Tarif</h3>
+  <p class="event-paragraph">gratuit</p>
+  <button class="event-button">Participer</button>
+
+  <h2 class="event-subtitle">Participants</h2>
+
+  <p>
+    {{ eventList[eventId].event_desc }}
+  </p>
+</div>
