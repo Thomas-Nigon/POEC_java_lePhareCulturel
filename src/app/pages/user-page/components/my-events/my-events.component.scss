@@ -13,18 +13,20 @@
   height: 100%;
 }
 .myEvent_nav-container {
-  background: linear-gradient(to bottom, #df3462 0%, #e0e1a6 100%);
-  color: $text;
+  background-color: $primary;
+  color: $secondary;
   padding: 1rem;
   justify-content: center;
   width: 100%;
+  min-height: 135px;
+  max-height: 135px;
   position: sticky;
   top: 0;
   left: 0;
 }
 
 .myEvent_eventContainer {
-  background-color: $secondary;
+  background-color: $background;
 
   display: flex;
   flex-direction: column;
@@ -42,28 +44,34 @@
 
 .myEvent-nav {
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   width: 100%;
 }
 
 .myEvent-button {
   all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
-  color: $text;
+  color: $secondary;
   font-weight: 200;
   font-family: $titleFont;
 }
+.myEvent-button span {
+  margin-right: 0.5rem;
+}
 .myEvent-button:hover {
-  color: $text;
+  color: $secondary;
   font-size: 1.5rem;
   font-weight: 700;
-  filter: drop-shadow(3px 5px 3px $accent);
+  //filter: drop-shadow(3px 5px 3px $primary);
 }
 .active {
-  color: $text;
+  color: $background;
   font-size: 1.5rem;
   font-weight: 700;
-  filter: drop-shadow(3px 3px 3px $accent);
+  //filter: drop-shadow(3px 3px 3px $accent);
 }
 
 .eventCard {

@@ -1,17 +1,23 @@
 <main class="profil">
   <div class="profil_title_container">
     <h2>Mon profil:</h2>
+    <nav class="profil__nav">
+      <button class="profil__nav__button" (click)="onClick($event)" type="button" name="home">
+        <span name="home" class="material-symbols-outlined"> home </span>
+      </button>
+      <button class="profil__nav__button" (click)="onClick($event)" type="button" name="avatar">
+        <span name="avatar" class="material-symbols-outlined"> account_circle </span>
+      </button>
+      <button class="profil__nav__button" (click)="onClick($event)" type="button" name="info">
+        <span name="info" class="material-symbols-outlined"> edit_square </span>
+      </button>
+      <button class="profil__nav__button" (click)="onClick($event)" type="button" name="password">
+        <span name="password" class="material-symbols-outlined"> lock_reset </span>
+      </button>
+    </nav>
   </div>
-  <img class="profil-image" src="{{ userList[userId].picture }}" alt="la photo de profil d'un utilisateur" />
-
-  <ul>
-    <li class="profil-item userName"><span class="profil_item-span">Nom:</span>{{ userList[userId].first_name }}</li>
-    <li class="profil-item userEmail"><span class="profil_item-span">Email:</span>{{ userList[userId].email }}</li>
-    <li class="profil-item userEmail"></li>
-    <p class="profil_item-span">A propos de moi:</p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe
-      pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio.
-    </p>
-  </ul>
+  <section *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
+  <section *ngIf="path === 'info'">EDIT INFO</section>
+  <section *ngIf="path === 'password'">EDIT PASSWORD</section>
+  <section *ngIf="path === 'home'"><app-my-info [userList]="userList" [userId]="userId"></app-my-info></section>
 </main>

@@ -1,0 +1,26 @@
+@import '../../../../../variables.scss';
+
+.avatar {
+  padding: 1rem;
+}
+.avatar__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.avatar__list__button {
+  all: unset;
+  margin-top: 1rem;
+  border: 2px solid $background;
+  border-radius: 50%;
+}
+.avatar__list__button:hover {
+  border: 2px solid $primary;
+  background-color: $primary;
+  border-radius: 50%;
+}
+
+.avatar__list__image {
+  width: 100px;
+}

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  authService = inject(AuthService);
+  router = inject(Router);
   fb: FormBuilder = inject(FormBuilder);
   pwdHidden = true;
   isFocused = false;
@@ -25,6 +28,9 @@ export class LoginComponent {
   onSubmit(): void {
     console.warn(this.loginForm.value);
     console.warn('to the backend');
+    this.authService.logIn();
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    this.router.navigate(['user/1']);
   }
 
   onFocus() {
