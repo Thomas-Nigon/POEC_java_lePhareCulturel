@@ -5,12 +5,7 @@
 button {
   cursor: pointer;
 }
-.profilContainer {
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 .profil {
   box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
   background-color: $background;
@@ -39,8 +34,6 @@ button {
 .profil__nav__button {
   background-color: $primary;
   border: none;
-  // padding: 0.5rem;
-  // padding: 1rem 1rem 0 0;
   color: $secondary;
   margin: 1rem 1rem 0 0;
   cursor: pointer;
@@ -52,95 +45,18 @@ button {
 .profil__nav__button span {
   font-size: 2rem;
 }
-.profil_userDescription {
-  padding: 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
 
-.profil-image {
-  animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
-  width: 50%;
-  max-width: 250px;
-  max-height: 250px;
-}
-
-.profil_listContainer {
-  display: flex;
-}
-
-.profil-item {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  list-style: none;
-  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
-}
-.profil_item-span {
-  color: $primary;
-  font-weight: bold;
-}
-.profil_details {
-  display: none;
-}
-
-.profil p {
-  padding: 0.5rem 1rem;
-  animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
-}
 @media screen and (min-width: 768px) {
-  .profil_details {
-    display: block;
+  .profil {
+    width: 40vw;
   }
-  .profil_listContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 300px;
-  }
+}
+@media screen and (min-width: 900px) {
   .profil {
     align-items: center;
-  }
-
-  .profil-illustration {
-    margin-left: 2rem;
-    display: none;
-    width: 50vw;
-    max-width: 792px;
-  }
-
-  .profilContainer {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .profil-illustration {
-    display: block;
-    width: 50%;
-    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
+    height: 80vh;
+    width: 40vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .profilContainer {
-    align-items: end;
-    justify-content: space-between;
-    max-width: 1300px;
-  }
-  .profil-illustration {
-    display: block;
-    height: 100%;
-    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
-  }
-
-  .profil-image {
-    animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
-    width: 50%;
-    max-width: 225px;
-    max-height: 225px;
-  }
 }
