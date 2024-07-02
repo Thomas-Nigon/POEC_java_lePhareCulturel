@@ -44,16 +44,16 @@
 
 .myEvent-nav {
   display: flex;
-  // justify-content: space-around;
   width: 100%;
 }
 
 .myEvent-button {
   all: unset;
+  margin-right: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem;
   color: $secondary;
   font-weight: 200;
   font-family: $titleFont;
@@ -62,16 +62,15 @@
   margin-right: 0.5rem;
 }
 .myEvent-button:hover {
-  color: $secondary;
+  color: $background;
   font-size: 1.5rem;
   font-weight: 700;
-  //filter: drop-shadow(3px 5px 3px $primary);
 }
 .active {
   color: $background;
   font-size: 1.5rem;
   font-weight: 700;
-  //filter: drop-shadow(3px 3px 3px $accent);
+  border-bottom: 2px solid $accent;
 }
 
 .eventCard {
