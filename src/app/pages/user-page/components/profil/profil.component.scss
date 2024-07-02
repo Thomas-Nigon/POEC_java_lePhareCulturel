@@ -34,8 +34,6 @@ button {
 .profil__nav__button {
   background-color: $primary;
   border: none;
-  // padding: 0.5rem;
-  // padding: 1rem 1rem 0 0;
   color: $secondary;
   margin: 1rem 1rem 0 0;
   cursor: pointer;
@@ -48,10 +46,6 @@ button {
   font-size: 2rem;
 }
 
-.profil p {
-  padding: 0.5rem 1rem;
-  animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
-}
 @media screen and (min-width: 768px) {
   .profil {
     width: 40vw;
