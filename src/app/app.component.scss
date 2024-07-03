@@ -7,4 +7,10 @@
   background-color: $background;
   background-color: red;
   background-image: url('/assets/memphisBackground.svg');
+  min-height: calc(100vh - 104.5px);
+}
+@media screen and (min-width: 768px) {
+  .main {
+    min-height: calc(100vh - 104.5px);
+  }
 }

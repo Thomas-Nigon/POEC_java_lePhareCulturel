@@ -18,5 +18,45 @@
     "id": 4,
     "name": "avatar4",
     "url": "assets/images/avatars/avatar4.svg"
+  },
+  {
+    "id": 5,
+    "name": "avatar5",
+    "url": "assets/images/avatars/avatar5.svg"
+  },
+  {
+    "id": 6,
+    "name": "avatar6",
+    "url": "assets/images/avatars/avatar6.svg"
+  },
+  {
+    "id": 7,
+    "name": "avatar7",
+    "url": "assets/images/avatars/avatar7.svg"
+  },
+  {
+    "id": 8,
+    "name": "avatar8",
+    "url": "assets/images/avatars/avatar8.svg"
+  },
+  {
+    "id": 9,
+    "name": "avatar9",
+    "url": "assets/images/avatars/avatar9.svg"
+  },
+  {
+    "id": 10,
+    "name": "avatar10",
+    "url": "assets/images/avatars/avatar10.svg"
+  },
+  {
+    "id": 11,
+    "name": "avatar11",
+    "url": "assets/images/avatars/avatar11.svg"
+  },
+  {
+    "id": 12,
+    "name": "avatar12",
+    "url": "assets/images/avatars/avatar12.svg"
   }
 ]
