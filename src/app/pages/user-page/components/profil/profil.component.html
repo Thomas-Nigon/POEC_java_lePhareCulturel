@@ -18,6 +18,6 @@
   </div>
   <section *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
   <section *ngIf="path === 'info'">EDIT INFO</section>
-  <section *ngIf="path === 'password'">EDIT PASSWORD</section>
+  <section *ngIf="path === 'password'"><app-edit-password></app-edit-password></section>
   <section *ngIf="path === 'home'"><app-my-info [userList]="userList" [userId]="userId"></app-my-info></section>
 </main>
