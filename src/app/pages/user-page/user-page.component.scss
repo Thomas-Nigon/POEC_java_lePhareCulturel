@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  gap: 2rem;
-  height: 100%;
-  min-height: calc(100vh - 104.5px);
+  padding: 0 2rem;
+  padding-bottom: 125px;
+  min-height: calc(100vh - (104.5px));
   width: 100%;
 }
 
@@ -20,5 +19,6 @@
     justify-content: center;
     gap: 2rem;
     min-height: calc(100vh - 95.5px);
+    padding-bottom: 0px;
   }
 }
