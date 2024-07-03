@@ -1,5 +1,5 @@
 @import '../../../../../variables.scss';
-@import './animations.scss';
+@import '../../../../../animations.scss';
 @import './gradient.scss';
 
 button {
@@ -8,6 +8,7 @@ button {
 
 .profil {
   box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
+  margin-top: 2rem;
   background-color: $background;
   display: flex;
   flex-direction: column;

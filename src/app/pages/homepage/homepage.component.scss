@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 100px;
+  padding-bottom: 125px;
 }
 .homepage__title {
   color: $primary;
@@ -19,4 +19,9 @@
 
 .container {
   margin: 20px;
+}
+@media screen and (min-width: 900px) {
+  .homepage {
+    padding-bottom: 0px;
+  }
 }

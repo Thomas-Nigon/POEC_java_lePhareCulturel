@@ -1,15 +1,15 @@
 @import '../../../../../variables.scss';
-@import './animations.scss';
+@import '../../../../../animations.scss';
 @import './gradient.scss';
 
 .myEvent {
   box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  margin-top: 2rem;
   height: 100%;
 }
 .myEvent_nav-container {
@@ -87,9 +87,6 @@
   width: 70%;
 }
 
-.myEvent-illustration {
-  display: none;
-}
 @media screen and (min-width: 768px) {
   .myEvent_eventContainer {
     max-width: 800px;
@@ -105,12 +102,6 @@
   }
   .myEvent {
     max-width: 1300px;
-  }
-  .myEvent-illustration {
-    margin-left: 2rem;
-    display: block;
-    width: 50%;
-    animation: fadeInCenterLarge 0.3s linear 0s 1 normal forwards;
   }
 }
 @media screen and (min-width: 900px) {
