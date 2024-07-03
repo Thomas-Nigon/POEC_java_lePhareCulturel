@@ -79,12 +79,17 @@
   margin: 0 0 1rem 0;
 }
 .eventCard-img {
-  width: 100px;
+  max-width: 300px;
 }
-.eventCard_cardDescription {
-  text-align: center;
+.eventCard_descriptionContainer {
   padding: 0.5rem;
-  width: 70%;
+  width: 100%;
+}
+.eventCard__textDesc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -94,10 +99,6 @@
     .eventCard {
       flex-direction: row;
       justify-content: space-between;
-    }
-    .eventCard-img {
-      width: 30%;
-      height: 100%;
     }
   }
   .myEvent {
