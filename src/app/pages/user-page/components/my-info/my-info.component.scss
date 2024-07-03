@@ -8,7 +8,7 @@
 }
 
 .myInfo-image {
-  animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+  //animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
   width: 50%;
   max-width: 200px;
   max-height: 200px;
@@ -19,7 +19,7 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   list-style: none;
-  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+  //animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
 .myInfo__item__title {
   color: $primary;
@@ -30,7 +30,7 @@
   display: flex;
   color: $primary;
   padding: 0.5rem 1rem;
-  animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+  // animation: fadeInRight 0.8s ease 0s 1 normal forwards;
 }
 .profil_details {
   display: none;
@@ -38,7 +38,7 @@
 
 .myInfo p {
   padding: 0.5rem 1rem;
-  animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
+  //animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
 }
 @media screen and (min-width: 768px) {
   .profil_details {

@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //padding: 2rem;
-  //padding-bottom: 100px;
-  //gap: 2rem;
-  min-height: calc(100vh - 104.5px);
+  padding: 2rem;
+  padding-bottom: 100px;
+  gap: 2rem;
+  min-height: calc(100vh - (104.5px));
   width: 100%;
 }
 
