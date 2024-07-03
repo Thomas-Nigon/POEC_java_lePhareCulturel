@@ -13,6 +13,7 @@
   height: 100%;
 }
 .myEvent_nav-container {
+  z-index: 1;
   background-color: $primary;
   color: $secondary;
   padding: 1rem;
@@ -71,9 +72,10 @@
   font-weight: 700;
   border-bottom: 2px solid $accent;
 }
-
-.eventCard {
+.eventCard__link {
   all: unset;
+}
+.eventCard {
   cursor: pointer;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,8 @@
 <section class="myInfo">
-  <img class="myInfo-image" src="{{ userList[userId].picture }}" alt="la photo de profil d'un utilisateur" />
+  <img
+    class="myInfo-image"
+    src="{{ userList ? userList[userId].picture : '' }}"
+    alt="la photo de profil d'un utilisateur" />
 
   <ul>
     <li class="myInfo-item">
@@ -7,14 +10,14 @@
         <span class="material-symbols-outlined"> id_card </span>
         Nom:
       </h5>
-      {{ userList[userId].first_name }}
+      {{ userList ? userList[userId].first_name : '' }}
     </li>
     <li class="myInfo-item userEmail">
       <h5 class="myInfo__item__title">
         <span class="material-symbols-outlined"> mail </span>
         Email:
       </h5>
-      {{ userList[userId].email }}
+      {{ userList ? userList[userId].email : '' }}
     </li>
     <li class="myInfo-item userEmail"></li>
     <h5 class="myInfo__aboutMe__title">
