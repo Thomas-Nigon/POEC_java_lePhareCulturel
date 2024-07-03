@@ -10,12 +10,11 @@
 .myInfo-image {
   animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
   width: 50%;
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .myInfo-item {
-  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -90,7 +89,5 @@
   .profil-image {
     animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
     width: 50%;
-    max-width: 225px;
-    max-height: 225px;
   }
 }
