@@ -1,18 +1,36 @@
 @import '../../../../../variables.scss';
+@import '../../../../../animations.scss';
 
 .avatar {
   padding: 1rem;
 }
+.avatar__title__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: inherit;
+}
+.avatar__thumbnail {
+  margin-left: 1rem;
+  width: 50px;
+}
 .avatar__list {
+  height: calc(70vh - (135px + 105px));
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 .avatar__list__button {
   all: unset;
   margin-top: 1rem;
   border: 2px solid $background;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
 }
 .avatar__list__button:hover {
@@ -23,4 +41,11 @@
 
 .avatar__list__image {
   width: 100px;
+  animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+}
+
+@media screen and (min-width: 900px) {
+  .avatar__list {
+    height: calc(80vh - (135px + 105px));
+  }
 }
