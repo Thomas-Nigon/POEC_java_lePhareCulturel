@@ -23,7 +23,7 @@ export class EditAvatarComponent implements OnInit, OnDestroy {
 
   onClick(event: Event) {
     const avatarId = (event.target as HTMLInputElement).getAttribute('id');
-    this.selectedId = avatarId ? parseInt(avatarId) : 0;
+    this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
   }
   ngOnDestroy() {
     console.warn('send picture to DB');
