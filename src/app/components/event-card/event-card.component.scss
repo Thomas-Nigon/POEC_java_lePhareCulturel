@@ -31,7 +31,8 @@
   align-items: center;
 }
 .eventCard-img {
-  width: 100px;
+  width: 100%;
+  max-width: 300px;
 }
 .eventCard__title {
   padding-left: 0.5rem;
@@ -45,6 +46,10 @@
   margin-left: 1rem;
 }
 .eventCard__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem;
   color: $background;
 }
