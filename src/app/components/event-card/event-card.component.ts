@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { EventInterface } from '../../models/event.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-card',
@@ -10,4 +11,11 @@ import { EventInterface } from '../../models/event.model';
 })
 export class EventCardComponent {
   @Input() eventList: EventInterface[] = [];
+  router = inject(Router);
+
+  onClick() {
+    this.router.navigate(['/event', 1]).catch((error: unknown) => {
+      console.error(error);
+    });
+  }
 }
