@@ -1,29 +1,19 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { AvatarService } from '../../../../shared/services/avatar.service';
 import { Avatar } from '../../../../models/avatar.model';
 import { CommonModule } from '@angular/common';
-import { FormArray, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-avatar',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule],
   templateUrl: './edit-avatar.component.html',
   styleUrl: './edit-avatar.component.scss',
 })
-export class EditAvatarComponent implements OnInit {
+export class EditAvatarComponent implements OnInit, OnDestroy {
   private avatarService = inject(AvatarService);
   avatarList!: Avatar[];
-  fb: FormBuilder = inject(FormBuilder);
-
-  public editAvatarForm = this.fb.group({
-    checkboxes: this.fb.array([
-      this.fb.control(false),
-      this.fb.control(false),
-      this.fb.control(false),
-      this.fb.control(false),
-    ]),
-  });
+  selectedId = 0;
 
   ngOnInit() {
     this.avatarService.getAvatarList().subscribe(data => {
@@ -31,13 +21,11 @@ export class EditAvatarComponent implements OnInit {
     });
   }
 
-  updateCheckbox(index: number) {
-    const checkboxes = this.editAvatarForm.get('checkboxes') as FormArray;
-
-    checkboxes.controls.forEach((control, i) => {
-      if (i !== index) {
-        control.setValue(false);
-      }
-    });
+  onClick(event: Event) {
+    const avatarId = (event.target as HTMLInputElement).getAttribute('id');
+    this.selectedId = avatarId ? parseInt(avatarId) : 0;
+  }
+  ngOnDestroy() {
+    console.warn('send picture to DB');
   }
 }

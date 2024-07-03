@@ -1,13 +1,14 @@
-<article class="avatar">
-  <h3>Mon avatar:</h3>
-  <p>Choisissez un avatar pour votre profil.</p>
-  <form [formGroup]="editAvatarForm" class="avatar__list">
-    <div formArrayName="checkboxes">
-      <button type="button" class="avatar__list__button" *ngFor="let avatar of avatarList">
-        <img class="avatar__list__image" [src]="avatar.url" alt="Avatar" />
-        <input (change)="updateCheckbox(avatar.id)" type="checkbox" [value]="avatar.url" />
-      </button>
+<article>
+  <article class="avatar">
+    <div class="avatar__title__wrapper">
+      <h3>Mon avatar:</h3>
+      <img class="avatar__thumbnail" src="{{ avatarList[selectedId].url }}" alt="" />
     </div>
-    <button type="button" class="avatar__button">valider</button>
-  </form>
+    <p>Choisissez un avatar pour votre profil.</p>
+  </article>
+  <section class="avatar__list">
+    <button type="button" (click)="onClick($event)" class="avatar__list__button" *ngFor="let avatar of avatarList">
+      <img class="avatar__list__image" id="{{ avatar.id }}" [src]="avatar.url" alt="Avatar" />
+    </button>
+  </section>
 </article>
