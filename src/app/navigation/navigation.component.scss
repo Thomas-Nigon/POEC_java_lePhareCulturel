@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=poppins:100,200,300,400,500,600,700,800,900');
 @import '../../variables.scss';
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: $background;
-}
+} */
 
 .navigation {
   position: fixed;
@@ -20,7 +20,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
