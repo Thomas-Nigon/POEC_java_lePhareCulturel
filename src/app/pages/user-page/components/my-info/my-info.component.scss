@@ -16,6 +16,9 @@
   max-width: 200px;
   max-height: 200px;
 }
+.myInfo__pseudo {
+  margin: 0 auto;
+}
 
 .myInfo__list {
   margin-top: 1rem;
@@ -55,14 +58,8 @@
   margin-top: 0.5rem;
 }
 .descriptionForm {
-  background-color: red;
   width: 100%;
-  display: -webkit-box;
-  height: 50px;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  height: 150px;
 }
 
 @media screen and (min-width: 900px) {

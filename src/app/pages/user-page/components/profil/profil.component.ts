@@ -4,13 +4,12 @@ import { CommonModule } from '@angular/common';
 import { EditAvatarComponent } from '../edit-avatar/edit-avatar.component';
 import { MyInfoComponent } from '../my-info/my-info.component';
 import { EditPasswordComponent } from '../edit-password/edit-password.component';
-import { EditInfoComponent } from '../edit-info/edit-info.component';
 import { UserInterface } from '../../../../models/user.model';
 
 @Component({
   selector: 'app-profil',
   standalone: true,
-  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent, EditInfoComponent, EditPasswordComponent],
+  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent, EditPasswordComponent],
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.scss',
 })

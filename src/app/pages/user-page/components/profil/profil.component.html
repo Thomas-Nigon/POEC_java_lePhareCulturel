@@ -8,18 +8,12 @@
       <button class="profil__nav__button" (click)="onClick($event)" type="button" name="avatar">
         <span name="avatar" class="material-symbols-outlined"> account_circle </span>
       </button>
-      <button class="profil__nav__button" (click)="onClick($event)" type="button" name="info">
-        <span name="info" class="material-symbols-outlined"> edit_square </span>
-      </button>
       <button class="profil__nav__button" (click)="onClick($event)" type="button" name="password">
         <span name="password" class="material-symbols-outlined"> lock_reset </span>
       </button>
     </nav>
   </div>
   <section class="profil__component__container" *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
-  <section class="profil__component__container" *ngIf="path === 'info'">
-    <app-edit-info [userList]="userList" [userId]="userId" />
-  </section>
   <section class="profil__component__container" *ngIf="path === 'password'">
     <app-edit-password></app-edit-password>
   </section>

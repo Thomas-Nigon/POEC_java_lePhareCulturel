@@ -3,7 +3,7 @@
     class="myInfo-image"
     src="{{ userList ? userList[userId].picture : '' }}"
     alt="la photo de profil d'un utilisateur" />
-  <h5>{{ userList[userId].first_name }}</h5>
+  <h5 class="myInfo__pseudo">{{ userList[userId].first_name }}</h5>
   <ul class="myInfo__list">
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
@@ -95,8 +95,8 @@
       <div class="myInfo__item__container">
         @if (editDescription) {
           <form class="editInfo__form descriptionForm" [formGroup]="editDescriptionForm">
-            <input
-              class="register__form__input descriptionForm"
+            <textarea
+              class="descriptionForm"
               [ngClass]="{
                 invalid: editDescriptionForm.get('description')?.invalid,
               }"
@@ -104,7 +104,8 @@
               type="textarea"
               placeholder="{{ userList[userId].description }}"
               formControlName="description"
-              (blur)="onBlurDescription($event)" />
+              (blur)="onBlurDescription($event)">
+            </textarea>
           </form>
         } @else {
           <p>{{ userList[userId].description }} tresqdq</p>
