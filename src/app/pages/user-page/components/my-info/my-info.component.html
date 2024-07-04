@@ -3,7 +3,7 @@
     class="myInfo-image"
     src="{{ userList ? userList[userId].picture : '' }}"
     alt="la photo de profil d'un utilisateur" />
-  <h5 class="myInfo__pseudo">{{ userList[userId].first_name }}</h5>
+  <h5 class="myInfo__pseudo">{{ userList ? userList[userId].first_name : '' }}</h5>
   <ul class="myInfo__list">
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
@@ -20,12 +20,12 @@
               }"
               id="firstname"
               type="text"
-              placeholder="{{ userList[userId].first_name }}"
+              placeholder="{{ userList ? userList[userId].first_name : '' }}"
               formControlName="firstname"
               (blur)="onBlurFirstname($event)" />
           </form>
         } @else {
-          {{ userList[userId].first_name }}
+          {{ userList ? userList[userId].first_name : '' }}
           <button class="editInfo__form__button" (click)="editFirstname = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
@@ -48,12 +48,12 @@
               }"
               id="lastname"
               type="text"
-              placeholder="{{ userList[userId].last_name }}"
+              placeholder="{{ userList ? userList[userId].last_name : '' }}"
               formControlName="lastname"
               (blur)="onBlurLastname($event)" />
           </form>
         } @else {
-          {{ userList[userId].last_name }}
+          {{ userList ? userList[userId].last_name : '' }}
           <button class="editInfo__form__button" (click)="editLastname = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
@@ -75,12 +75,12 @@
               }"
               id="email"
               type="email"
-              placeholder="{{ userList[userId].email }}"
+              placeholder="{{ userList ? userList[userId].email : '' }}"
               formControlName="email"
               (blur)="onBlurEmail($event)" />
           </form>
         } @else {
-          {{ userList[userId].email }}
+          {{ userList ? userList[userId].email : '' }}
           <button class="editInfo__form__button" (click)="editEmail = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
@@ -102,13 +102,13 @@
               }"
               id="description"
               type="textarea"
-              placeholder="{{ userList[userId].description }}"
+              placeholder="{{ userList ? userList[userId].description : '' }}"
               formControlName="description"
               (blur)="onBlurDescription($event)">
             </textarea>
           </form>
         } @else {
-          <p>{{ userList[userId].description }} tresqdq</p>
+          <p>{{ userList ? userList[userId].description : '' }}</p>
           <button class="editInfo__form__button" (click)="editDescription = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>

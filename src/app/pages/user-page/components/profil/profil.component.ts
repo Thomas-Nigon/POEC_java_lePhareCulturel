@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditAvatarComponent } from '../edit-avatar/edit-avatar.component';
 import { MyInfoComponent } from '../my-info/my-info.component';
@@ -9,7 +9,7 @@ import { UserInterface } from '../../../../models/user.model';
 @Component({
   selector: 'app-profil',
   standalone: true,
-  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent, EditPasswordComponent],
+  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent, EditPasswordComponent, RouterOutlet],
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.scss',
 })
