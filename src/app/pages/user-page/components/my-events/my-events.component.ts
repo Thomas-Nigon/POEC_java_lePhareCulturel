@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { EventInterface } from '../../../../models/event.model';
+import { EventCardComponent } from '../../../../components/event-card/event-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-my-events',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, EventCardComponent, RouterLink],
   templateUrl: './my-events.component.html',
   styleUrl: './my-events.component.scss',
 })

@@ -14,6 +14,7 @@
   border-bottom: 3px solid $background;
   border-top: 3px solid $background;
 }
+
 .titleBar_nav {
   display: none;
 }
@@ -49,7 +50,7 @@
   .titleBar_nav-link {
     all: unset;
     color: $background;
-    font-family: $titleFont;
+    font-family: $smallTitle;
     font-size: 1.4rem;
     font-weight: bold;
   }

@@ -14,14 +14,15 @@ import { ActivatedRoute } from '@angular/router';
 export class EventPageEventCardComponent implements OnInit {
   eventService = inject(EventsService);
   eventList!: EventInterface[];
-  eventId!: number;
+  eventTest!: EventInterface[];
   private route = inject(ActivatedRoute);
+  eventId = 0;
   ngOnInit() {
     this.eventService.getAllEvents().subscribe(data => {
       this.eventList = data;
     });
     this.route.params.subscribe(params => {
-      this.eventId = +params['id']; //log the value of id
+      this.eventId = +params['id'];
     });
   }
 }
