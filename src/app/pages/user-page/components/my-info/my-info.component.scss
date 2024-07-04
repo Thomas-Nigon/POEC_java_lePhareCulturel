@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: calc(70vh - 135px);
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .myInfo-image {
@@ -13,10 +16,12 @@
   max-height: 200px;
 }
 
+.myInfo__list {
+  margin-top: 1rem;
+}
 .myInfo-item {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
   list-style: none;
 }
 .myInfo__item__title {
@@ -27,16 +32,30 @@
 .myInfo__aboutMe__title {
   display: flex;
   color: $primary;
-  padding: 0.5rem 1rem;
+  padding-top: 0.5rem;
 }
-.profil_details {
-  display: none;
+.myInfo__item__container {
+  display: flex;
+}
+.myInfo__item__container span {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+.editInfo__form__button {
+  all: unset;
+  cursor: pointer;
 }
 
 .myInfo p {
-  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
 }
+
 @media screen and (min-width: 900px) {
+  .myInfo {
+    max-height: calc(80vh - 135px);
+    padding: 1rem;
+  }
+
   .myInfo-image {
     animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
   }
@@ -52,6 +71,4 @@
   .myInfo p {
     animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
   }
-}
-@media screen and (min-width: 1200px) {
 }

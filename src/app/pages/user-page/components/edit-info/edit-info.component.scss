@@ -1,0 +1,84 @@
+@import '../../../../../variables.scss';
+@import '../../../../../animations.scss';
+
+.editInfo {
+  padding: 1rem;
+  height: calc(70vh - (135px + 105px));
+}
+
+.editInfo__form {
+  color: $text;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.editInfo__form__credentials {
+  width: 100%;
+}
+.editInfo__form__input {
+  all: unset;
+  color: $text;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  // margin: 1rem 0;
+  background-color: $background;
+  border: 2px solid $primary;
+  box-sizing: border-box;
+  width: 100%;
+}
+.editInfo__form__input:focus {
+  background-color: white;
+  color: $text;
+}
+.editInfo__form__button {
+  background-color: $secondary;
+  color: $text;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  border: 2px solid $primary;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.editInfo__form__button:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+.editInfoForm__wrapper {
+  position: relative;
+}
+
+.editInfoForm__wrapper span {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  font-size: 26px;
+}
+.input-icon {
+  position: absolute;
+  top: 32%;
+  right: 6%;
+  width: 35px;
+}
+
+.invalid {
+  background-color: lime;
+  border-color: red;
+}
+
+.editInfoForm__passwordViewButton {
+  all: unset;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .editInfo {
+    height: calc(80vh - (135px + 105px));
+  }
+}

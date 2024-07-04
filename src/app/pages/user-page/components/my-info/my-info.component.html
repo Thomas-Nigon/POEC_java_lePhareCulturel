@@ -1,20 +1,88 @@
 <section class="myInfo">
   <img class="myInfo-image" src="{{ userList[userId].picture }}" alt="la photo de profil d'un utilisateur" />
-
-  <ul>
+  <h5>{{ userList[userId].first_name }}</h5>
+  <ul class="myInfo__list">
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
         <span class="material-symbols-outlined"> id_card </span>
         Nom:
       </h5>
-      {{ userList[userId].first_name }}
+      <div class="myInfo__item__container">
+        @if (editFirstname) {
+          <form class="editInfo__form" [formGroup]="editFirstnameForm">
+            <input
+              class="register__form__input"
+              [ngClass]="{
+                invalid: editFirstnameForm.get('firstname')?.invalid,
+              }"
+              id="firstname"
+              type="text"
+              placeholder="{{ userList[userId].first_name }}"
+              formControlName="firstname"
+              (blur)="onBlurFirstname($event)" />
+          </form>
+        } @else {
+          {{ userList[userId].first_name }}
+          <button class="editInfo__form__button" (click)="editFirstname = true">
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
+        }
+      </div>
     </li>
-    <li class="myInfo-item userEmail">
+    <li class="myInfo-item">
+      <h5 class="myInfo__item__title">
+        <span class="material-symbols-outlined"> id_card </span>
+        Prénom:
+      </h5>
+
+      <div class="myInfo__item__container">
+        @if (editLastname) {
+          <form class="editInfo__form" [formGroup]="editLastnameForm">
+            <input
+              class="register__form__input"
+              [ngClass]="{
+                invalid: editLastnameForm.get('firstname')?.invalid,
+              }"
+              id="lastname"
+              type="text"
+              placeholder="{{ userList[userId].last_name }}"
+              formControlName="lastname"
+              (blur)="onBlurLastname($event)" />
+          </form>
+        } @else {
+          {{ userList[userId].last_name }}
+          <button class="editInfo__form__button" (click)="editLastname = true">
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
+        }
+      </div>
+    </li>
+    <li class="myInfo-item">
       <h5 class="myInfo__item__title">
         <span class="material-symbols-outlined"> mail </span>
         Email:
       </h5>
-      {{ userList[userId].email }}
+      <div class="myInfo__item__container">
+        @if (editEmail) {
+          <form class="editInfo__form" [formGroup]="editEmailForm">
+            <input
+              class="register__form__input"
+              [ngClass]="{
+                invalid: editEmailForm.get('firstname')?.invalid,
+              }"
+              id="email"
+              type="email"
+              placeholder="{{ userList[userId].email }}"
+              formControlName="email"
+              (blur)="onBlurEmail($event)" />
+          </form>
+        } @else {
+          {{ userList[userId].email }}
+          <button class="editInfo__form__button" (click)="editEmail = true">
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
+        }
+      </div>
     </li>
     <li class="myInfo-item userEmail"></li>
     <h5 class="myInfo__aboutMe__title">

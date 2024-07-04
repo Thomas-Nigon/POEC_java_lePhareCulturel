@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditAvatarComponent } from '../edit-avatar/edit-avatar.component';
 import { MyInfoComponent } from '../my-info/my-info.component';
+import { EditInfoComponent } from '../edit-info/edit-info.component';
 
 @Component({
   selector: 'app-profil',
   standalone: true,
-  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent],
+  imports: [RouterLink, CommonModule, EditAvatarComponent, MyInfoComponent, EditInfoComponent],
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.scss',
 })
