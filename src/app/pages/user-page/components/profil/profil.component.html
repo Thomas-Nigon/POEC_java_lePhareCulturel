@@ -16,8 +16,12 @@
       </button>
     </nav>
   </div>
-  <section *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
-  <section *ngIf="path === 'info'"><app-edit-info [userList]="userList" [userId]="userId" /></section>
-  <section *ngIf="path === 'password'">EDIT PASSWORD</section>
-  <section *ngIf="path === 'home'"><app-my-info [userList]="userList" [userId]="userId"></app-my-info></section>
+  <section class="profil__component__container" *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
+  <section class="profil__component__container" *ngIf="path === 'info'">
+    <app-edit-info [userList]="userList" [userId]="userId" />
+  </section>
+  <section class="profil__component__container" *ngIf="path === 'password'">EDIT PASSWORD</section>
+  <section class="profil__component__container" *ngIf="path === 'home'">
+    <app-my-info [userList]="userList" [userId]="userId"></app-my-info>
+  </section>
 </main>

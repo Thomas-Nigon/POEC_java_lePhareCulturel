@@ -23,4 +23,6 @@ export class EditInfoComponent {
     email: ['', [Validators.required, Validators.email]],
     description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500)]],
   });
+
+  onSubmit(): void {}
 }

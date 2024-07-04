@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { UserInterface } from '../../../../models/user.model';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EditAvatarComponent } from '../edit-avatar/edit-avatar.component';
 import { MyInfoComponent } from '../my-info/my-info.component';
 import { EditInfoComponent } from '../edit-info/edit-info.component';
+import { UserInterface } from '../../../../models/user.model';
 
 @Component({
   selector: 'app-profil',

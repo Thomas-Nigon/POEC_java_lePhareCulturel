@@ -4,13 +4,14 @@
 .myInfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-height: calc(70vh - 135px);
+  min-width: 100%;
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
 .myInfo-image {
+  margin: 0 auto;
   width: 50%;
   max-width: 200px;
   max-height: 200px;
@@ -45,9 +46,23 @@
   all: unset;
   cursor: pointer;
 }
-
+.myInfo-item__description {
+  display: flex;
+  flex-direction: column;
+}
 .myInfo p {
+  width: 100%;
   margin-top: 0.5rem;
+}
+.descriptionForm {
+  background-color: red;
+  width: 100%;
+  display: -webkit-box;
+  height: 50px;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 900px) {

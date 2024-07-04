@@ -16,9 +16,10 @@ export class MyInfoComponent {
   editFirstname = false;
   editLastname = false;
   editEmail = false;
-  editpseudo = false;
-  editdescription = false;
+  editPseudo = false;
+  editDescription = false;
   fb = inject(FormBuilder);
+
   editFirstnameForm = this.fb.group({
     firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
   });
@@ -27,6 +28,9 @@ export class MyInfoComponent {
   });
   editEmailForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
+  });
+  editDescriptionForm = this.fb.group({
+    description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
   });
 
   onBlurFirstname(event: Event) {
@@ -43,5 +47,10 @@ export class MyInfoComponent {
     const targetText = (event.target as HTMLInputElement).value;
     this.userList[this.userId].email = targetText;
     this.editEmail = false;
+  }
+  onBlurDescription(event: Event) {
+    const targetText = (event.target as HTMLInputElement).value;
+    this.userList[this.userId].description = targetText;
+    this.editDescription = false;
   }
 }

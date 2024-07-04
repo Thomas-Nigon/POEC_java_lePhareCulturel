@@ -84,14 +84,32 @@
         }
       </div>
     </li>
-    <li class="myInfo-item userEmail"></li>
-    <h5 class="myInfo__aboutMe__title">
-      <span class="material-symbols-outlined"> description </span>
-      A propos de moi:
-    </h5>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe
-      pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio.
-    </p>
+    <li class="myInfo-item__description">
+      <h5 class="myInfo__aboutMe__title">
+        <span class="material-symbols-outlined"> description </span>
+        A propos de moi:
+      </h5>
+      <div class="myInfo__item__container">
+        @if (editDescription) {
+          <form class="editInfo__form descriptionForm" [formGroup]="editDescriptionForm">
+            <input
+              class="register__form__input descriptionForm"
+              [ngClass]="{
+                invalid: editDescriptionForm.get('description')?.invalid,
+              }"
+              id="description"
+              type="textarea"
+              placeholder="{{ userList[userId].description }}"
+              formControlName="description"
+              (blur)="onBlurDescription($event)" />
+          </form>
+        } @else {
+          <p>{{ userList[userId].description }} tresqdq</p>
+          <button class="editInfo__form__button" (click)="editDescription = true">
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
+        }
+      </div>
+    </li>
   </ul>
 </section>
