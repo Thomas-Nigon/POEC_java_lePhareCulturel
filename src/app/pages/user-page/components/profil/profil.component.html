@@ -20,7 +20,9 @@
   <section class="profil__component__container" *ngIf="path === 'info'">
     <app-edit-info [userList]="userList" [userId]="userId" />
   </section>
-  <section class="profil__component__container" *ngIf="path === 'password'">EDIT PASSWORD</section>
+  <section class="profil__component__container" *ngIf="path === 'password'">
+    <app-edit-password></app-edit-password>
+  </section>
   <section class="profil__component__container" *ngIf="path === 'home'">
     <app-my-info [userList]="userList" [userId]="userId"></app-my-info>
   </section>

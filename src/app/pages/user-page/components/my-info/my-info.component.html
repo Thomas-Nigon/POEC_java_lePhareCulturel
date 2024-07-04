@@ -1,5 +1,8 @@
 <section class="myInfo">
-  <img class="myInfo-image" src="{{ userList[userId].picture }}" alt="la photo de profil d'un utilisateur" />
+  <img
+    class="myInfo-image"
+    src="{{ userList ? userList[userId].picture : '' }}"
+    alt="la photo de profil d'un utilisateur" />
   <h5>{{ userList[userId].first_name }}</h5>
   <ul class="myInfo__list">
     <li class="myInfo-item">

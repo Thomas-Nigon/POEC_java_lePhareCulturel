@@ -2,26 +2,26 @@
   {
     "id": 1,
     "name": "Culinaire",
-    "img": "/assets/images/categories/food.svg"
+    "img": "/assets/images/Restaurant.jpeg"
   },
   {
     "id": 2,
     "name": "Musique",
-    "img": "/assets/images/categories/musicV2.svg"
+    "img": "/assets/images/Musique.jpg"
   },
   {
     "id": 3,
     "name": "Arts",
-    "img": "/assets/images/categories/art.svg"
+    "img": "/assets/images/culture.jpg"
   },
   {
     "id": 4,
     "name": "Sport",
-    "img": "/assets/images/categories/sportV2.svg"
+    "img": "/assets/images/sport.jpg"
   },
   {
     "id": 5,
     "name": "Nature",
-    "img": "/assets/images/categories/natureV2.svg"
+    "img": "/assets/images/Nature3.jpg"
   }
 ]
