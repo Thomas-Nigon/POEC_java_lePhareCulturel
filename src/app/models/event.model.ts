@@ -5,4 +5,5 @@ export interface EventInterface {
   event_time: string;
   event_date: string;
   event_desc: string;
+  event_category: string;
 }
