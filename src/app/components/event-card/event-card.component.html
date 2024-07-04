@@ -1,4 +1,4 @@
-<a routerLink="/event/{{ eventList ? eventList[3].id : '' }}" class="eventCard__link">
+<a routerLink="/event/{{ eventList ? eventList[3].id - 1 : '' }}" class="eventCard__link">
   <article class="eventCard">
     <img class="eventCard-img" src="{{ eventList ? eventList[3].event_pic : '' }}" alt="" />
     <div class="eventCard__description">
