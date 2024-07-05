@@ -14,7 +14,7 @@
         @if (editFirstname) {
           <form class="editInfo__form" [formGroup]="editFirstnameForm">
             <input
-              class="register__form__input"
+              class="myInfo__form__input"
               [ngClass]="{
                 invalid: editFirstnameForm.get('firstname')?.invalid,
               }"
@@ -42,7 +42,7 @@
         @if (editLastname) {
           <form class="editInfo__form" [formGroup]="editLastnameForm">
             <input
-              class="register__form__input"
+              class="myInfo__form__input"
               [ngClass]="{
                 invalid: editLastnameForm.get('firstname')?.invalid,
               }"
@@ -69,7 +69,7 @@
         @if (editEmail) {
           <form class="editInfo__form" [formGroup]="editEmailForm">
             <input
-              class="register__form__input"
+              class="myInfo__form__input"
               [ngClass]="{
                 invalid: editEmailForm.get('firstname')?.invalid,
               }"
