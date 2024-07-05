@@ -9,7 +9,7 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   height: 100%;
 }
 .myEvent_nav-container {
@@ -57,6 +57,7 @@
   color: $secondary;
   font-weight: 200;
   font-family: $titleFont;
+  cursor: pointer;
 }
 .myEvent-button span {
   margin-right: 0.5rem;
@@ -82,8 +83,27 @@
   align-items: center;
   margin: 0 0 1rem 0;
 }
+.eventCard__category__wrapper {
+  position: relative;
+  display: inline-block;
+}
 .eventCard-img {
+  display: block;
   max-width: 300px;
+}
+.eventCard__category__name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $secondary;
+  font-family: $titleFont;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: $primary;
+  border-radius: 0.5rem;
 }
 .eventCard_descriptionContainer {
   padding: 0.5rem;
@@ -91,6 +111,7 @@
 }
 .eventCard__textDesc {
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;

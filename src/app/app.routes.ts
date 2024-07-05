@@ -11,13 +11,16 @@ import { CreatGroupComponent } from './components/creat-group/creat-group.compon
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'event/:id', component: EventPageComponent },
-  { path: 'user/:id', component: UserPageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'user/:id',
+    component: UserPageComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'search', component: SearchPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'create-group', component: CreatGroupComponent },
   { path: '', redirectTo: '/create-group', pathMatch: 'full' },
-
   {
     path: '**',
     redirectTo: '',

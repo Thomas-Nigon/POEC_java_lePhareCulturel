@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 0.75rem;
   padding-bottom: 125px;
   min-height: calc(100vh - (104.5px));
   width: 100%;
@@ -14,6 +14,7 @@
 }
 @media screen and (min-width: 768px) {
   .userPage {
+    padding: 0 2rem;
     flex-direction: row;
     align-items: start;
     justify-content: center;

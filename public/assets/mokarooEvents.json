@@ -3,6 +3,7 @@
     "id": 1,
     "event_name": "La Bonne Aventure à Dunkerque",
     "event_pic": "/assets/images/culture.jpg",
+    "event_category": "Culture",
     "event_time": "9:18 PM",
     "event_date": "6/21/2024",
     "event_desc": "Du 21 à 15h au 23 juin 00h, l’équipe des Nuits- Secrètes-sur-Mer organise en complicité avec la Communauté Urbaine de Dunkerque un festival en plein air gratuit. Une programmation de folie (JAIN, LUIDJI, DISIZ, MERYL, AMADOU &amp; MARIAM, BEN PLG, TEKI LATEX, STO, MADBEN, MAMBELE, KAPAK, YAHED, MISS CAMILLE, MEZERG, PÉPITE…) à ne pas rater!"
@@ -11,6 +12,7 @@
     "id": 2,
     "event_name": "Course de la Citadelle",
     "event_pic": "/assets/images/Nature3.jpg",
+    "event_category": "Nature",
     "event_time": "A partir de 18h30",
     "event_date": "6/22/2024",
     "event_desc": "Le Lille Métropole Athlétisme (LMA) et la Ville de Lille organisent la nouvelle édition de la course de la Citadelle de Lille, dans le cadre du week-end olympique. À vos dossards !"
@@ -19,6 +21,7 @@
     "id": 3,
     "event_name": "Week-end olympique et paralympique",
     "event_pic": "/assets/images/sport.jpg",
+    "event_category": "Sport",
     "event_time": "10:00 AM",
     "event_date": "6/22/2024 et 23/06/2024",
     "event_desc": "Dans le cadre des Jeux olympiques de Paris 2024, la Ville organise de nombreux événements : un week-end olympique mêlant sport et culture est organisé avec un village de pratiques et d’initiations sportives sur l’Esplanade du Champ de Mars"
@@ -27,6 +30,7 @@
     "id": 4,
     "event_name": "Le Refugee Food Festival",
     "event_pic": "/assets/images/Restaurant.jpeg",
+    "event_category": "Culinaire",
     "event_time": "19:00",
     "event_date": "17/06/2024 au 22/06/2024",
     "event_desc": "Le Refugee Food Festival ouvre une nouvelle page pour nous rappeler que rien ne rapproche plus les humains que la cuisine. Un festival solidaire où les restaurateurs lillois ouvrent leurs fourneaux à des cuisiniers réfugiés pour des collaborations éphémères."
@@ -35,6 +39,7 @@
     "id": 5,
     "event_name": "Vernissage des expositions d'été 2024",
     "event_pic": "/assets/images/culture.jpg",
+    "event_category": "Culture",
     "event_time": "6:00 PM",
     "event_date": "6/21/2024",
     "event_desc": "À l’occasion d’un hommage monographique bien mérité, le peintre Paul Hémery sera mis à l’honneur dans plusieurs espaces du musée La Piscine. Il sera accompagné par les céramiques coté maison - côté jardin de Mado Jolain dans les cabines et les photographies coup de poing d’Anouk Desury à l’étage."
@@ -43,6 +48,7 @@
     "id": 6,
     "event_name": "Festival Artpenteurs visite musicale",
     "event_pic": "/assets/images/culture.jpg",
+    "event_category": "Culture",
     "event_time": "9:00 AM",
     "event_date": "07/07/2024",
     "event_desc": "Avec des artistes venus des quatre coins de la France et d’Europe, tu y retrouveras leurs expositions dans des endroits emblématiques où chacun d’eux a lié l’histoire de chaque lieu à celle des Flandres."
@@ -51,6 +57,7 @@
     "id": 7,
     "event_name": "Passage de la flamme olympique à Roubaix",
     "event_pic": "/assets/images/sport.jpg",
+    "event_category": "Sport",
     "event_time": "2:45 PM",
     "event_date": "07/02/2024",
     "event_desc": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris."
@@ -59,6 +66,7 @@
     "id": 8,
     "event_name": "Cinéma en plein air : Alibi.com 2",
     "event_pic": "/assets/images/culture.jpg",
+    "event_category": "Culture",
     "event_time": "8:00 PM",
     "event_date": "07/07/2024",
     "event_desc": ""
@@ -67,6 +75,7 @@
     "id": 9,
     "event_name": "Visites Guidées Festival Entre-Lacs",
     "event_pic": "/assets/images/Nature3.jpg",
+    "event_category": "Nature",
     "event_time": "2:40 PM",
     "event_date": "6/22/2024",
     "event_desc": ""
@@ -75,6 +84,7 @@
     "id": 10,
     "event_name": "Batucada Capanga",
     "event_pic": "/assets/images/sport.jpg",
+    "event_category": "Sport",
     "event_time": "6:00 PM",
     "event_date": "7/21/2024",
     "event_desc": "Sur la Grand’Place, la Batucada Capanga va te faire danser dans une ambiance de carnaval de Bahia, avec 45 percussionnistes et surtout de la bonne humeur !"

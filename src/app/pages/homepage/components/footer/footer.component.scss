@@ -1,6 +1,6 @@
 @import '../../../../../variables.scss';
 
-div {
+.footer {
   background-color: $primary;
   color: $background;
   padding: 1rem;
@@ -9,7 +9,7 @@ div {
   text-align: center;
   justify-content: center;
 }
-h1 {
+.footer_title {
   background-color: $primary;
   color: $background;
   margin-top: 1rem;
@@ -17,7 +17,7 @@ h1 {
   text-align: center;
 }
 
-p {
+.footer_slogan {
   text-align: center;
   justify-content: center;
 }
