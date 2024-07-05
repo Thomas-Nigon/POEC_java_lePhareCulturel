@@ -5,11 +5,20 @@ import { EventCardComponent } from '../../components/event-card/event-card.compo
 import { EventsService } from '../../shared/services/events.service';
 import { EventInterface } from '../../models/event.model';
 import { FavoriteCardComponent } from './components/favorite-card/favorite-card.component';
+import { TopBlockComponent } from './components/top-block/top-block.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [FilterBarComponent, AboutUsComponent, EventCardComponent, FavoriteCardComponent],
+  imports: [
+    FilterBarComponent,
+    AboutUsComponent,
+    EventCardComponent,
+    FavoriteCardComponent,
+    TopBlockComponent,
+    FooterComponent,
+  ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })
