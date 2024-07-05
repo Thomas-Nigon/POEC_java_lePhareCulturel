@@ -8,7 +8,7 @@ button {
 
 .profil {
   box-shadow: rgba(223, 52, 98, 0.3) 0px 4px 12px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-color: $background;
   display: flex;
   flex-direction: column;
@@ -45,6 +45,9 @@ button {
 
 .profil__nav__button span {
   font-size: 2rem;
+}
+.profil__component__container {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
