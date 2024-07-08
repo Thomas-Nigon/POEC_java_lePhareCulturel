@@ -29,12 +29,19 @@
       </a>
     </section>
     <section class="myEvent_past" *ngIf="!incomingEvents">
-      <article class="eventCard" *ngFor="let event of eventList">
-        <img class="eventCard-img" src="{{ event.event_pic }}" alt="" />
-        <h4>{{ event.event_name }}</h4>
-        <p>{{ event.event_date }} {{ event.event_time }}</p>
-        <p>{{ event.event_desc }}</p>
-      </article>
+      <a class="eventCard__link" routerLink="/event/{{ event.id - 1 }}" *ngFor="let event of eventList">
+        <article class="eventCard">
+          <div class="eventCard__category__wrapper">
+            <img class="eventCard-img" src="{{ event.event_pic }}" alt="" />
+            <h2 class="eventCard__category__name">{{ event.event_category }}</h2>
+          </div>
+          <div class="eventCard_descriptionContainer">
+            <h5>{{ event.event_name }}</h5>
+            <p>{{ event.event_date }} {{ event.event_time }}</p>
+            <p class="eventCard__textDesc">{{ event.event_desc }}</p>
+          </div>
+        </article>
+      </a>
     </section>
   </div>
 </main>
