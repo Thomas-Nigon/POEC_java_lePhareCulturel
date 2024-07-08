@@ -11,6 +11,8 @@
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
-
   <app-filter-bar></app-filter-bar>
+  <section>
+    <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
+  </section>
 </main>
