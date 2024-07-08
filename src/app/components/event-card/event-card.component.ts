@@ -11,6 +11,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class EventCardComponent {
   @Input() eventList: EventInterface[] = [];
+  @Input() event!: EventInterface;
   router = inject(Router);
   targetId!: number | null;
   onClick(event: Event) {

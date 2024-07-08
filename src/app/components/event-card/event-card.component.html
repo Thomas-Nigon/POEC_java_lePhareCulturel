@@ -1,19 +1,16 @@
-<a routerLink="/event/{{ eventList ? eventList[3].id - 1 : '' }}" class="eventCard__link">
+<a routerLink="/event/{{ event && event.id - 1 }}" class="eventCard__link">
   <article class="eventCard">
     <div class="eventCard__category__wrapper">
-      <img
-        class="eventCard-img"
-        src="{{ eventList ? eventList[3].event_pic : '' }}"
-        alt=" {{ eventList ? eventList[3].event_category : '' }}" />
-      <h2 class="eventCard__category__name">{{ eventList ? eventList[3].event_category : '' }}</h2>
+      <img class="eventCard-img" src="{{ event && event.event_pic }}" alt=" {{ event && event.event_category }}" />
+      <h2 class="eventCard__category__name">{{ event && event.event_category }}</h2>
     </div>
     <div class="eventCard__description">
-      <h3 class="eventCard__title">{{ eventList ? eventList[3].event_name : '' }}</h3>
+      <h3 class="eventCard__title">{{ event && event.event_name }}</h3>
       <p class="eventCard__date">
-        {{ eventList ? eventList[3].event_date : '' }}
-        <span class="eventCard__time">{{ eventList ? eventList[3].event_time : '' }}</span>
+        {{ event && event.event_date }}
+        <span class="eventCard__time">{{ event && event.event_time }}</span>
       </p>
-      <p class="eventCard__description">{{ eventList ? eventList[3].event_desc : '' }}</p>
+      <p class="eventCard__description">{{ event && event.event_desc }}</p>
     </div>
   </article>
 </a>
