@@ -10,12 +10,12 @@
   },
   {
     "id": 2,
-    "event_name": "Course de la Citadelle",
-    "event_pic": "/assets/images/Nature3.jpg",
-    "event_category": "Nature",
+    "event_name": "Les nuits secretes",
+    "event_pic": "/assets/images/Musique.jpg",
+    "event_category": "Musique",
     "event_time": "A partir de 18h30",
-    "event_date": "6/22/2024",
-    "event_desc": "Le Lille Métropole Athlétisme (LMA) et la Ville de Lille organisent la nouvelle édition de la course de la Citadelle de Lille, dans le cadre du week-end olympique. À vos dossards !"
+    "event_date": "7/13/2024",
+    "event_desc": "En 2024, les Nuits Secrètes avancent leur banquet d’une semaine et alignent leurs planètes autour du 14 juillet. Ni repos ni jour férié pour les braves, la fête sera autant locale que nationale et internationale. Trois jours et trois nuits hors du temps et hors de tout, c’est ce qui vous attend à une heure de Lille et deux de Paris, aka Aulnoye-Aymeries."
   },
   {
     "id": 3,
