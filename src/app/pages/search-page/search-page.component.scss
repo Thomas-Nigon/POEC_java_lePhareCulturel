@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 101px);
 }
 
 .calendar_title_container {
@@ -77,8 +78,9 @@
   font-size: 2.5rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .searchPage {
+    min-height: calc(100vh - 91.5px);
     padding-bottom: 0;
   }
   .calendar_title_container {
