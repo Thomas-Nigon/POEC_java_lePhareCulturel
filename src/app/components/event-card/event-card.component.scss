@@ -23,6 +23,7 @@
 }
 
 .eventCard {
+  width: 100%;
   border: 4px solid $primary;
   color: $secondary;
   background-color: $primary;
@@ -37,7 +38,6 @@
 }
 .eventCard-img {
   display: block;
-  // width: 100%;
   max-width: 300px;
   border-radius: 0.8rem;
 }
@@ -69,7 +69,6 @@
 .eventCard__description {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 0.5rem;
   color: $background;

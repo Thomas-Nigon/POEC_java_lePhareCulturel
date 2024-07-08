@@ -4,7 +4,7 @@
   <article class="calendar_title_container">
     <h3 class="calendar-title">
       {{ displayDate }}
-      <button (click)="onClick()">
+      <button class="calendar-title__button" (click)="onClick()">
         <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_circle_up </span>
         <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_circle_down </span>
       </button>
@@ -13,4 +13,8 @@
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
+  <app-filter-bar></app-filter-bar>
+  <section>
+    <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
+  </section>
 </main>
