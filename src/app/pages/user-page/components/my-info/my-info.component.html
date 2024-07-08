@@ -12,7 +12,7 @@
       </h5>
       <div class="myInfo__item__container">
         @if (editFirstname) {
-          <form class="editInfo__form" [formGroup]="editFirstnameForm">
+          <form [formGroup]="editFirstnameForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
@@ -40,7 +40,7 @@
 
       <div class="myInfo__item__container">
         @if (editLastname) {
-          <form class="editInfo__form" [formGroup]="editLastnameForm">
+          <form [formGroup]="editLastnameForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
@@ -67,7 +67,7 @@
       </h5>
       <div class="myInfo__item__container">
         @if (editEmail) {
-          <form class="editInfo__form" [formGroup]="editEmailForm">
+          <form [formGroup]="editEmailForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
@@ -94,9 +94,9 @@
       </h5>
       <div class="myInfo__item__container">
         @if (editDescription) {
-          <form class="editInfo__form descriptionForm" [formGroup]="editDescriptionForm">
+          <form class="myInfo-item__descriptionForm" [formGroup]="editDescriptionForm">
             <textarea
-              class="descriptionForm"
+              class="myInfo__form__input textarea"
               [ngClass]="{
                 invalid: editDescriptionForm.get('description')?.invalid,
               }"
