@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 125px;
+  padding-bottom: 70px;
 }
 .homepage__title {
   color: $primary;
@@ -20,6 +20,12 @@
 
 .container {
   margin: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 @media screen and (min-width: 900px) {
   .homepage {

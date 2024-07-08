@@ -3,22 +3,20 @@
 .footer {
   background-color: $primary;
   color: $background;
-  padding: 1rem;
+  width: 100%;
   display: flex;
-  align-items: center;
-  text-align: center;
   justify-content: center;
+  align-items: center;
+  height: 150px;
 }
-.footer_title {
+.footer__title {
   background-color: $primary;
   color: $background;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin: 0 1rem;
   text-align: center;
 }
 
-.footer_slogan {
+.footer__slogan {
   color: $secondary;
   text-align: center;
-  justify-content: center;
 }
