@@ -2,10 +2,11 @@
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: $background;
   padding-bottom: 50px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-block {
@@ -30,11 +31,14 @@
 }
 
 .button-53 {
+  z-index: 2;
   background-color: $primary;
   border: 0 solid #e5e7eb;
   box-sizing: border-box;
   color: #000000;
   display: flex;
+  margin: 0 auto;
+  /* 
   font-family:
     ui-sans-serif,
     system-ui,
@@ -49,7 +53,7 @@
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
-    'Noto Color Emoji';
+    'Noto Color Emoji'; */
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
@@ -74,6 +78,7 @@
 }
 
 .button-53:after {
+  z-index: 1;
   content: '';
   position: absolute;
   border: 1px solid #000000;
@@ -95,7 +100,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .container {
     flex-direction: row;
   }
