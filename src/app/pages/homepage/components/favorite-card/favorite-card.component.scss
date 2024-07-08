@@ -3,12 +3,12 @@
 .container {
   display: flex;
   flex-direction: row;
-  background-color: $primaryT;
+  background-color: $background;
   border-radius: 15px;
   overflow: hidden;
   max-width: 500px;
   width: 100%;
-  color: $background;
+  color: $primaryT;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 90%;
   margin: 1rem auto;

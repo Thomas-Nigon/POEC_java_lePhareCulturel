@@ -21,7 +21,7 @@ export class SearchPageComponent implements OnInit {
   isOpen = true;
   clickedDate!: string;
   date!: Date;
-  displayDate = 'Une date en Particulier?';
+  displayDate = 'Une date en particulier?';
 
   eventService = inject(EventsService);
   eventList!: EventInterface[];
