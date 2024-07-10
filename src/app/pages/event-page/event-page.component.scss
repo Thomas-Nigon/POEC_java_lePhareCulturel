@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.eventPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 101px);
+  padding-bottom: 70px;
+}
+
+@media screen and (min-width: 900px) {
+  .eventPage {
+    min-height: calc(100vh - 91.5px);
+    padding-bottom: 0px;
+  }
+}
