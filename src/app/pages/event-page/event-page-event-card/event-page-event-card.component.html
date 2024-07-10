@@ -3,7 +3,7 @@
     class="event-image"
     src="{{ eventList && eventList[eventId].event_pic }}"
     alt="{{ eventList && eventList[eventId].event_desc }}" />
-  <section class="eventCard__descriptionContainer">
+  <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
     <article class="eventCard__descriptionContainer__participants">
       <div class="eventCard__participant__container">
         <img
@@ -25,6 +25,6 @@
       <h3 class="event__price">Tarif:</h3>
       <p>Gratuit</p>
     </article>
-    <button class="event-button"><a class="eventCard__link" routerLink="">Participer</a></button>
+    <button (click)="onClick()" class="event-button">Je participe</button>
   </section>
 </div>

@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'search', component: SearchPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'create-group', component: CreatGroupComponent },
+  { path: 'group', component: CreatGroupComponent },
   { path: '', redirectTo: '/create-group', pathMatch: 'full' },
   {
     path: '**',

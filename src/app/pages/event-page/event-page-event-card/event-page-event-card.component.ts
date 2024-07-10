@@ -20,6 +20,7 @@ export class EventPageEventCardComponent implements OnInit {
   eventList!: EventInterface[];
   userList!: UserInterface[];
   eventTest!: EventInterface[];
+  hidden = false;
   private route = inject(ActivatedRoute);
   eventId!: number;
   eventDate!: string;
@@ -33,5 +34,8 @@ export class EventPageEventCardComponent implements OnInit {
     this.userService.getAllUser().subscribe(data => {
       this.userList = data;
     });
+  }
+  onClick() {
+    this.hidden = true;
   }
 }

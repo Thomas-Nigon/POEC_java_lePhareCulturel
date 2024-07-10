@@ -1,5 +1,8 @@
 @import '../../../variables.scss';
 
+.hidden {
+  display: none;
+}
 .eventPage {
   display: flex;
   flex-direction: column;
@@ -7,6 +10,11 @@
   width: 100%;
   min-height: calc(100vh - 101px);
   padding-bottom: 70px;
+}
+.groupComponents {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 900px) {

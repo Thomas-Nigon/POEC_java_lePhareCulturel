@@ -1,3 +1,6 @@
 <main class="eventPage">
   <app-event-page-event-card></app-event-page-event-card>
+  <section class="groupComponents" [ngClass]="{ hidden: !hidden }">
+    <app-creat-group class="groupComponents"></app-creat-group>
+  </section>
 </main>
