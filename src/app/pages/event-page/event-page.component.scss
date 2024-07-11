@@ -8,10 +8,48 @@
   min-height: calc(100vh - 101px);
   padding-bottom: 70px;
 }
+.groupComponents__title {
+  color: $primary;
+}
+.groupComponents__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  background-color: $background;
+  padding: 1rem;
+}
+.groupComponents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  background-color: $background;
+}
+.hidden {
+  display: none;
+}
+.test {
+  background-color: $primary;
+  color: $background;
+  border: none;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
 
 @media screen and (min-width: 900px) {
   .eventPage {
     min-height: calc(100vh - 91.5px);
     padding-bottom: 0px;
+  }
+  .groupComponents__container {
+    border: 2px solid $primary;
+    border-radius: 0.5rem;
   }
 }

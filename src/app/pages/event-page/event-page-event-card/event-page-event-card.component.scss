@@ -1,5 +1,23 @@
 @import '../../../../variables.scss';
 
+.hidden {
+  height: 0;
+  animation: closeIn 0.2s ease-out;
+}
+@keyframes closeIn {
+  0% {
+    height: 100%;
+  }
+
+  10% {
+    height: 300px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
 .event-card {
   display: flex;
   flex-direction: column;
@@ -16,6 +34,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 1rem 0 1rem;
+  overflow: hidden;
 }
 
 .eventCard__eventDate {
@@ -80,8 +99,9 @@
 }
 
 .event-button:hover {
-  background-color: $text;
-  color: white;
+  background-color: $secondary;
+  color: $primary;
+  border: 2px solid $primary;
   box-shadow:
     0 6px 8px rgba(0, 0, 0, 0.2),
     0 3px 6px rgba(0, 0, 0, 0.15);
@@ -93,6 +113,12 @@
 }
 
 @media screen and (min-width: 900px) {
+  .event-card {
+    border-left: 2px solid $primary;
+    border-right: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
   .event-image {
     max-height: 400px;
     object-fit: cover;

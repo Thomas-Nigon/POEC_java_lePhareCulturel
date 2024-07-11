@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Le groupe a toto",
+    "description": "On va boire des verre et ecouter del a musique",
+    "time": "12:00",
+    "members": [
+      {
+        "id": 1,
+        "first_name": "Lissi",
+        "last_name": "Hospital",
+        "email": "lhospital0@dropbox.com",
+        "picture": "/assets/images/avatars/avatar1.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 2,
+        "first_name": "Mariquilla",
+        "last_name": "McSaul",
+        "email": "mmcsaul1@slate.com",
+        "picture": "/assets/images/avatars/avatar1.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 3,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Le groupe a titi",
+    "description": "On va manger des gros kebabs",
+    "time": "21:00",
+    "members": [
+      {
+        "id": 1,
+        "first_name": "Lissi",
+        "last_name": "Hospital",
+        "email": "lhospital0@dropbox.com",
+        "picture": "/assets/images/avatars/avatar1.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 2,
+        "first_name": "Mariquilla",
+        "last_name": "McSaul",
+        "email": "mmcsaul1@slate.com",
+        "picture": "/assets/images/avatars/avatar1.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 3,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 4,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 5,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 6,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 7,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 8,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      },
+      {
+        "id": 8,
+        "first_name": "Adam",
+        "last_name": "Ovitts",
+        "email": "aovitts2@twitter.com",
+        "picture": "/assets/images/avatars/avatar2.svg",
+        "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
+      }
+    ]
+  }
+]
