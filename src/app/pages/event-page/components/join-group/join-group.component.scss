@@ -15,6 +15,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  overflow: hidden;
 }
 .joinGroup__titleContainer {
   display: flex;
@@ -34,4 +35,8 @@
 }
 .joinGroup__title {
   color: $primary;
+}
+.hidden {
+  height: 0;
+  animation: closeIn 0.2s ease-out;
 }

@@ -33,6 +33,15 @@
 .hidden {
   display: none;
 }
+.test {
+  background-color: $primary;
+  color: $background;
+  border: none;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
 
 @media screen and (min-width: 900px) {
   .eventPage {

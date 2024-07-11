@@ -6,7 +6,7 @@
       <span *ngIf="hideJoinGroup" class="material-symbols-outlined"> arrow_circle_down </span>
     </button>
   </div>
-  <section class="joinGroup__groupContainer">
+  <section class="joinGroup__groupContainer" [ngClass]="{ hidden: hideJoinGroup }">
     <app-group-card *ngFor="let group of groupList" [group]="group"></app-group-card>
   </section>
 </main>
