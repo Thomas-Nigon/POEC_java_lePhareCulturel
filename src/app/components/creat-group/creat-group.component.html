@@ -1,6 +1,12 @@
-<div class="group-card">
-  <form class="createGroupForm">
-    <h2 class="card-title">Créer un Groupe</h2>
+<div class="createGroup">
+  <div class="createGroup__titleContainer">
+    <h3 class="card-title">Créer !</h3>
+    <button type="button" (click)="onClick()" class="closeButton">
+      <span *ngIf="!hideCreateGroup" class="material-symbols-outlined"> arrow_circle_up </span>
+      <span *ngIf="hideCreateGroup" class="material-symbols-outlined"> arrow_circle_down </span>
+    </button>
+  </div>
+  <form class="createGroupForm" [ngClass]="{ hidden: hideCreateGroup }">
     <div class="form-group">
       <label for="groupName">Nom du Groupe</label>
       <input type="text" id="groupName" class="form-control" placeholder="Entrez le nom du groupe" />

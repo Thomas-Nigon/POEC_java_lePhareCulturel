@@ -1,0 +1,55 @@
+@import '../../../../../variables.scss';
+
+.groupCard {
+  background-color: $secondary;
+  border: 2px solid $primary;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.groupCard__title {
+  color: $primary;
+}
+
+.groupCard__membersList {
+  display: flex;
+  flex-direction: row;
+}
+.groupCard__member {
+  padding: 0.5rem;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.groupCard__member__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 40px;
+}
+.groupCard__avatar {
+  width: 30px;
+}
+.groupCard__button {
+  width: 50%;
+  font-size: 1rem;
+  align-self: center;
+  padding: 0.5rem 0.5rem;
+  color: $background;
+  background-color: $primary;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  border: 2px solid $primary;
+}
+.groupCard__button:hover {
+  background-color: $secondary;
+  color: $primary;
+}

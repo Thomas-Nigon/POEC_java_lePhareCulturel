@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { FilterBarComponent } from '../../homepage/components/filter-bar/filter-bar.component';
 import { EventsService } from '../../../shared/services/events.service';
 import { EventInterface } from '../../../models/event.model';
@@ -20,7 +20,9 @@ export class EventPageEventCardComponent implements OnInit {
   eventList!: EventInterface[];
   userList!: UserInterface[];
   eventTest!: EventInterface[];
-  hidden = false;
+  @Output() testhidden = new EventEmitter<boolean>();
+  @Input() hidden!: boolean;
+  // hidden = false;
   private route = inject(ActivatedRoute);
   eventId!: number;
   eventDate!: string;
@@ -37,5 +39,6 @@ export class EventPageEventCardComponent implements OnInit {
   }
   onClick() {
     this.hidden = true;
+    this.testhidden.emit(this.hidden);
   }
 }

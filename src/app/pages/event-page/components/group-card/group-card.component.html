@@ -1,0 +1,18 @@
+<article class="groupCard">
+  <h4 class="groupCard__title">{{ group.name }} <span>(4pers)</span></h4>
+
+  <h5>Info:</h5>
+  <p>{{ group.description }}</p>
+  <h5>heure de Rdv:</h5>
+  <p>{{ group.time }}</p>
+  <h5>membres:</h5>
+  <div class="groupCard__membersList">
+    <div class="groupCard__member" *ngFor="let member of group.members">
+      <span class="groupCard__member__name">
+        {{ member.first_name }}
+      </span>
+      <img class="groupCard__avatar" src="{{ member.picture }}" alt="a member avatar" />
+    </div>
+  </div>
+  <button class="groupCard__button">REJOINDRE</button>
+</article>
