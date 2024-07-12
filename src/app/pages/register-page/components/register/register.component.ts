@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from '../../../../shared/validators/passwordValidator';
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
+import { NewUser } from '../../../../models/newUser.models';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,7 @@ import { matchPasswordValidator } from '../../../../shared/validators/matchPassw
 export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
+  newUser!: NewUser;
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
@@ -33,6 +35,7 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
+    this.newUser = this.registerForm.value as NewUser;
     console.warn('form submitted ! data sent:', this.registerForm.value);
   }
 }
