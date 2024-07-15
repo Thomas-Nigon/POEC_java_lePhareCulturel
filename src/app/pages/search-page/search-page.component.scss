@@ -71,10 +71,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   cursor: pointer;
   color: $primary;
+}
+.calendar-title__button span {
   background-color: $background;
+  border-radius: 50%;
 }
 .calendar-title__button:hover {
   background-color: $primary;
