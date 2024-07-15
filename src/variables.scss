@@ -47,6 +47,10 @@ body {
   font-weight: 400;
   background-color: $background;
 }
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+} /* 16px */
 
 h1,
 h2,
