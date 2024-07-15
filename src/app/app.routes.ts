@@ -16,11 +16,22 @@ export const routes: Routes = [
     component: UserPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'search', component: SearchPageComponent },
+  {
+    path: 'events',
+    component: SearchPageComponent,
+    children: [
+      {
+        path: ':date',
+        component: SearchPageComponent,
+      },
+      { path: ':category', component: SearchPageComponent },
+    ],
+  },
+  { path: 'events/:category', component: SearchPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'group', component: CreatGroupComponent },
-  { path: '', redirectTo: '/create-group', pathMatch: 'full' },
+
   {
     path: '**',
     redirectTo: '',

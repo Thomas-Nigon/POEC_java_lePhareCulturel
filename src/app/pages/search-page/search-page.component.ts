@@ -9,6 +9,7 @@ import { FilterBarComponent } from '../homepage/components/filter-bar/filter-bar
 import { EventsService } from '../../shared/services/events.service';
 import { EventInterface } from '../../models/event.model';
 import { EventCardComponent } from '../../components/event-card/event-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -23,6 +24,7 @@ export class SearchPageComponent implements OnInit {
   date!: Date;
   displayDate = 'Une date en particulier?';
 
+  router = inject(Router);
   eventService = inject(EventsService);
   eventList!: EventInterface[];
 
@@ -65,6 +67,12 @@ export class SearchPageComponent implements OnInit {
     }).format(this.date);
     this.displayDate = this.clickedDate.charAt(0).toUpperCase() + this.clickedDate.slice(1);
     this.isOpen = false;
+    this.router
+      .navigate(['/events', this.clickedDate])
+      .then(() => {})
+      .catch((err: unknown) => {
+        console.error(err);
+      });
   }
 }
 
