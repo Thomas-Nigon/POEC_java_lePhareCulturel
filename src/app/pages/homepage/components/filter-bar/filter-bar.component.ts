@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CategoriesService } from '../../../../shared/categories.service';
 import { Category } from '../../../../models/category.model';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-filter-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './filter-bar.component.html',
   styleUrl: './filter-bar.component.scss',
 })
