@@ -13,7 +13,7 @@
 .text-block {
   padding: 20px;
   margin: 1rem;
-  //flex: 2;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,26 +37,8 @@
   z-index: 2;
   background-color: $primary;
   border: 0 solid #e5e7eb;
-  box-sizing: border-box;
-  color: #000000;
+  color: $background;
   display: flex;
-  margin: 0 auto;
-  /* 
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    system-ui,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    'Noto Sans',
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji'; */
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
@@ -75,25 +57,74 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+.button-social {
+  z-index: 2;
+  background-color: $primary;
+  border: 0 solid #e5e7eb;
+  color: $background;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-around;
+  width: 65%;
+  font-weight: 700;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.social {
+  cursor: pointer;
+  z-index: 5;
+}
+.social:hover {
+  color: $text;
+}
+.test {
+  z-index: 5;
+}
+.test:hover {
+  color: $text;
+}
+.button-53:hover {
+  color: $text;
+}
 
-.button-53:focus {
+.button-53:focus,
+.button-social:after {
   outline: 0;
 }
 
-.button-53:after {
+.button-53:after,
+.button-social:after {
   z-index: 1;
   content: '';
   position: absolute;
-  border: 1px solid #000000;
+  border: 1px solid $text;
   bottom: 4px;
   left: 4px;
   width: calc(100% - 1px);
   height: calc(100% - 1px);
 }
 
-.button-53:hover:after {
+.button-53:hover:after,
+.button-social:hover:after {
   bottom: 2px;
   left: 2px;
+}
+.social {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  color: $background;
 }
 
 @media (min-width: 768px) {

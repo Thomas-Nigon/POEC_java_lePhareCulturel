@@ -11,24 +11,30 @@
         Nom:
       </h5>
       <div class="myInfo__item__container">
-        @if (editFirstname) {
-          <form [formGroup]="editFirstnameForm">
+        @if (edit) {
+          <form [formGroup]="editUserForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
-                invalid: editFirstnameForm.get('firstname')?.invalid,
+                invalid: editUserForm.get('firstname')?.invalid,
               }"
               id="firstname"
               type="text"
               placeholder="{{ userList ? userList[userId].first_name : '' }}"
               formControlName="firstname"
-              (blur)="onBlurFirstname($event)" />
+              (blur)="onBlur()" />
           </form>
         } @else {
           {{ userList ? userList[userId].first_name : '' }}
-          <button class="editInfo__form__button" (click)="editFirstname = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
+          @if (editUserForm.dirty) {
+            <button type="button" class="editInfo__form__button" (click)="submitEditFirstname()">
+              <span class="material-symbols-outlined"> save </span>
+            </button>
+          } @else {
+            <button class="editInfo__form__button" (click)="edit = true">
+              <span class="material-symbols-outlined"> edit </span>
+            </button>
+          }
         }
       </div>
     </li>
@@ -39,22 +45,22 @@
       </h5>
 
       <div class="myInfo__item__container">
-        @if (editLastname) {
-          <form [formGroup]="editLastnameForm">
+        @if (edit) {
+          <form [formGroup]="editUserForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
-                invalid: editLastnameForm.get('firstname')?.invalid,
+                invalid: editUserForm.get('firstname')?.invalid,
               }"
               id="lastname"
               type="text"
               placeholder="{{ userList ? userList[userId].last_name : '' }}"
               formControlName="lastname"
-              (blur)="onBlurLastname($event)" />
+              (blur)="onBlur()" />
           </form>
         } @else {
           {{ userList ? userList[userId].last_name : '' }}
-          <button class="editInfo__form__button" (click)="editLastname = true">
+          <button class="editInfo__form__button" (click)="edit = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
         }
@@ -67,21 +73,21 @@
       </h5>
       <div class="myInfo__item__container">
         @if (editEmail) {
-          <form [formGroup]="editEmailForm">
+          <form [formGroup]="editUserForm">
             <input
               class="myInfo__form__input"
               [ngClass]="{
-                invalid: editEmailForm.get('firstname')?.invalid,
+                invalid: editUserForm.get('firstname')?.invalid,
               }"
               id="email"
               type="email"
               placeholder="{{ userList ? userList[userId].email : '' }}"
               formControlName="email"
-              (blur)="onBlurEmail($event)" />
+              (blur)="onBlur()" />
           </form>
         } @else {
           {{ userList ? userList[userId].email : '' }}
-          <button class="editInfo__form__button" (click)="editEmail = true">
+          <button class="editInfo__form__button" (click)="edit = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
         }
@@ -93,23 +99,23 @@
         A propos de moi:
       </h5>
       <div class="myInfo__item__container">
-        @if (editDescription) {
-          <form class="myInfo-item__descriptionForm" [formGroup]="editDescriptionForm">
+        @if (edit) {
+          <form class="myInfo-item__descriptionForm" [formGroup]="editUserForm">
             <textarea
               class="myInfo__form__input textarea"
               [ngClass]="{
-                invalid: editDescriptionForm.get('description')?.invalid,
+                invalid: editUserForm.get('description')?.invalid,
               }"
               id="description"
               type="textarea"
               placeholder="{{ userList ? userList[userId].description : '' }}"
               formControlName="description"
-              (blur)="onBlurDescription($event)">
+              (blur)="onBlur()">
             </textarea>
           </form>
         } @else {
           <p>{{ userList ? userList[userId].description : '' }}</p>
-          <button class="editInfo__form__button" (click)="editDescription = true">
+          <button class="editInfo__form__button" (click)="edit = true">
             <span class="material-symbols-outlined"> edit </span>
           </button>
         }

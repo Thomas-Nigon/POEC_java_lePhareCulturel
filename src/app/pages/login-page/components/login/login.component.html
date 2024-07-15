@@ -21,7 +21,11 @@
         placeholder="Mot de passe..."
         formControlName="password"
         required />
-      <button class="loginForm__passwordViewButton" (click)="togglePasswordView()" (keydown)="togglePasswordView()">
+      <button
+        type="button"
+        class="loginForm__passwordViewButton"
+        (click)="togglePasswordView()"
+        (keydown)="togglePasswordView()">
         <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
       </button>
     </div>

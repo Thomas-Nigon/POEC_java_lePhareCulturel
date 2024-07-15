@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from '../../../../shared/validators/passwordValidator';
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
+import { NewUser } from '../../../../models/newUser.models';
+import { UserService } from '../../../../shared/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -14,12 +16,14 @@ import { matchPasswordValidator } from '../../../../shared/validators/matchPassw
 export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
+  newUser!: NewUser;
+  userService = inject(UserService);
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
-    username: ['', Validators.required, Validators.minLength(3), Validators.maxLength(30)],
+    username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
     credentials: this.fb.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, passwordValidator()]],
       confirmPassword: ['', [Validators.required, matchPasswordValidator()]],
     }),
@@ -33,6 +37,8 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
+    this.newUser = this.registerForm.value as NewUser;
     console.warn('form submitted ! data sent:', this.registerForm.value);
+    this.userService.createUser(this.newUser);
   }
 }

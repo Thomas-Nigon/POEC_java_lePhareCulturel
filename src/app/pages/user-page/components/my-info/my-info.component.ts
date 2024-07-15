@@ -12,16 +12,18 @@ import { CommonModule } from '@angular/common';
 })
 export class MyInfoComponent {
   @Input() userList: UserInterface[] = [];
-  @Input() userId = 0;
+  @Input() userId!: number;
+  edit = false;
   editFirstname = false;
   editLastname = false;
   editEmail = false;
   editPseudo = false;
   editDescription = false;
   fb = inject(FormBuilder);
+  test = 'toto';
 
-  editFirstnameForm = this.fb.group({
-    firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+  /*  editFirstnameForm = this.fb.group({
+    firstname: [this.test, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
   });
   editLastnameForm = this.fb.group({
     lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -31,9 +33,26 @@ export class MyInfoComponent {
   });
   editDescriptionForm = this.fb.group({
     description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-  });
+  }); */
 
-  onBlurFirstname(event: Event) {
+  editUserForm = this.fb.group({
+    firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    lastnamer: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    desc: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
+  });
+  onBlur() {
+    this.edit = false;
+    /*  const firstname = (event.target as HTMLInputElement).value;
+    this.userList[this.userId].first_name = firstname;
+    const lastname = (event.target as HTMLInputElement).value;
+    this.userList[this.userId].last_name = lastname;
+    const email = (event.target as HTMLInputElement).value;
+    this.userList[this.userId].email = email;
+    const desc = (event.target as HTMLInputElement).value;
+    this.userList[this.userId].description = desc; */
+  }
+
+  /*   onBlurFirstname(event: Event) {
     const targetText = (event.target as HTMLInputElement).value;
     this.userList[this.userId].first_name = targetText;
     this.editFirstname = false;
@@ -52,5 +71,10 @@ export class MyInfoComponent {
     const targetText = (event.target as HTMLInputElement).value;
     this.userList[this.userId].description = targetText;
     this.editDescription = false;
+  } */
+
+  submitEditFirstname() {
+    this.edit = false;
+    console.warn('send this to backdend', this.editUserForm.value);
   }
 }
