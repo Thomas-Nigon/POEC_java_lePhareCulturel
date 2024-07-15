@@ -34,7 +34,7 @@
 }
 
 .button-53 {
-  z-index: 2;
+  z-index: 5;
   background-color: $primary;
   border: 0 solid #e5e7eb;
   color: $background;
@@ -86,12 +86,6 @@
   z-index: 5;
 }
 .social:hover {
-  color: $text;
-}
-.test {
-  z-index: 5;
-}
-.test:hover {
   color: $text;
 }
 .button-53:hover {
