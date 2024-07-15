@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "userName": "John Doe",
+    "message": "Hey everyone, are we all set for the concert in two days?",
+    "date": "10:00 AM, June 18"
+  },
+  {
+    "id": 2,
+    "userName": "Jane Smith",
+    "message": "Yes, I'm excited! What time should we meet?",
+    "date": "10:05 AM, June 18"
+  },
+  {
+    "id": 3,
+    "userName": "Alice Johnson",
+    "message": "How about we meet at 6 PM near the main entrance?",
+    "date": "10:10 AM, June 18"
+  },
+  {
+    "id": 4,
+    "userName": "Bob Brown",
+    "message": "6 PM works for me. Should we grab dinner after?",
+    "date": "10:15 AM, June 18"
+  },
+  {
+    "id": 5,
+    "userName": "John Doe",
+    "message": "Dinner sounds great! There’s a nice place nearby we could try.",
+    "date": "10:20 AM, June 18"
+  },
+  {
+    "id": 6,
+    "userName": "Jane Smith",
+    "message": "Perfect, I’ll be there at 6. Looking forward to it!",
+    "date": "10:25 AM, June 18"
+  },
+  {
+    "id": 7,
+    "userName": "Alice Johnson",
+    "message": "Same here. See you all in two days!",
+    "date": "10:30 AM, June 18"
+  },
+  {
+    "id": 8,
+    "userName": "Bob Brown",
+    "message": "See you guys there!",
+    "date": "10:35 AM, June 18"
+  }
+]

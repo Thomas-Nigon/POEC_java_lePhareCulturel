@@ -1,0 +1,22 @@
+@import '../../../../../variables.scss';
+
+.singleMessage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin-left: 1rem;
+  margin: 1rem;
+  width: 36%;
+  max-width: 90%;
+}
+.singleMessage__container {
+  background-color: $secondary;
+  color: $text;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid $primary;
+}
+.singleMessage p {
+  margin-left: 1rem;
+}
