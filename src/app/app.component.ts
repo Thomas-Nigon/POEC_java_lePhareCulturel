@@ -9,6 +9,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { EventPageComponent } from './pages/event-page/event-page.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import { EventPageComponent } from './pages/event-page/event-page.component';
     RouterLinkActive,
     FullCalendarModule,
     NavigationComponent,
+    ChatPageComponent,
   ],
 
   templateUrl: './app.component.html',

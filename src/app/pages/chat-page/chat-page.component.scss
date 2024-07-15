@@ -1,0 +1,89 @@
+@import '../../../variables.scss';
+
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 101px);
+}
+
+.chatPage__container {
+  display: flex;
+  min-height: calc(100vh - 101px);
+  max-height: calc(100vh - 101px);
+
+  padding-bottom: 70px;
+  overflow: scroll;
+  width: 100%;
+}
+.chatPage__container__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  max-width: 75px;
+  border-right: 1px solid $primary;
+}
+.chatPage__container__aside__avatarPic {
+  width: 50px;
+}
+.chatPage__container__chatWindow {
+  background-color: $background;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // padding-bottom: 70px;
+}
+.chatPage__container__chatWindow__messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  overflow: scroll;
+  padding-bottom: 2.5rem;
+}
+.textarea__wrapper {
+  position: relative;
+  top: 50%;
+  width: 100%;
+}
+.chatPage__container__chatWindow__textArea {
+  padding: 3px;
+  background-color: $background;
+  width: 94%;
+  position: absolute;
+  bottom: 0%;
+  right: 3%;
+  border-radius: 4px;
+  padding-right: 35px;
+  min-height: 2rem;
+  field-sizing: content;
+}
+
+.chatPage__textarea__sendButton {
+  all: unset;
+  font-size: 2rem;
+  position: absolute;
+  right: 5%;
+  bottom: 1%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatPage__textarea__sendButton span {
+  border-radius: 50%;
+  font-size: 2rem;
+  color: $primary;
+}
+
+@media screen and (min-width: 900px) {
+  .chatPage {
+    min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container {
+    min-height: calc(100vh - 91.5px);
+  }
+}
