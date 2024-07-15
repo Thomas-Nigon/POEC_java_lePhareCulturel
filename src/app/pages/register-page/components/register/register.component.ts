@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from '../../../../shared/validators/passwordValidator';
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
 import { NewUser } from '../../../../models/newUser.models';
+import { UserService } from '../../../../shared/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -16,6 +17,7 @@ export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
   newUser!: NewUser;
+  userService = inject(UserService);
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
@@ -37,5 +39,6 @@ export class RegisterComponent {
   onSubmit(): void {
     this.newUser = this.registerForm.value as NewUser;
     console.warn('form submitted ! data sent:', this.registerForm.value);
+    this.userService.createUser(this.newUser);
   }
 }
