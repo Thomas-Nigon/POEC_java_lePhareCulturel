@@ -1,6 +1,9 @@
 <main class="filterBar">
   <Ul class="filterBar-list">
-    <li class="filterBar-item" *ngFor="let category of categoryList">
+    <li
+      class="filterBar-item"
+      routerLink="/events/{{ category.name.toLowerCase() }}"
+      *ngFor="let category of categoryList">
       <img class="filterBar-icon" src="{{ category.img }}" alt="" />
       <p class="filterBar-name">{{ category.name }}</p>
     </li>
