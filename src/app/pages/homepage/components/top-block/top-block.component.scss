@@ -32,7 +32,10 @@
   color: $primary;
   padding-bottom: 20px;
 }
-
+.button__wrapper {
+  width: 100%;
+  max-width: 460px;
+}
 .button-53 {
   z-index: 5;
   background-color: $primary;
