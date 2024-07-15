@@ -1,5 +1,5 @@
 <main class="searchPage">
-  <h2 class="search_page_title">L'Agenda du Phare Culturel</h2>
+  <h2 class="search_page_title">L'Agenda du Phare</h2>
   <app-filter-bar></app-filter-bar>
   <article class="calendar_title_container">
     <h3 class="calendar-title">
@@ -13,7 +13,6 @@
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
-  <app-filter-bar></app-filter-bar>
   <section>
     <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
   </section>

@@ -53,8 +53,13 @@
   margin-left: 1rem;
 }
 .closeButton span {
-  font-size: 3rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
   color: $primary;
+}
+.closeButton span:hover {
+  background-color: $primary;
+  color: $background;
 }
 
 .form-group {
