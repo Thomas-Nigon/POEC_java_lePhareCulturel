@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 RUN npm install -g npm && \
   npm install && \
-  npm run build && \
+  npm run build --prod && \
   rm -rf /app/node_modules
 
 FROM nginx:stable

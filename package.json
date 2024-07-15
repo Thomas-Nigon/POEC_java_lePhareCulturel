@@ -1,6 +1,6 @@
 {
-  "name": "angular-boilerplate",
-  "version": "0.0.0",
+  "name": "le-phare-culturel",
+  "version": "0.0.1",
   "scripts": {
     "prepare": "husky",
     "ng": "ng",
