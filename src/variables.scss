@@ -3,27 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Londrina+Solid:wght@100;300;400;900&display=swap');
-/* @font-face {
-  font-family: 'Oxygen';
-  src: url('/fonts/Oxygen/Oxygen-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oxygen';
-  src: url('/fonts/Oxygen/Oxygen-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Oxygen';
-  src: url('/fonts/Oxygen/Oxygen-Ligth.ttf');
-  font-weight: 300;
-  font-style: normal;
-} */
 
 $text: #110307;
 $background: #f3e8eb;
+$backgroundT: hsla(344, 31%, 93%, 0.6);
 $primary: #df3462;
 $primaryT: hsla(344, 73%, 54%, 0.8);
 $secondary: #e0e1a6;
