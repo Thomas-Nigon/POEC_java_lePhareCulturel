@@ -1,0 +1,25 @@
+@import '../../../variables.scss';
+.userPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.75rem;
+  padding-bottom: 125px;
+  min-height: calc(100vh - (104.5px));
+  width: 100%;
+}
+
+.userPage-title {
+  color: $accent;
+}
+@media screen and (min-width: 768px) {
+  .userPage {
+    padding: 0 2rem;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    min-height: calc(100vh - 95.5px);
+    padding-bottom: 0px;
+  }
+}

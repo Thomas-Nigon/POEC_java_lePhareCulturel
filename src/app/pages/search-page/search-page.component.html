@@ -1,0 +1,19 @@
+<main class="searchPage">
+  <h2 class="search_page_title">L'Agenda du Phare</h2>
+  <app-filter-bar></app-filter-bar>
+  <article class="calendar_title_container">
+    <h3 class="calendar-title">
+      {{ displayDate }}
+      <button class="calendar-title__button" (click)="onClick()">
+        <span *ngIf="isOpen" class="material-symbols-outlined"> arrow_circle_up </span>
+        <span *ngIf="!isOpen" class="material-symbols-outlined"> arrow_circle_down </span>
+      </button>
+    </h3>
+  </article>
+  <div class="calendar-container" [ngClass]="{ close: !isOpen }">
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </div>
+  <section>
+    <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
+  </section>
+</main>

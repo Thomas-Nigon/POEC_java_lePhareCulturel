@@ -1,0 +1,92 @@
+@import '../../../../../variables.scss';
+
+.registerForm__container {
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+  margin-top: 15vh;
+  width: 90vw;
+  max-width: 600px;
+  border: 2px solid $primary;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.register__form {
+  color: $text;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register__form__credentials {
+  width: 100%;
+}
+.register__form__input {
+  all: unset;
+  color: $text;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  background-color: $background;
+  border: 2px solid $primary;
+  box-sizing: border-box;
+  width: 100%;
+}
+.register__form__input:focus {
+  background-color: white;
+  color: $text;
+}
+.register__form__button {
+  background-color: $secondary;
+  color: $text;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  border: 2px solid $primary;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.register__form__button:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+.registerForm__wrapper {
+  position: relative;
+}
+
+.registerForm__wrapper span {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  font-size: 26px;
+}
+.input-icon {
+  position: absolute;
+  top: 32%;
+  right: 6%;
+  width: 35px;
+}
+
+.invalid {
+  border-color: red;
+}
+
+.registerForm__passwordViewButton {
+  all: unset;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .registerForm__container {
+    padding: 2rem;
+  }
+}

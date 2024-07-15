@@ -1,0 +1,22 @@
+@import '../../../../../variables.scss';
+
+.footer {
+  background-color: $primary;
+  color: $background;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.footer__title {
+  background-color: $primary;
+  color: $background;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.footer__slogan {
+  color: $secondary;
+  text-align: center;
+}

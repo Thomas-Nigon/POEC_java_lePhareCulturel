@@ -1,0 +1,105 @@
+@import '../../../../../variables.scss';
+@import '../../../../../animations.scss';
+
+.myInfo {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(70vh - 135px);
+  min-width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.myInfo-image {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 200px;
+  max-height: 200px;
+}
+.myInfo__pseudo {
+  margin: 0 auto;
+}
+
+.myInfo__list {
+  margin-top: 1rem;
+}
+.myInfo-item {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.myInfo__item__title {
+  color: $primary;
+  display: flex;
+  justify-content: center;
+}
+.myInfo__aboutMe__title {
+  display: flex;
+  color: $primary;
+  padding-top: 0.5rem;
+}
+.myInfo__item__container {
+  display: flex;
+}
+.myInfo__item__container span {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.editInfo__form__button {
+  all: unset;
+  cursor: pointer;
+}
+.myInfo-item__description {
+  display: flex;
+  flex-direction: column;
+}
+.myInfo p {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.myInfo__form__input {
+  all: unset;
+  color: $text;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  background-color: $background;
+  border: 1px solid $primary;
+  box-sizing: border-box;
+  width: 100%;
+}
+.myInfo__form__input:focus {
+  background-color: white;
+  color: $text;
+}
+.myInfo-item__descriptionForm {
+  width: 100%;
+}
+.textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+}
+
+@media screen and (min-width: 900px) {
+  .myInfo {
+    max-height: calc(80vh - 135px);
+    padding: 1rem;
+  }
+
+  .myInfo-image {
+    animation: fadeInCenter 0.3s linear 0s 1 normal forwards;
+  }
+
+  .myInfo-item {
+    animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+  }
+
+  .myInfo__aboutMe__title {
+    animation: fadeInRight 0.8s ease 0s 1 normal forwards;
+  }
+
+  .myInfo p {
+    animation: fadeInBottom 0.5s ease 0s 1 normal forwards;
+  }
+}

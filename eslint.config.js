@@ -13,6 +13,7 @@ const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommen
 // Export our config array, which is composed together thanks to the typed utility function from typescript-eslint
 module.exports = tseslint.config(
   {
+    ignores: ['**/*.spec.ts'],
     languageOptions: {
       parserOptions: {
         project: './tsconfig.json',
@@ -63,6 +64,7 @@ module.exports = tseslint.config(
       'no-empty-function': 'off',
       '@typescript-eslint/no-empty-function': 'off',
       '@angular-eslint/no-empty-lifecycle-method': 'off',
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
   {

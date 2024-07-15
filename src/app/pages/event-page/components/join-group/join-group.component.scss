@@ -1,0 +1,48 @@
+@import '../../../../../variables.scss';
+
+.joinGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: $background;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+.joinGroup__groupContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+.joinGroup__titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closeButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+.closeButton span {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: $primary;
+  border-radius: 50%;
+}
+.closeButton span:hover {
+  color: $background;
+  background-color: $primary;
+}
+.joinGroup__title {
+  color: $primary;
+}
+.hidden {
+  height: 0;
+  animation: closeIn 0.2s ease-out;
+}

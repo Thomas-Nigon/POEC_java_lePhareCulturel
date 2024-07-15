@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Culinaire",
+    "img": "/assets/images/Restaurant.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Musique",
+    "img": "/assets/images/Musique.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Arts",
+    "img": "/assets/images/culture.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Sport",
+    "img": "/assets/images/sport.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Nature",
+    "img": "/assets/images/Nature3.jpg"
+  }
+]

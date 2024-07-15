@@ -1,0 +1,113 @@
+@import '../../../variables.scss';
+
+.titleBar {
+  background-color: $primary;
+  color: $background;
+  display: flex;
+  justify-content: center;
+}
+.titleBar-title {
+  margin: 1rem;
+  padding: 0.5rem;
+  color: $background;
+  border-bottom: 3px solid $background;
+  border-top: 3px solid $background;
+}
+
+.titleBar_nav {
+  display: none;
+}
+.titleBar_nav-item {
+  list-style: none;
+}
+
+@media screen and (min-width: 900px) {
+  .titleBar-title {
+    display: none;
+  }
+  .titleBar_nav {
+    margin: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $background;
+  }
+  .titleBar_nav-title {
+    border-top: 1px solid $background;
+    color: $background;
+  }
+  .titleBar_nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .titleBar_nav-item {
+    margin-left: 1.4rem;
+    cursor: pointer;
+  }
+  .titleBar_nav-link {
+    all: unset;
+    color: $background;
+    font-family: $titleFont;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .titleBar_nav-link:hover {
+    color: $text;
+  }
+  .active {
+    animation: myAnim 0.8s ease 0s 1 normal forwards;
+    border-bottom: 2px solid $accent;
+  }
+
+  @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      transform: translateY(-24px);
+    }
+
+    24% {
+      opacity: 1;
+    }
+
+    40% {
+      animation-timing-function: ease-in;
+      transform: translateY(-12px);
+    }
+
+    65% {
+      animation-timing-function: ease-in;
+      transform: translateY(-6px);
+    }
+
+    82% {
+      animation-timing-function: ease-in;
+      transform: translateY(-3px);
+    }
+
+    93% {
+      animation-timing-function: ease-in;
+      transform: translateY(-2px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+      animation-timing-function: ease-out;
+      transform: translateY(0px);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="event-card">
+  <img
+    class="event-image"
+    src="{{ eventList && eventList[eventId].event_pic }}"
+    alt="{{ eventList && eventList[eventId].event_desc }}" />
+  <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
+    <article class="eventCard__descriptionContainer__participants">
+      <div class="eventCard__participant__container">
+        <img
+          class="eventCard__participants__avatar"
+          *ngFor="let user of userList"
+          src="{{ userList && user.picture }}"
+          alt="the avatar of the user" />
+        <p>158 participants</p>
+      </div>
+    </article>
+    <h3 class="eventCard__eventDate">
+      {{ eventList && eventList[eventId].event_date }}
+    </h3>
+    <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
+    <p class="eventCard__eventDesc">
+      {{ eventList && eventList[eventId].event_desc }}
+    </p>
+    <article class="eventCard__descriptionContainer__price">
+      <h3 class="event__price">Tarif:</h3>
+      <p>Gratuit</p>
+    </article>
+    <button (click)="onClick()" class="event-button">Je participe</button>
+  </section>
+</div>

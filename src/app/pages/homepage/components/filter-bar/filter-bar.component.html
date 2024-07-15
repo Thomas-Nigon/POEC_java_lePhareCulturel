@@ -1,0 +1,8 @@
+<main class="filterBar">
+  <Ul class="filterBar-list">
+    <li class="filterBar-item" *ngFor="let category of categoryList">
+      <img class="filterBar-icon" src="{{ category.img }}" alt="" />
+      <p class="filterBar-name">{{ category.name }}</p>
+    </li>
+  </Ul>
+</main>

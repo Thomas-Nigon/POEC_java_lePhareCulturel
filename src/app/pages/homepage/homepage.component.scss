@@ -1,0 +1,37 @@
+@import '../../../variables.scss';
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+.homepage__title {
+  color: $primary;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.homepage__favorite {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .homepage {
+    padding-bottom: 0px;
+  }
+  .homepage__favorite {
+    flex-direction: row;
+  }
+}
