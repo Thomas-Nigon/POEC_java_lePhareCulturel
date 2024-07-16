@@ -16,4 +16,7 @@ export class UserService {
   createUser(newUser: NewUser): Observable<NewUser> {
     return this.http.post<NewUser>('backendRoute', newUser);
   }
+  getUser(): Observable<UserInterface> {
+    return this.http.get<UserInterface>(`backenRoute`);
+  }
 }

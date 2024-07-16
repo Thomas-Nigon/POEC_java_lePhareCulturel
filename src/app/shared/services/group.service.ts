@@ -12,4 +12,7 @@ export class GroupService {
   getAllGroups(): Observable<GroupInterface[]> {
     return this.http.get<GroupInterface[]>('assets/groups.json');
   }
+  createGroup(NewGroup: GroupInterface): Observable<GroupInterface> {
+    return this.http.post<GroupInterface>('backendRoute', NewGroup);
+  }
 }

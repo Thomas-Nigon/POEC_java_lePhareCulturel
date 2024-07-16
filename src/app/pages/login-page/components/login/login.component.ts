@@ -31,7 +31,7 @@ export class LoginComponent {
     this.userLogin = this.loginForm.value as userLoginInterface;
     console.warn(this.userLogin);
     console.warn('to the backend');
-    this.authService.logIn();
+    this.authService.userLogin(this.userLogin);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(['']);
   }
