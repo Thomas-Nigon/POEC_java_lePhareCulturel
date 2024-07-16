@@ -61,15 +61,20 @@
 .chatPage__container__chatWindow__textArea {
   padding: 3px;
   margin: 0.5rem;
-  background-color: $background;
+  background-color: $backgroundT;
   width: 90%;
   max-width: 500px;
   border-radius: 4px;
   font-size: 1rem;
   field-sizing: content;
   font-family: $mainFont;
+  resize: none;
+  border: 1px solid $primary;
 }
-
+.chatPage__container__chatWindow__textArea:focus {
+  background-color: $background;
+  outline: none !important;
+}
 .chatPage__textarea__sendButton {
   all: unset;
   width: 30px;
