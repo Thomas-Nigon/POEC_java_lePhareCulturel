@@ -1,0 +1,109 @@
+@import '../../../variables.scss';
+
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 101px);
+}
+
+.chatPage__container {
+  display: flex;
+  min-height: calc(100vh - 101px);
+  max-height: calc(100vh - 101px);
+  width: 100%;
+}
+.ownCard {
+  align-self: flex-end;
+}
+.chatPage__container__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  max-width: 75px;
+  background-color: $secondary;
+  border-right: 1px solid $primary;
+}
+.chatPage__container__aside__groupMember {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.chatPage__container__aside__userName {
+  display: none;
+  margin-left: 10px;
+}
+.chatPage__container__aside__avatarPic {
+  width: 50px;
+}
+.chatPage__container__chatWindow {
+  background-color: $backgroundT;
+  border-right: 1px solid $secondary;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: scroll;
+  scrollbar-width: none;
+  padding-bottom: 70px;
+}
+.textarea__container {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatPage__container__chatWindow__textArea {
+  padding: 3px;
+  margin: 0.5rem;
+  background-color: $background;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 4px;
+  font-size: 1rem;
+  field-sizing: content;
+  font-family: $mainFont;
+}
+
+.chatPage__textarea__sendButton {
+  all: unset;
+  width: 30px;
+  font-size: 2rem;
+  position: sticky;
+  bottom: 70px;
+  right: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+.chatPage__textarea__sendButton span {
+  font-size: 2rem;
+  color: $primary;
+}
+
+@media screen and (min-width: 900px) {
+  .chatPage {
+    min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container {
+    min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container__aside {
+    max-width: 400px;
+    align-items: flex-start;
+  }
+  .chatPage__container__aside__userName {
+    display: block;
+  }
+  .chatPage__container__chatWindow {
+    padding-bottom: 0px;
+  }
+}
