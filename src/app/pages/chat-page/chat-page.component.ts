@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { SingleMessageCardComponent } from './components/single-message-card/single-message-card.component';
 import { MessagesService } from '../../shared/services/messages.service';
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { messageInterface } from '../../models/message.model';
 
 @Component({
@@ -19,7 +19,7 @@ export class ChatPageComponent implements OnInit {
   fb = inject(FormBuilder);
   currentMessage!: string;
   userMessage = this.fb.group({
-    userMessage: [''],
+    userMessage: ['', [Validators.required, Validators.minLength(1)]],
   });
   ngOnInit() {
     this.messageService.getMessagesByGroup().subscribe(messages => {
@@ -41,5 +41,6 @@ export class ChatPageComponent implements OnInit {
       date: new Date().toLocaleString(),
       group: 1,
     });
+    this.userMessage.reset();
   }
 }

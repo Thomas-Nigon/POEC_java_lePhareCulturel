@@ -20,9 +20,15 @@
             name="userMessage"
             id="userMessage"
             formControlName="userMessage"
-            placeholder="Ecrivez votre message"></textarea>
+            placeholder="Ecrivez votre message"
+            >{{ currentMessage }}</textarea
+          >
         </form>
-        <button type="submit" (click)="submitMessage()" class="chatPage__textarea__sendButton">
+        <button
+          type="submit"
+          (click)="submitMessage()"
+          [disabled]="!userMessage.valid"
+          class="chatPage__textarea__sendButton">
           <span class="material-symbols-outlined"> send</span>
         </button>
       </div>
