@@ -7,14 +7,19 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { CreatGroupComponent } from './components/creat-group/creat-group.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'event/:id', component: EventPageComponent },
   {
     path: 'user/:id',
     component: UserPageComponent,
     canActivate: [AuthGuard],
+  },
+  { path: 'event/:id', component: EventPageComponent },
+  {
+    path: 'events/:id/groups/:id/chat',
+    component: ChatPageComponent,
   },
   {
     path: 'events',
@@ -27,7 +32,6 @@ export const routes: Routes = [
       { path: ':category', component: SearchPageComponent },
     ],
   },
-  { path: 'events/:category', component: SearchPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'group', component: CreatGroupComponent },

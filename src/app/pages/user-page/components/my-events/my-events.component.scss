@@ -15,7 +15,7 @@
 .myEvent_nav-container {
   z-index: 1;
   background-color: $primary;
-  color: $secondary;
+  color: $background;
   padding: 1rem;
   justify-content: center;
   width: 100%;
@@ -38,6 +38,11 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.title__event__history {
+  color: $primary;
+}
+
 .myEvent_eventContainer::-webkit-scrollbar {
   display: none;
 }

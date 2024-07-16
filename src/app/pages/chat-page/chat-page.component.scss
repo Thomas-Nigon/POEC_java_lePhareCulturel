@@ -1,0 +1,135 @@
+@import '../../../variables.scss';
+
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 101px);
+}
+
+.chatPage__container {
+  display: flex;
+  min-height: calc(100vh - 101px);
+  max-height: calc(100vh - 101px);
+  width: 100%;
+}
+.ownCard {
+  align-self: flex-end;
+}
+.chatPage__container__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 20%;
+  max-width: 75px;
+  background-color: $secondary;
+  border-right: 1px solid $primary;
+}
+.chatPage__container__aside__groupMember {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.chatPage__container__aside__userName {
+  display: none;
+  margin-left: 10px;
+}
+.chatPage__container__aside__avatarPic {
+  width: 50px;
+}
+.chatPage__container__chatWindow {
+  background-color: $backgroundT;
+  border-right: 1px solid $secondary;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding-bottom: 70px;
+}
+.textarea__container {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatPage__container__chatWindow__form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.chatPage__container__chatWindow__textArea {
+  padding: 3px;
+  margin: 0.5rem;
+  background-color: $backgroundT;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 4px;
+  font-size: 1rem;
+  field-sizing: content;
+  font-family: $mainFont;
+  resize: none;
+  border: 1px solid $primary;
+}
+.chatPage__container__chatWindow__textArea:focus {
+  background-color: $background;
+  outline: none !important;
+}
+.chatPage__textarea__sendButton {
+  all: unset;
+  height: 100%;
+  width: 30px;
+  position: sticky;
+  bottom: 70px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatPage__textarea__sendButton:disabled span {
+  color: darkgray;
+  cursor: not-allowed;
+}
+.chatPage__textarea__sendButton span {
+  padding: 0.3rem;
+  font-size: 2rem;
+  color: $background;
+  border-radius: 50%;
+}
+.chatPage__textarea__sendButton span:hover {
+  color: $primary;
+  background-color: $secondary;
+}
+.chatPage__textarea__sendButton:disabled span:hover {
+  color: $primary;
+  color: darkgray;
+  cursor: not-allowed;
+  background-color: $primary;
+}
+
+@media screen and (min-width: 900px) {
+  .chatPage {
+    min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container {
+    min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container__aside {
+    max-width: 400px;
+    align-items: flex-start;
+  }
+  .chatPage__container__aside__userName {
+    display: block;
+  }
+  .chatPage__container__chatWindow {
+    padding-bottom: 0px;
+  }
+}

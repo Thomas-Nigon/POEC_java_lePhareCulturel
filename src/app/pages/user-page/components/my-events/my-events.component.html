@@ -9,7 +9,7 @@
         </button>
         <button class="myEvent-button" [ngClass]="{ active: !incomingEvents }" (click)="onClickpast()">
           <span class="material-symbols-outlined"> history </span>
-          <h4>passés</h4>
+          <h4>Passés</h4>
         </button>
       </nav>
     </div>
@@ -21,8 +21,10 @@
             <h2 class="eventCard__category__name">{{ event.event_category }}</h2>
           </div>
           <div class="eventCard_descriptionContainer">
-            <h5>{{ event.event_name }}</h5>
-            <p>{{ event.event_date }} {{ event.event_time }}</p>
+            <div class="title__event__history">
+              <h5>{{ event.event_name }}</h5>
+            </div>
+            <p class="event__history__date">{{ event.event_date }} {{ event.event_time }}</p>
             <p class="eventCard__textDesc">{{ event.event_desc }}</p>
           </div>
         </article>
@@ -36,8 +38,10 @@
             <h2 class="eventCard__category__name">{{ event.event_category }}</h2>
           </div>
           <div class="eventCard_descriptionContainer">
-            <h5>{{ event.event_name }}</h5>
-            <p>{{ event.event_date }} {{ event.event_time }}</p>
+            <div class="title__event__history">
+              <h5>{{ event.event_name }}</h5>
+            </div>
+            <p class="event__history__date">{{ event.event_date }} {{ event.event_time }}</p>
             <p class="eventCard__textDesc">{{ event.event_desc }}</p>
           </div>
         </article>
