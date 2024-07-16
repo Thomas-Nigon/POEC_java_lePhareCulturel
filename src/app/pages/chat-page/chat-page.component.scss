@@ -58,6 +58,11 @@
   justify-content: center;
   align-items: center;
 }
+.chatPage__container__chatWindow__form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .chatPage__container__chatWindow__textArea {
   padding: 3px;
   margin: 0.5rem;
@@ -72,21 +77,24 @@
 
 .chatPage__textarea__sendButton {
   all: unset;
+  height: 100%;
   width: 30px;
-  font-size: 2rem;
   position: sticky;
   bottom: 70px;
-  right: 1px;
+  right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $background;
-  border-radius: 50%;
-  padding: 0.3rem;
 }
 .chatPage__textarea__sendButton span {
+  padding: 0.3rem;
   font-size: 2rem;
+  color: $background;
+  border-radius: 50%;
+}
+.chatPage__textarea__sendButton span:hover {
   color: $primary;
+  background-color: $secondary;
 }
 
 @media screen and (min-width: 900px) {
