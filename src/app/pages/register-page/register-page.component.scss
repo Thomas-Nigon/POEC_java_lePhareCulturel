@@ -3,22 +3,11 @@
 .registerPage {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 104.5px);
-}
-
-@media screen and (min-width: 768px) {
-  .registerPage {
-    min-height: calc(100vh - 104.5px);
-  }
+  min-height: calc(100vh - 101px);
 }
 
 @media screen and (min-width: 900px) {
   .registerPage {
-    min-height: calc(100vh - 84.5px);
-  }
-}
-@media screen and (min-width: 1300px) {
-  .registerPage {
-    min-height: calc(100vh - 95.5px);
+    min-height: calc(100vh - 91.5px);
   }
 }

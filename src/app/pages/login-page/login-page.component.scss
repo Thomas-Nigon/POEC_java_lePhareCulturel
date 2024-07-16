@@ -3,22 +3,12 @@
 .loginPage {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 104.5px);
-}
-
-@media screen and (min-width: 768px) {
-  .loginPage {
-    min-height: calc(100vh - 104.5px);
-  }
+  min-height: calc(100vh - 101px);
+  max-height: calc(100vh - 101px);
 }
 
 @media screen and (min-width: 900px) {
   .loginPage {
-    min-height: calc(100vh - 84.5px);
-  }
-}
-@media screen and (min-width: 1300px) {
-  .loginPage {
-    min-height: calc(100vh - 95.5px);
+    min-height: calc(100vh - 91.5px);
   }
 }
