@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { messageInterface } from '../../../../models/chat.model';
+import { messageInterface } from '../../../../models/message.model';
 import { CommonModule } from '@angular/common';
 
 @Component({

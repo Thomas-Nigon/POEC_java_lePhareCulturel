@@ -21,6 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+  scrollbar-width: none;
   width: 20%;
   max-width: 75px;
   background-color: $secondary;
@@ -45,7 +47,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scrollbar-width: none;
   padding-bottom: 70px;
 }
@@ -58,35 +61,58 @@
   justify-content: center;
   align-items: center;
 }
+.chatPage__container__chatWindow__form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .chatPage__container__chatWindow__textArea {
   padding: 3px;
   margin: 0.5rem;
-  background-color: $background;
+  background-color: $backgroundT;
   width: 90%;
   max-width: 500px;
   border-radius: 4px;
   font-size: 1rem;
   field-sizing: content;
   font-family: $mainFont;
+  resize: none;
+  border: 1px solid $primary;
 }
-
+.chatPage__container__chatWindow__textArea:focus {
+  background-color: $background;
+  outline: none !important;
+}
 .chatPage__textarea__sendButton {
   all: unset;
+  height: 100%;
   width: 30px;
-  font-size: 2rem;
   position: sticky;
   bottom: 70px;
-  right: 1px;
+  right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $background;
-  border-radius: 50%;
-  padding: 0.3rem;
+}
+.chatPage__textarea__sendButton:disabled span {
+  color: darkgray;
+  cursor: not-allowed;
 }
 .chatPage__textarea__sendButton span {
+  padding: 0.3rem;
   font-size: 2rem;
+  color: $background;
+  border-radius: 50%;
+}
+.chatPage__textarea__sendButton span:hover {
   color: $primary;
+  background-color: $secondary;
+}
+.chatPage__textarea__sendButton:disabled span:hover {
+  color: $primary;
+  color: darkgray;
+  cursor: not-allowed;
+  background-color: $primary;
 }
 
 @media screen and (min-width: 900px) {
