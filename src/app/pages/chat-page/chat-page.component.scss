@@ -14,6 +14,9 @@
   max-height: calc(100vh - 101px);
   width: 100%;
 }
+.ownCard {
+  align-self: flex-end;
+}
 .chatPage__container__aside {
   display: flex;
   flex-direction: column;
@@ -44,10 +47,11 @@
   justify-content: space-between;
   overflow: scroll;
   scrollbar-width: none;
+  padding-bottom: 70px;
 }
 .textarea__container {
   position: sticky;
-  bottom: 70px;
+  bottom: 0px;
   width: 100%;
   background-color: $primary;
   display: flex;
@@ -99,10 +103,7 @@
   .chatPage__container__aside__userName {
     display: block;
   }
-  .textarea__wrapper {
-    bottom: 0px;
-  }
-  .textarea__container {
-    bottom: 0px;
+  .chatPage__container__chatWindow {
+    padding-bottom: 0px;
   }
 }

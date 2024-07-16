@@ -8,7 +8,10 @@
     </aside>
 
     <section class="chatPage__container__chatWindow">
-      <app-single-message-card *ngFor="let message of messageList" [message]="message" />
+      <app-single-message-card
+        *ngFor="let message of messageList"
+        [message]="message"
+        [ngClass]="{ ownCard: message.user.id === 101 }" />
 
       <div class="textarea__container">
         <textarea
