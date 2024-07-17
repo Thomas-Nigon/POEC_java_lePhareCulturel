@@ -19,4 +19,8 @@ export class UserService {
   getUser(): Observable<UserInterface> {
     return this.http.get<UserInterface>(`backenRoute`);
   }
+  getUserLocal(): UserInterface {
+    const userData = localStorage.getItem('user');
+    return JSON.parse(userData ?? '{}') as UserInterface;
+  }
 }
