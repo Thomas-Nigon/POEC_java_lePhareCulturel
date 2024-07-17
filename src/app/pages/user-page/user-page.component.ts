@@ -22,15 +22,17 @@ export class UserPageComponent implements OnInit {
   userId!: number;
   testId!: number;
   userList!: UserInterface[];
+  myUser!: UserInterface;
   ngOnInit() {
     this.userService.getAllUser().subscribe(data => {
       this.userList = data;
     });
     this.route.params.subscribe(params => {
-      this.userId = +params['id']; //log the value of id
+      this.userId = +params['id'];
     });
     this.eventService.getAllEvents().subscribe(data => {
       this.eventList = data;
     });
+    this.myUser = this.userService.getUserLocal();
   }
 }
