@@ -6,7 +6,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { AuthGuard } from './shared/guards/auth.guard';
-import { CreatGroupComponent } from './components/creat-group/creat-group.component';
+import { CreateGroupComponent } from './pages/event-page/components/create-group/create-group.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 export const routes: Routes = [
@@ -34,7 +34,7 @@ export const routes: Routes = [
   },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'group', component: CreatGroupComponent },
+  { path: 'group', component: CreateGroupComponent },
 
   {
     path: '**',
