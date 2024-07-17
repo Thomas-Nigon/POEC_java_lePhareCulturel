@@ -29,13 +29,15 @@ export class AuthService {
   }
 
   userLogin(userCredentials: userLoginInterface): Observable<UserInterface> {
-    return this.http.post<UserInterface>('http://localhost:8080/api/v1/auth/sign-in', userCredentials).pipe(
-      map(data => {
-        this.myUser.next({ ...data, isLogged: true });
-        localStorage.setItem('user', JSON.stringify({ ...data, isLogged: true }));
-        return data;
-      })
-    );
+    return this.http
+      .post<UserInterface>('http://localhost:8080/api/v1/auth/sign-in', userCredentials, { withCredentials: true })
+      .pipe(
+        map(data => {
+          this.myUser.next({ ...data, isLogged: true });
+          localStorage.setItem('user', JSON.stringify({ ...data, isLogged: true }));
+          return data;
+        })
+      );
   }
   logOut() {
     this.isLoggedInSubject.next(false);
