@@ -2,8 +2,8 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 
-import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { routes } from './app.routes';
 import { cookieInterceptor } from './shared/interceptors/cookie.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [
