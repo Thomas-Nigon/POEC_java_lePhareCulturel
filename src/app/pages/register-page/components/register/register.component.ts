@@ -19,6 +19,7 @@ export class RegisterComponent {
   newUser: NewUser = {
     firstname: '',
     password: '',
+    confirm_password: '',
     profile_nickname: '',
     avatar: 'assets/images/avatars/avatar1.svg',
     profile_description: 'Parlez nous de vous !',
@@ -47,12 +48,13 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
-    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
     this.newUser.firstname = this.registerForm.value.firstname ?? '';
     this.newUser.lastname = this.registerForm.value.lastname ?? '';
     this.newUser.profile_nickname = this.registerForm.value.nickname ?? '';
     this.newUser.email = this.registerForm.value.credentials?.email ?? '';
-    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
+    this.newUser.password = this.registerForm.value.credentials?.password ?? '';
+    this.newUser.confirm_password = this.registerForm.value.credentials?.confirmPassword ?? '';
     this.userService.createUser(this.newUser);
+    console.warn(this.newUser);
   }
 }
