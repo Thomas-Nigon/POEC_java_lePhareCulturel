@@ -22,7 +22,7 @@ export class MyInfoComponent {
   fb = inject(FormBuilder);
   test = 'toto';
 
-  /*  editFirstnameForm = this.fb.group({
+  /*   editFirstnameForm = this.fb.group({
     firstname: [this.test, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
   });
   editLastnameForm = this.fb.group({
@@ -37,8 +37,8 @@ export class MyInfoComponent {
 
   editUserForm = this.fb.group({
     firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-    lastnamer: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-    desc: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
+    lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
   });
   onBlur() {
     this.edit = false;
