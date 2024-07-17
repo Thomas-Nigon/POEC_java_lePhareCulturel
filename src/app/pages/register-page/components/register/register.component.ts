@@ -16,12 +16,22 @@ import { UserService } from '../../../../shared/services/user.service';
 export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
-  newUser!: NewUser;
+  newUser: NewUser = {
+    firstname: '',
+    password: '',
+    profile_nickname: '',
+    avatar: 'assets/images/avatars/avatar1.svg',
+    profile_description: 'Parlez nous de vous !',
+    email: '',
+    lastname: '',
+  };
   userService = inject(UserService);
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+    nickname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
     credentials: this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, passwordValidator()]],
@@ -37,7 +47,12 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
-    this.newUser = this.registerForm.value as NewUser;
+    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
+    this.newUser.firstname = this.registerForm.value.firstname ?? '';
+    this.newUser.lastname = this.registerForm.value.lastname ?? '';
+    this.newUser.profile_nickname = this.registerForm.value.nickname ?? '';
+    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
+    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
     this.userService.createUser(this.newUser);
   }
 }

@@ -9,11 +9,12 @@ import { UserInterface } from '../../models/user.model';
 })
 export class AuthService {
   private myUser = new BehaviorSubject<UserInterface>({
-    first_name: '',
-    last_name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     description: '',
     picture: '',
+    nickname: '',
     isLogged: false,
   });
   public myUser$: Observable<UserInterface> = this.myUser.asObservable();
