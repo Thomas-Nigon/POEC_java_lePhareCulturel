@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { userLoginInterface } from '../../models/loginModel';
 import { HttpClient } from '@angular/common/http';
 import { UserInterface } from '../../models/user.model';
@@ -38,9 +38,15 @@ export class AuthService {
           this.myUser.next({ ...data, isLogged: true });
           localStorage.setItem('user', JSON.stringify({ ...data, isLogged: true }));
           return data;
+        }),
+        catchError(error => {
+          console.error('Login error:', error);
+
+          return throwError(() => new Error('Login failed. Please try again.'));
         })
       );
   }
+
   logOut() {
     this.isLoggedInSubject.next(false);
   }
