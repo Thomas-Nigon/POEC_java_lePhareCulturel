@@ -29,9 +29,9 @@
 .register__form__input {
   all: unset;
   color: $text;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1rem 0;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
   background-color: $background;
   border: 2px solid $primary;
   box-sizing: border-box;
@@ -65,7 +65,7 @@
 
 .registerForm__wrapper span {
   position: absolute;
-  top: 32px;
+  top: 14px;
   right: 20px;
   font-size: 26px;
 }
