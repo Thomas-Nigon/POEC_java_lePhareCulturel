@@ -1,23 +1,23 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { userLoginInterface } from '../../models/loginModel';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private http = inject(HttpClient);
   private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  // Function to get the current login state
   isLoggedIn() {
     return this.isLoggedInSubject.asObservable();
   }
 
-  // Function to log in the user
-  logIn() {
+  userLogin(userCredetials: userLoginInterface) {
+    this.http.post<userLoginInterface>('backendRoute', userCredetials);
     this.isLoggedInSubject.next(true);
   }
-
-  // Function to log out the user
   logOut() {
     this.isLoggedInSubject.next(false);
   }

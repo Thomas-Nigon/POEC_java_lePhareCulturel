@@ -38,7 +38,6 @@ export class RegisterComponent {
 
   onSubmit(): void {
     this.newUser = this.registerForm.value as NewUser;
-    console.warn('form submitted ! data sent:', this.registerForm.value);
     this.userService.createUser(this.newUser);
   }
 }
