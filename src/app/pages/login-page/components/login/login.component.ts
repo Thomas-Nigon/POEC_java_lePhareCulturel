@@ -29,10 +29,10 @@ export class LoginComponent {
   });
   onSubmit(): void {
     this.userLogin = this.loginForm.value as userLoginInterface;
-    this.authService.userLogin(this.userLogin);
-    this.authService.isLoggedIn();
+    this.authService.userLogin(this.userLogin).subscribe();
+    this.authService.login();
     this.router
-      .navigate([''])
+      .navigate(['user'])
       .then(() => {})
       .catch((error: unknown) => {
         console.error(error);
