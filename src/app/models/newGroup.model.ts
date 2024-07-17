@@ -1,4 +1,4 @@
-export interface NewgroupInterface {
+export interface NewGroupInterface {
   name: string;
   members: number;
   time: string;

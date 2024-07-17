@@ -1,0 +1,112 @@
+@import '../../../../../variables.scss';
+.createGroup {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $background;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+.closeButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.closeButton span {
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: $primary;
+}
+.closeButton span:hover {
+  background-color: $primary;
+  color: $background;
+}
+
+.createGroup__titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createGroup__title {
+  text-align: center;
+  color: $primary;
+}
+
+.createGroupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.createGroupForm label {
+  color: $primary;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.createGroupForm__input {
+  width: 100%;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid $primary;
+  background-color: $background;
+  color: $text;
+}
+.createGroupForm__input:focus {
+  background-color: white;
+  outline: $accent;
+  border: none;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+.create-button {
+  width: 50%;
+  font-size: 1rem;
+  align-self: center;
+  padding: 1rem 1.5rem;
+  color: $background;
+  background-color: $primary;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 2px solid $primary;
+}
+
+.create-button:hover {
+  background-color: $secondary;
+  color: $primary;
+}
+.hidden {
+  height: 0;
+  animation: closeIn 0.2s ease-out;
+}
+@keyframes closeIn {
+  0% {
+    height: 100%;
+  }
+
+  10% {
+    height: 300px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+}
