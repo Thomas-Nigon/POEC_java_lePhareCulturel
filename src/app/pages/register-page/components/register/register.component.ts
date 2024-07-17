@@ -54,7 +54,15 @@ export class RegisterComponent {
     this.newUser.email = this.registerForm.value.credentials?.email ?? '';
     this.newUser.password = this.registerForm.value.credentials?.password ?? '';
     this.newUser.confirm_password = this.registerForm.value.credentials?.confirmPassword ?? '';
-    this.userService.createUser(this.newUser);
-    console.warn(this.newUser);
+    this.userService.createUser(this.newUser).subscribe({
+      next: response => {
+        console.warn('User added:', response);
+        // Handle successful user creation here
+      },
+      error: err => {
+        console.error('Error occurred:', err);
+        // Handle the error here, e.g., display a message to the user
+      },
+    });
   }
 }

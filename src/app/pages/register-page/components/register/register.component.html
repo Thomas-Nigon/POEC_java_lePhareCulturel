@@ -8,8 +8,28 @@
       }"
       id="firstname"
       type="text"
-      placeholder="Nom d'utilisateur..."
+      placeholder="Votre nom ..."
       formControlName="firstname"
+      required />
+    <input
+      class="register__form__input"
+      [ngClass]="{
+        invalid: registerForm.get('lastname')?.invalid,
+      }"
+      id="lastname"
+      type="text"
+      placeholder="Votre Prénom..."
+      formControlName="lastname"
+      required />
+    <input
+      class="register__form__input"
+      [ngClass]="{
+        invalid: registerForm.get('nickname')?.invalid,
+      }"
+      id="nickname"
+      type="text"
+      placeholder="Votre pseudo ..."
+      formControlName="nickname"
       required />
     <div class="register__form__credentials" formGroupName="credentials">
       <input
