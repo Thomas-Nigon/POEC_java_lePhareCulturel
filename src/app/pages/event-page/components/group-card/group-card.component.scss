@@ -1,7 +1,7 @@
 @import '../../../../../variables.scss';
 
 .groupCard {
-  background-color: $secondary;
+  background-color: $primary;
   border: 2px solid $primary;
   border-radius: 0.5rem;
   padding: 0 1rem;
@@ -12,7 +12,10 @@
   flex-direction: column;
 }
 .groupCard__title {
-  color: $primary;
+  color: $background;
+}
+.groupCard__title5 {
+  color: $background;
 }
 
 .groupCard__membersList {
@@ -42,8 +45,8 @@
   font-size: 1rem;
   align-self: center;
   padding: 0.5rem 0.5rem;
-  color: $background;
-  background-color: $primary;
+  color: $primary;
+  background-color: $background;
   border-radius: 0.25rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
@@ -52,4 +55,8 @@
 .groupCard__button:hover {
   background-color: $secondary;
   color: $primary;
+}
+.button__wrapper {
+  width: 100%;
+  max-width: 360px;
 }

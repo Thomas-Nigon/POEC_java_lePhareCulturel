@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Culinaire",
+    "name": "Manger",
     "img": "/assets/images/Restaurant.jpeg"
   },
   {
@@ -11,7 +11,7 @@
   },
   {
     "id": 3,
-    "name": "Arts",
+    "name": "Art",
     "img": "/assets/images/culture.jpg"
   },
   {
