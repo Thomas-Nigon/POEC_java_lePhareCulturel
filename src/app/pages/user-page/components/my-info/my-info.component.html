@@ -1,6 +1,28 @@
 <section class="myInfo">
+  <div class="myInfo__edit__wrapper">
+    <button *ngIf="!edit" (click)="edit = !edit">
+      <span class="material-symbols-outlined"> edit</span>
+    </button>
+    <button *ngIf="edit" (click)="submitEditForm()">
+      <span class="material-symbols-outlined"> save</span>
+    </button>
+  </div>
   <img class="myInfo-image" src="{{ myUser ? myUser.picture : '' }}" alt="la photo de profil d'un utilisateur" />
-  <h5 class="myInfo__pseudo">{{ myUser ? myUser.nickname : '' }}</h5>
+  @if (edit) {
+    <form [formGroup]="editUserForm">
+      <input
+        class="myInfo__form__input"
+        [ngClass]="{
+          invalid: editUserForm.get('nickname')?.invalid,
+        }"
+        id="nickname"
+        type="text"
+        placeholder="{{ myUser ? myUser.nickname : '' }}"
+        formControlName="nickname" />
+    </form>
+  } @else {
+    <h5 class="myInfo__pseudo">{{ myUser ? myUser.nickname : '' }}</h5>
+  }
   <ul class="myInfo__list">
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
@@ -18,20 +40,10 @@
               id="firstname"
               type="text"
               placeholder="{{ myUser ? myUser.firstname : '' }}"
-              formControlName="firstname"
-              (blur)="onBlur()" />
+              formControlName="firstname" />
           </form>
         } @else {
           {{ myUser ? myUser.firstname : '' }}
-          @if (editUserForm.dirty) {
-            <button type="button" class="editInfo__form__button" (click)="submitEditFirstname()">
-              <span class="material-symbols-outlined"> save </span>
-            </button>
-          } @else {
-            <button class="editInfo__form__button" (click)="edit = true">
-              <span class="material-symbols-outlined"> edit </span>
-            </button>
-          }
         }
       </div>
     </li>
@@ -52,14 +64,10 @@
               id="lastname"
               type="text"
               placeholder="{{ myUser ? myUser.lastname : '' }}"
-              formControlName="lastname"
-              (blur)="onBlur()" />
+              formControlName="lastname" />
           </form>
         } @else {
           {{ myUser ? myUser.lastname : '' }}
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
         }
       </div>
     </li>
@@ -69,25 +77,7 @@
         Email:
       </h5>
       <div class="myInfo__item__container">
-        @if (editEmail) {
-          <form [formGroup]="editUserForm">
-            <input
-              class="myInfo__form__input"
-              [ngClass]="{
-                invalid: editUserForm.get('firstname')?.invalid,
-              }"
-              id="email"
-              type="email"
-              placeholder="{{ myUser ? myUser.email : '' }}"
-              formControlName="email"
-              (blur)="onBlur()" />
-          </form>
-        } @else {
-          {{ myUser ? myUser.email : '' }}
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
-        }
+        {{ myUser ? myUser.email : '' }}
       </div>
     </li>
     <li class="myInfo-item__description">
@@ -106,15 +96,11 @@
               id="description"
               type="textarea"
               placeholder="{{ myUser ? myUser.description : '' }}"
-              formControlName="description"
-              (blur)="onBlur()">
+              formControlName="description">
             </textarea>
           </form>
         } @else {
           <p>{{ myUser ? myUser.description : '' }}</p>
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
         }
       </div>
     </li>

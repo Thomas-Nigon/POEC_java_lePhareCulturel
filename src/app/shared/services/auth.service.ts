@@ -37,6 +37,7 @@ export class AuthService {
         map(data => {
           this.myUser.next({ ...data, isLogged: true });
           localStorage.setItem('user', JSON.stringify({ ...data, isLogged: true }));
+          this.login();
           return data;
         })
       );

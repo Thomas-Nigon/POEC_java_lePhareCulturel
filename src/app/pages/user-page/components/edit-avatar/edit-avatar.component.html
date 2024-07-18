@@ -8,7 +8,7 @@
   </article>
   <section class="avatar__list">
     <button type="button" (click)="onClick($event)" class="avatar__list__button" *ngFor="let avatar of avatarList">
-      <img class="avatar__list__image" id="{{ avatar.id }}" [src]="avatar.url" alt="Avatar" />
+      <img class="avatar__list__image" id="{{ avatar.id }}" [src]="avatar.url" alt="Avatar" [name]="avatar.url" />
     </button>
   </section>
 </article>
