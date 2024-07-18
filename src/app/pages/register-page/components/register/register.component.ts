@@ -57,11 +57,9 @@ export class RegisterComponent {
     this.userService.createUser(this.newUser).subscribe({
       next: response => {
         console.warn('User added:', response);
-        // Handle successful user creation here
       },
       error: err => {
         console.error('Error occurred:', err);
-        // Handle the error here, e.g., display a message to the user
       },
     });
   }

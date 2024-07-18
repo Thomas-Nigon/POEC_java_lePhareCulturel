@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -29,14 +30,16 @@ export class LoginComponent {
   });
   onSubmit(): void {
     this.userLogin = this.loginForm.value as userLoginInterface;
-    this.authService.userLogin(this.userLogin).subscribe();
-    this.authService.login();
-    this.router
-      .navigate(['user'])
-      .then(() => {})
-      .catch((error: unknown) => {
-        console.error(error);
-      });
+    this.authService.userLogin(this.userLogin).subscribe({
+      next: response => {
+        this.router
+          .navigate([''])
+          .then(() => {})
+          .catch((error: unknown) => {
+            console.error(error);
+          });
+      },
+    });
   }
 
   onFocus() {

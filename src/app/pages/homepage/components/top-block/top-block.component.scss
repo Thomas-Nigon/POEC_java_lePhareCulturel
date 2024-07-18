@@ -10,7 +10,6 @@
 }
 
 .text-block {
-  padding: 20px;
   margin: 1rem;
   flex: 2;
   display: flex;
@@ -133,7 +132,7 @@
 @media screen and (min-width: 900px) {
   .container {
     flex-direction: row;
-    height: 62vh;
+    height: 55vh;
     align-items: unset;
   }
 }

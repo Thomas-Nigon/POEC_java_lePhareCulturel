@@ -1,9 +1,6 @@
-export interface UserInterface {
+export interface EditedUserInterface {
   firstname: string | null;
   lastname: string | null;
   nickname: string | null;
-  email: string | null;
-  avatar: string | null;
   description: string | null;
-  isLogged: boolean | null;
 }
