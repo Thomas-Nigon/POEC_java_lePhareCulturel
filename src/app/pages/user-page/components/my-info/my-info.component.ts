@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class MyInfoComponent {
   @Input() userList: UserInterface[] = [];
   @Input() userId!: number;
+  @Input() myUser!: UserInterface;
   edit = false;
   editFirstname = false;
   editLastname = false;
