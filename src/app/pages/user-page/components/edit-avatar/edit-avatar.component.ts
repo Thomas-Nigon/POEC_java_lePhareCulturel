@@ -3,6 +3,7 @@ import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
+import { EditAvatarInterface } from '../../../../models/editAvatar.model';
 
 @Component({
   selector: 'app-edit-avatar',
@@ -16,17 +17,20 @@ export class EditAvatarComponent implements OnInit {
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
   selectedId = 0;
-  newAvatar!: string;
+  newAvatar!: EditAvatarInterface;
 
   ngOnInit() {
     this.avatarService.getAvatarList().subscribe(data => {
       this.avatarList = data;
+      this.newAvatar = {
+        url: this.avatarList[this.selectedId].url,
+      };
     });
   }
 
   onClick(event: Event) {
     const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
-    this.newAvatar = avatarUrl ?? '';
+    this.newAvatar.url = avatarUrl ?? '';
     const avatarId = (event.target as HTMLInputElement).getAttribute('id');
     this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
     this.userService.editUserAvatar(this.newAvatar).subscribe({

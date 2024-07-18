@@ -5,6 +5,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
 import { NewUser } from '../../models/newUser.models';
 import { environment } from '../../../environments/environment';
 import { EditedUserInterface } from '../../models/editUser.model';
+import { EditAvatarInterface } from '../../models/editAvatar.model';
 
 @Injectable({
   providedIn: 'root',
@@ -45,7 +46,7 @@ export class UserService {
 
   editUser(editedUser: EditedUserInterface): Observable<EditedUserInterface> {
     return this.http
-      .put<EditedUserInterface>(`${this.apiUrl}/users/edit/user`, editedUser, { withCredentials: true })
+      .put<EditedUserInterface>(`${this.apiUrl}/users/profile`, editedUser, { withCredentials: true })
       .pipe(
         tap((response: EditedUserInterface) => {
           console.warn('User edited successfully:', response);
@@ -53,9 +54,9 @@ export class UserService {
         catchError(this.handleError)
       );
   }
-  editUserAvatar(newAvatar: string): Observable<string> {
-    return this.http.put<string>(`${this.apiUrl}/users/edit/avatar`, newAvatar, { withCredentials: true }).pipe(
-      tap((response: string) => {
+  editUserAvatar(newAvatar: EditAvatarInterface): Observable<EditAvatarInterface> {
+    return this.http.put<EditAvatarInterface>(`${this.apiUrl}/users/avatar`, newAvatar, { withCredentials: true }).pipe(
+      tap((response: EditAvatarInterface) => {
         console.warn('User edited successfully:', response);
       }),
       catchError(this.handleError)

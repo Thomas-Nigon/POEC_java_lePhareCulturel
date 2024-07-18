@@ -46,6 +46,14 @@ export class MyInfoComponent implements OnInit {
     this.edit = false;
     this.myUser = { ...this.myUser, ...this.editUserForm.value };
     this.editedUser = { ...this.editedUser, ...this.editUserForm.value };
+    this.userService.editUser(this.editedUser).subscribe({
+      next: response => {
+        console.warn('User eited successfully:', response);
+      },
+      error: err => {
+        console.error('Error occurred:', err);
+      },
+    });
     console.warn('my edit:', this.editedUser);
     console.warn('my user:', this.myUser);
   }
