@@ -1,8 +1,9 @@
 export interface UserInterface {
-  id: number;
-  first_name: string;
-  last_name: string;
+  firstname: string;
+  lastname: string;
+  nickname: string;
   email: string;
   picture: string;
   description: string;
+  isLogged: boolean;
 }

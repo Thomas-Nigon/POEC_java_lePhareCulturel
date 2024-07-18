@@ -29,11 +29,14 @@ export class LoginComponent {
   });
   onSubmit(): void {
     this.userLogin = this.loginForm.value as userLoginInterface;
-    console.warn(this.userLogin);
-    console.warn('to the backend');
-    this.authService.userLogin(this.userLogin);
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.router.navigate(['']);
+    this.authService.userLogin(this.userLogin).subscribe();
+    this.authService.login();
+    this.router
+      .navigate(['user'])
+      .then(() => {})
+      .catch((error: unknown) => {
+        console.error(error);
+      });
   }
 
   onFocus() {

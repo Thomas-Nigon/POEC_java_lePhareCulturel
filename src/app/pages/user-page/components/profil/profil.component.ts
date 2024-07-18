@@ -16,6 +16,7 @@ import { UserInterface } from '../../../../models/user.model';
 export class ProfilComponent {
   @Input() userId!: number;
   @Input() userList!: UserInterface[];
+  @Input() myUser!: UserInterface;
   path: string | null = 'home';
 
   onClick(event: Event) {
