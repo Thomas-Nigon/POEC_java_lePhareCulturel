@@ -14,10 +14,10 @@
         <p>158 participants</p>
       </div>
     </article>
+    <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
     <h3 class="eventCard__eventDate">
       {{ eventList && eventList[eventId].event_date }}
     </h3>
-    <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
     <p class="eventCard__eventDesc">
       {{ eventList && eventList[eventId].event_desc }}
     </p>

@@ -7,7 +7,7 @@
     </button>
   </div>
   <form class="createGroupForm" [formGroup]="createGroupForm" [ngClass]="{ hidden: hideCreateGroup }">
-    <label for="groupName">Nom du Groupe</label>
+    <label for="groupName">Nom du groupe</label>
     <input
       type="text"
       id="groupName"
@@ -15,14 +15,14 @@
       formControlName="groupName"
       placeholder="Entrez le nom du groupe" />
 
-    <label for="participantNumber">Nombre de Participants</label>
+    <label for="participantNumber">Nombre de participants</label>
     <input
       type="number"
       id="participantNumber"
       class="createGroupForm__input"
       placeholder="Entrez le nombre de participants" />
 
-    <label for="meetingTime">Date et Heure de la Rencontre</label>
+    <label for="meetingTime">Date et heure de la rencontre</label>
     <input type="time" id="meetingTime" class="createGroupForm__input" formControlName="meetingTime" />
 
     <label for="description">Description</label>
@@ -33,6 +33,6 @@
       formControlName="description"
       placeholder="Entrez la description du groupe"></textarea>
 
-    <button (click)="submitGroupForm()" class="create-button">Créer un Groupe</button>
+    <button (click)="submitGroupForm()" class="create-button">Créer un groupe</button>
   </form>
 </div>
