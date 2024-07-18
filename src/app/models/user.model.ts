@@ -3,7 +3,7 @@ export interface UserInterface {
   lastname: string | null;
   nickname: string | null;
   email: string | null;
-  picture: string | null;
+  avatar: string | null;
   description: string | null;
   isLogged: boolean | null;
 }

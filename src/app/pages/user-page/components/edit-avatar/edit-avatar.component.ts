@@ -1,9 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
 import { EditAvatarInterface } from '../../../../models/editAvatar.model';
+import { UserInterface } from '../../../../models/user.model';
 
 @Component({
   selector: 'app-edit-avatar',
@@ -13,6 +14,7 @@ import { EditAvatarInterface } from '../../../../models/editAvatar.model';
   styleUrl: './edit-avatar.component.scss',
 })
 export class EditAvatarComponent implements OnInit {
+  @Input() myUser!: UserInterface;
   private avatarService = inject(AvatarService);
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
@@ -35,7 +37,8 @@ export class EditAvatarComponent implements OnInit {
     this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
     this.userService.editUserAvatar(this.newAvatar).subscribe({
       next: response => {
-        console.warn('User added:', response);
+        console.warn('edit avatar successful:', response);
+        this.myUser.avatar = this.newAvatar.url;
       },
       error: err => {
         console.error('Error occurred:', err);

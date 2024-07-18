@@ -7,7 +7,7 @@
       <span class="material-symbols-outlined"> save</span>
     </button>
   </div>
-  <img class="myInfo-image" src="{{ myUser ? myUser.picture : '' }}" alt="la photo de profil d'un utilisateur" />
+  <img class="myInfo-image" src="{{ myUser ? myUser.avatar : '' }}" alt="la photo de profil d'un utilisateur" />
   @if (edit) {
     <form [formGroup]="editUserForm">
       <input
