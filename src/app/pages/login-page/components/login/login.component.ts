@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../../shared/services/auth.service';
-import { userLoginInterface } from '../../../../models/loginModel';
+import { UserLoginInterface } from '../../../../models/loginModel';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
 
@@ -17,10 +16,10 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  userLogin!: UserLoginInterface;
   authService = inject(AuthService);
   router = inject(Router);
   location = inject(Location);
-  userLogin!: userLoginInterface;
   fb: FormBuilder = inject(FormBuilder);
   pwdHidden = true;
   isFocused = false;
@@ -33,7 +32,7 @@ export class LoginComponent {
     password: [''],
   });
   onSubmit(): void {
-    this.userLogin = this.loginForm.value as userLoginInterface;
+    this.userLogin = this.loginForm.value as UserLoginInterface;
     this.authService.userLogin(this.userLogin).subscribe({
       next: response => {
         Swal.fire({
