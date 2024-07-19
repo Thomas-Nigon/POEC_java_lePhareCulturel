@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PaginationDummyService {
+  http = inject(HttpClient);
   private totalItems = 100;
 
   getItems(page = 1, itemsPerPage = 10): Observable<string[]> {
