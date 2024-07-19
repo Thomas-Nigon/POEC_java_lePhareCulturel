@@ -1,5 +1,18 @@
 <main class="searchPage">
   <h2 class="search_page_title">L'Agenda du Phare</h2>
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false">
+    <div class="data-card" *ngFor="let item of items">
+      {{ item }}
+    </div>
+
+    <div *ngIf="isLoading">Loading...</div>
+  </div>
   <app-filter-bar></app-filter-bar>
   <article class="calendar_title_container">
     <h3 class="calendar-title">

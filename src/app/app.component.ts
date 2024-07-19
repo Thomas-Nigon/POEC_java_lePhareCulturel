@@ -10,6 +10,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { EventPageComponent } from './pages/event-page/event-page.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
     FullCalendarModule,
     NavigationComponent,
     ChatPageComponent,
+    InfiniteScrollDirective,
   ],
 
   templateUrl: './app.component.html',
