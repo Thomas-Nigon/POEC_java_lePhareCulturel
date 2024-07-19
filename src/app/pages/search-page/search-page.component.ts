@@ -29,7 +29,7 @@ export class SearchPageComponent implements OnInit {
   eventList!: EventInterface[];
 
   ngOnInit() {
-    this.eventService.getAllEventsbackend().subscribe(data => (console.warn(data), (this.eventList = data)));
+    this.eventService.getAllEvents().subscribe(data => (console.warn(data), (this.eventList = data)));
   }
 
   calendarOptions: CalendarOptions = {
