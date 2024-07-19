@@ -1,8 +1,10 @@
-import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
-import { userLoginInterface } from '../../models/loginModel';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
 import { UserInterface } from '../../models/user.model';
+import { userLoginInterface } from '../../models/loginModel';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -36,9 +38,11 @@ export class AuthService {
 
     return throwError(() => new Error(errorMessage));
   }
+
   isLoggedIn() {
     return this.isLoggedInSubject.asObservable();
   }
+
   login() {
     this.isLoggedInSubject.next(true);
   }
@@ -59,7 +63,24 @@ export class AuthService {
         })
       );
   }
+
   logOut() {
+    this.isLoggedInSubject.next(false);
+    //localStorage.removeItem('user');
     localStorage.setItem('user', JSON.stringify({ isLogged: false }));
+  }
+
+  refreshToken(): Observable<unknown> {
+    return this.http.post<unknown>('http://localhost:8080/api/token/refresh', {}, { withCredentials: true }).pipe(
+      tap(response => {
+        // Le serveur met à jour le cookie HttpOnly automatiquement
+        // eslint-disable-next-line no-console
+        console.log('Tokens refreshed successfully', response);
+      }),
+      catchError(error => {
+        this.logOut();
+        return throwError(() => new Error(error.message || 'Token refresh error'));
+      })
+    );
   }
 }
