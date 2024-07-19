@@ -7,6 +7,7 @@ import { UserService } from '../../../shared/services/user.service';
 import { UserInterface } from '../../../models/user.model';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../shared/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-event-page-event-card',
@@ -47,6 +48,11 @@ export class EventPageEventCardComponent implements OnInit {
         this.testhidden.emit(this.hidden);
       } else {
         this.notLogged = true;
+        void Swal.fire({
+          icon: 'warning',
+          title: 'Connexion requise',
+          text: 'Vous devez etre connecté pour rejoindre un groupe',
+        });
       }
     });
   }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -17,9 +17,10 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  userLogin!: userLoginInterface;
   authService = inject(AuthService);
   router = inject(Router);
+  location = inject(Location);
+  userLogin!: userLoginInterface;
   fb: FormBuilder = inject(FormBuilder);
   pwdHidden = true;
   isFocused = false;
@@ -40,12 +41,7 @@ export class LoginComponent {
           title: 'Succès',
           text: 'Authentification réussie, redirection ...',
         });
-        this.router
-          .navigate([''])
-          .then(() => {})
-          .catch((error: unknown) => {
-            console.error(error);
-          });
+        this.location.back();
       },
       error: err => {
         Swal.fire({
