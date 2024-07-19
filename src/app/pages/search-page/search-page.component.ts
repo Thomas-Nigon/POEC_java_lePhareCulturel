@@ -117,4 +117,20 @@ export class SearchPageComponent implements OnInit {
         console.error(err);
       });
   }
+
+  geteventById() {
+    this.eventService.geteventById(4).subscribe(data => {
+      console.warn(data);
+    });
+  }
+  getGroupListByEvent() {
+    this.eventService.getGroupListByEvent(4).subscribe(data => {
+      console.warn(data);
+    });
+  }
+  getSingleGroupByEvent() {
+    this.eventService.getSingleGroupByEvent(4, 1).subscribe(data => {
+      console.warn(data);
+    });
+  }
 }

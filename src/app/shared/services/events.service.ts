@@ -16,4 +16,16 @@ export class EventsService {
   getAllEventsbackend() {
     return this.http.get<EventInterface[]>(`${this.apiUrl}/events`);
   }
+  geteventById(id: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${id}`);
+  }
+  getGroupListByEvent(id: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${id}/groups`);
+  }
+  getSingleGroupByEvent(eventId: number, groupId: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${eventId}/groups/${groupId}`);
+  }
 }
