@@ -60,6 +60,6 @@ export class AuthService {
       );
   }
   logOut() {
-    this.isLoggedInSubject.next(false);
+    localStorage.setItem('user', JSON.stringify({ isLogged: false }));
   }
 }

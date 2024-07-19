@@ -71,7 +71,7 @@ export class SearchPageComponent implements OnInit {
   ///////////////////////////
 
   ngOnInit() {
-    this.eventService.getAllEvents().subscribe(data => (this.eventList = data));
+    this.eventService.getAllEventsbackend().subscribe(data => (console.warn(data), (this.eventList = data)));
     this.loadData();
   }
 

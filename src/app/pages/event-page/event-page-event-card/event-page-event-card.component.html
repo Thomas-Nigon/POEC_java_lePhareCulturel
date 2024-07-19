@@ -11,7 +11,7 @@
           *ngFor="let user of userList"
           src="{{ userList && user.avatar }}"
           alt="the avatar of the user" />
-        <p>158 participants</p>
+        <p>{{ userList.length }} participants</p>
       </div>
     </article>
     <h3 class="eventCard__eventDate">
@@ -25,6 +25,7 @@
       <h3 class="event__price">Tarif:</h3>
       <p>Gratuit</p>
     </article>
+    <!-- <p class="notLogged" *ngIf="notLogged">Vous devez etre connecté pour rejoindre un groupe</p> -->
     <button (click)="onClick()" class="event-button">Je participe</button>
   </section>
 </div>
