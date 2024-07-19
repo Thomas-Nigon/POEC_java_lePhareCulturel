@@ -61,15 +61,15 @@ export class RegisterComponent {
       next: response => {
         Swal.fire({
           icon: 'success',
-          title: 'Inscription reussie',
-          text: 'Votre compte a bien ete cree, vous pouvez vous connecter',
+          title: 'Inscription réussie',
+          text: 'Votre compte a bien été crée. Vérifiez vos Emails pour activer votre compte.',
         });
       },
       error: err => {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Une erreur est survenue, veuillez reessayer',
+          text: 'Une erreur est survenue, veuillez réessayer',
         });
       },
     });
