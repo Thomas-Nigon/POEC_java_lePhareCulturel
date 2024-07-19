@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UserService } from '../../../shared/services/user.service';
 import { UserInterface } from '../../../models/user.model';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-event-page-event-card',
@@ -15,11 +16,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './event-page-event-card.component.scss',
 })
 export class EventPageEventCardComponent implements OnInit {
+  authService = inject(AuthService);
   eventService = inject(EventsService);
   userService = inject(UserService);
   eventList!: EventInterface[];
   userList!: UserInterface[];
   eventTest!: EventInterface[];
+  notLogged = false;
   @Output() testhidden = new EventEmitter<boolean>();
   @Input() hidden!: boolean;
   // hidden = false;
@@ -38,7 +41,13 @@ export class EventPageEventCardComponent implements OnInit {
     });
   }
   onClick() {
-    this.hidden = true;
-    this.testhidden.emit(this.hidden);
+    this.authService.isLoggedIn().subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+        this.hidden = true;
+        this.testhidden.emit(this.hidden);
+      } else {
+        this.notLogged = true;
+      }
+    });
   }
 }
