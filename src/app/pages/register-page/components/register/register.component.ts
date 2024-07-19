@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
@@ -5,6 +7,7 @@ import { passwordValidator } from '../../../../shared/validators/passwordValidat
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
 import { NewUser } from '../../../../models/newUser.models';
 import { UserService } from '../../../../shared/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -56,10 +59,18 @@ export class RegisterComponent {
     this.newUser.confirm_password = this.registerForm.value.credentials?.confirmPassword ?? '';
     this.userService.createUser(this.newUser).subscribe({
       next: response => {
-        console.warn('User added:', response);
+        Swal.fire({
+          icon: 'success',
+          title: 'Inscription reussie',
+          text: 'Votre compte a bien ete cree, vous pouvez vous connecter',
+        });
       },
       error: err => {
-        console.error('Error occurred:', err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Une erreur est survenue, veuillez reessayer',
+        });
       },
     });
   }

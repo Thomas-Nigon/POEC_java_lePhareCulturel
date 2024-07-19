@@ -11,4 +11,7 @@ export class EventsService {
   getAllEvents() {
     return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
   }
+  getAllEventsbackend() {
+    return this.http.get<EventInterface[]>('http://localhost:8080/api/v1/events');
+  }
 }
