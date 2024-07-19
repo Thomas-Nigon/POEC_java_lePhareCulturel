@@ -38,7 +38,7 @@ export class LoginComponent {
         Swal.fire({
           icon: 'success',
           title: 'Succès',
-          text: 'Authentification reussie, redirection ...',
+          text: 'Authentification réussie, redirection ...',
         });
         this.router
           .navigate([''])
