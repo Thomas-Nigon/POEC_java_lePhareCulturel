@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
-import { userLoginInterface } from '../../models/loginModel';
+import { UserLoginInterface } from '../../models/loginModel';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { UserInterface } from '../../models/user.model';
 import { environment } from '../../../environments/environment';
@@ -43,7 +43,7 @@ export class AuthService {
     this.isLoggedInSubject.next(true);
   }
 
-  userLogin(userCredentials: userLoginInterface): Observable<UserInterface> {
+  userLogin(userCredentials: UserLoginInterface): Observable<UserInterface> {
     return this.http
       .post<UserInterface>(`${this.apiUrl}/auth/sign-in`, userCredentials, { withCredentials: true })
       .pipe(

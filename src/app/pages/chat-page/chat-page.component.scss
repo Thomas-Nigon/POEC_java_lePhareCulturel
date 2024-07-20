@@ -14,6 +14,11 @@
   max-height: calc(100vh - 101px);
   width: 100%;
 }
+.chatPage__container__main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .ownCard {
   align-self: flex-end;
 }
