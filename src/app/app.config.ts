@@ -1,9 +1,16 @@
 import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 import { routes } from './app.routes';
-import { cookieInterceptor } from './shared/interceptors/cookie.interceptor';
+import { authInterceptor } from './shared/interceptors/auth.interceptor';
+import { AuthService } from './shared/services/auth.service';
+
+export function initializeAuth(authService: AuthService) {
+  return () => {
+    authService.initializeAuthState().subscribe();
+  };
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +21,14 @@ export const appConfig: ApplicationConfig = {
         cookieName: 'XSRF-TOKEN',
         headerName: 'X-XSRF-TOKEN',
       }),
-      withInterceptors([cookieInterceptor])
+      withInterceptors([authInterceptor])
     ),
     provideIonicAngular(),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeAuth,
+      deps: [AuthService],
+      multi: true,
+    },
   ],
 };
