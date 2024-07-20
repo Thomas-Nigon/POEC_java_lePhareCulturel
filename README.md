@@ -1,42 +1,61 @@
-# AngularBoilerplate
+# Le Phare Culturel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
+Bienvenue sur le dépôt GitHub du projet **Le Phare Culturel**. Ce projet a été développé dans le cadre de la POEC Java et a pour objectif de créer une application pour la gestion d'un centre culturel.
 
-## Mandatory Extensions
+## Table des matières
 
-To ensure code quality and consistency, you must install the following extensions in your code editor:
+- [Description](#description)
+- [Fonctionnalités](#fonctionnalités)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Contributeurs](#contributeurs)
+- [Licence](#licence)
 
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+## Description
 
-## Development server
+Le Phare Culturel est une application permettant de gérer les événements, les inscriptions et les utilisateurs d'un centre culturel.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Fonctionnalités
 
-## Code scaffolding
+- Gestion des utilisateurs (inscription, connexion, rôles)
+- Gestion des événements (création, modification, suppression)
+- Inscription aux événements
+- Consultation du calendrier des événements
+- Administration des utilisateurs et des événements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prérequis
 
-## Build
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Un IDE compatible Java (IntelliJ IDEA, Eclipse, etc.)
+- Java JDK 11 ou plus récent
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/Thomas-Nigon/POEC_java_lePhareCulturel.git
+    ```
 
-## Running end-to-end tests
+2. Accédez au répertoire du projet :
+    ```bash
+    cd POEC_java_lePhareCulturel
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Importez le projet dans votre IDE préféré.
 
-## Linting
+4. Assurez-vous que toutes les dépendances sont correctement installées.
 
-Run `ng lint` to lint the project using ESLint. To automatically fix linting errors, run `npm run lint:fix`.
+## Utilisation
 
-## Formatting
+Une fois le projet importé dans votre IDE, vous pouvez le lancer en exécutant la méthode principale dans la classe de démarrage principale.
 
-Run `npm run prettier:check` to check the code formatting using Prettier. To automatically format the code, run `npm run prettier:write`.
+## Contributeurs
 
-## Further help
+- [Thomas Nigon](https://github.com/Thomas-Nigon)
+- Autres contributeurs...
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
