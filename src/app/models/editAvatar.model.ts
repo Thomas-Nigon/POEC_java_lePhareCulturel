@@ -1,3 +1,3 @@
-export interface EditAvatarInterface {
+export interface UserEditProfileAvatarInterface {
   url: string;
 }

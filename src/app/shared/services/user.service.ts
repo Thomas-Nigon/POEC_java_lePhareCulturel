@@ -1,63 +1,53 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { UserInterface } from '../../models/user.model';
+import { Injectable } from '@angular/core';
+import { UserProfileInterface } from '../../models/user-profile-interface.model';
 import { catchError, Observable, tap, throwError } from 'rxjs';
-import { NewUser } from '../../models/newUser.models';
-import { environment } from '../../../environments/environment';
-import { EditedUserInterface } from '../../models/editUser.model';
-import { EditAvatarInterface } from '../../models/editAvatar.model';
+import { UserRegistrationData } from '../../models/user-registration-data.models';
+import { UserEditProfileInterface } from '../../models/editUser.model';
+import { UserEditProfileAvatarInterface } from '../../models/editAvatar.model';
+import { RouteDefinition } from '../../RouteDefinition';
+import { CustomHttpApiService } from './custom-http-api.service';
+import { AvatarInterface } from '../../models/avatar.model';
+import { AppUiMessage } from '../app.ui-message';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
-  private http = inject(HttpClient);
-  private apiUrl = environment.apiUrl;
-
-  private handleError(error: HttpErrorResponse): Observable<never> {
-    let errorMessage = 'An unknown error occurred!';
-
-    if (error.error instanceof ErrorEvent) {
-      errorMessage = `A client-side error occurred: ${error.error.message}`;
-    } else {
-      errorMessage = `Backend returned code ${error.status.toString()}, body was: ${(error.error as { error_message: string }).error_message}`;
-    }
-
-    console.error(errorMessage);
-
-    return throwError(() => new Error(errorMessage));
+export class UserService extends CustomHttpApiService {
+  getAllUser(): Observable<UserProfileInterface[]> {
+    return throwError(() => new Error('Niet'));
   }
-  getAllUser(): Observable<UserInterface[]> {
-    return this.http.get<UserInterface[]>(`assets/MOCK_DATA_users.json`);
-  }
-  createUser(newUser: NewUser): Observable<NewUser> {
-    return this.http.post<NewUser>(`${this.apiUrl}/auth/sign-up`, newUser).pipe(
-      tap((response: NewUser) => {
-        console.warn('User created successfully:', response);
+
+  createUser(newUser: UserRegistrationData): Observable<UserRegistrationData> | null {
+    return this.http.post<UserRegistrationData>(RouteDefinition.Auth.REGISTER_URL, newUser).pipe(
+      tap((response: UserRegistrationData) => {
+        console.warn(AppUiMessage.SUCCESS_MESSAGES.SUCCESS_CREATE_MESSAGE, response);
       }),
       catchError(this.handleError)
     );
+
   }
 
-  getUserLocal(): UserInterface {
+  getUserLocal(): UserProfileInterface {
     const userData = localStorage.getItem('user');
-    return JSON.parse(userData ?? '{}') as UserInterface;
+    return JSON.parse(userData ?? '{}') as UserProfileInterface;
   }
 
-  editUser(editedUser: EditedUserInterface): Observable<EditedUserInterface> {
+  editUser(editedUser: UserEditProfileInterface): Observable<UserEditProfileInterface> | null {
     return this.http
-      .put<EditedUserInterface>(`${this.apiUrl}/users/profile`, editedUser, { withCredentials: true })
+      .put<UserEditProfileInterface>(RouteDefinition.Users.PROFILE_URL, editedUser, { withCredentials: true })
       .pipe(
-        tap((response: EditedUserInterface) => {
-          console.warn('User edited successfully:', response);
+        tap((response: UserEditProfileInterface) => {
+          console.warn(AppUiMessage.SUCCESS_MESSAGES.SUCCESS_EDIT_MESSAGE, response);
         }),
         catchError(this.handleError)
       );
   }
-  editUserAvatar(newAvatar: EditAvatarInterface): Observable<EditAvatarInterface> {
-    return this.http.put<EditAvatarInterface>(`${this.apiUrl}/users/avatar`, newAvatar, { withCredentials: true }).pipe(
-      tap((response: EditAvatarInterface) => {
-        console.warn('User edited successfully:', response);
+
+  /* ****** ****** ****** ****** */
+  editUserAvatar(newAvatar: AvatarInterface): Observable<UserEditProfileAvatarInterface> {
+    return this.http.put(RouteDefinition.Users.AVATAR_URL, newAvatar, { withCredentials: true }).pipe(
+      tap((response: UserEditProfileAvatarInterface) => {
+        console.warn(AppUiMessage.SUCCESS_MESSAGES.SUCCESS_EDIT_MESSAGE, response);
       }),
       catchError(this.handleError)
     );

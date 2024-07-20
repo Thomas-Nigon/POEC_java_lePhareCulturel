@@ -1,4 +1,5 @@
-export interface UserInterface {
+export interface UserProfileInterface {
+  userUID: string | null;
   firstname: string | null;
   lastname: string | null;
   nickname: string | null;

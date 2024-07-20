@@ -5,7 +5,7 @@ import { EventInterface } from '../../models/event.model';
 import { ProfilComponent } from './components/profil/profil.component';
 import { UserService } from '../../shared/services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { UserInterface } from '../../models/user.model';
+import { UserProfileInterface } from '../../models/user-profile-interface.model';
 
 @Component({
   selector: 'app-user-page',
@@ -21,8 +21,8 @@ export class UserPageComponent implements OnInit {
   private route = inject(ActivatedRoute);
   userId!: number;
   testId!: number;
-  userList!: UserInterface[];
-  myUser!: UserInterface;
+  userList!: UserProfileInterface[];
+  myUser!: UserProfileInterface;
   ngOnInit() {
     this.userService.getAllUser().subscribe(data => {
       this.userList = data;

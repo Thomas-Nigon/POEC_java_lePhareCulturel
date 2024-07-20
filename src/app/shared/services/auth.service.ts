@@ -2,15 +2,16 @@ import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
 import { userLoginInterface } from '../../models/loginModel';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { UserInterface } from '../../models/user.model';
+import { UserProfileInterface } from '../../models/user-profile-interface.model';
 import { environment } from '../../../environments/environment';
+import { RouteDefinition } from '../../RouteDefinition';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = environment.apiUrl;
-  private myUser = new BehaviorSubject<UserInterface>({
+  private myUser = new BehaviorSubject<UserProfileInterface>({
     firstname: '',
     lastname: '',
     email: '',
@@ -19,7 +20,7 @@ export class AuthService {
     nickname: '',
     isLogged: false,
   });
-  public myUser$: Observable<UserInterface> = this.myUser.asObservable();
+  public myUser$: Observable<UserProfileInterface> = this.myUser.asObservable();
 
   private http = inject(HttpClient);
   private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -43,9 +44,9 @@ export class AuthService {
     this.isLoggedInSubject.next(true);
   }
 
-  userLogin(userCredentials: userLoginInterface): Observable<UserInterface> {
+  userLogin(userCredentials: userLoginInterface): Observable<UserProfileInterface> {
     return this.http
-      .post<UserInterface>(`${this.apiUrl}/auth/sign-in`, userCredentials, { withCredentials: true })
+      .post<UserProfileInterface>(RouteDefinition.Auth.LOGIN_URL, userCredentials, { withCredentials: true })
       .pipe(
         tap(response => {
           console.warn('User logged in successfully:', response);

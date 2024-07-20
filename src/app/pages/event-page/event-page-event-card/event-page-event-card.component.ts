@@ -4,7 +4,7 @@ import { EventsService } from '../../../shared/services/events.service';
 import { EventInterface } from '../../../models/event.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UserService } from '../../../shared/services/user.service';
-import { UserInterface } from '../../../models/user.model';
+import { UserProfileInterface } from '../../../models/user-profile-interface.model';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../shared/services/auth.service';
 import Swal from 'sweetalert2';
@@ -21,7 +21,7 @@ export class EventPageEventCardComponent implements OnInit {
   eventService = inject(EventsService);
   userService = inject(UserService);
   eventList!: EventInterface[];
-  userList!: UserInterface[];
+  userList!: UserProfileInterface[];
   eventTest!: EventInterface[];
   notLogged = false;
   @Output() testhidden = new EventEmitter<boolean>();

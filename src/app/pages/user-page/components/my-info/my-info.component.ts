@@ -1,9 +1,9 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { UserInterface } from '../../../../models/user.model';
+import { UserProfileInterface } from '../../../../models/user-profile-interface.model';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
-import { EditedUserInterface } from '../../../../models/editUser.model';
+import { UserEditProfileInterface } from '../../../../models/editUser.model';
 
 @Component({
   selector: 'app-my-info',
@@ -13,10 +13,10 @@ import { EditedUserInterface } from '../../../../models/editUser.model';
   styleUrl: './my-info.component.scss',
 })
 export class MyInfoComponent implements OnInit {
-  @Input() userList: UserInterface[] = [];
+  @Input() userList: UserProfileInterface[] = [];
   @Input() userId!: number;
-  @Input() myUser!: UserInterface;
-  editedUser!: EditedUserInterface;
+  @Input() myUser!: UserProfileInterface;
+  editedUser!: UserEditProfileInterface;
   edit = false;
   fb = inject(FormBuilder);
   userService = inject(UserService);

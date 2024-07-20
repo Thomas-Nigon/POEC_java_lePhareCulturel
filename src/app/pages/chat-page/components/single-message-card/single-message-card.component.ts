@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { messageInterface } from '../../../../models/message.model';
+import { MessageGroupInterface } from '../../../../models/message.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './single-message-card.component.scss',
 })
 export class SingleMessageCardComponent {
-  @Input() message!: messageInterface;
+  @Input() message!: MessageGroupInterface;
 }

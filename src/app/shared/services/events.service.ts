@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { EventInterface } from '../../models/event.model';
+import { RouteDefinition } from '../../RouteDefinition';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +11,13 @@ export class EventsService {
   private http = inject(HttpClient);
 
   getAllEvents() {
-    return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
+    // .... 'assets/mokarooEvents.json'
+    const url = RouteDefinition.Events.EVENTS_URL;
+    return this.http.get<EventInterface[]>(url);
   }
-  getAllEventsbackend() {
-    return this.http.get<EventInterface[]>('http://localhost:8080/api/v1/events');
+  getEventsByID(eventID: number): Observable<EventInterface[]> {
+    // .... 'assets/mokarooEvents.json'
+    const url = RouteDefinition.Events.EVENTS_WITH_ID_URL.replace(RouteDefinition.Events.ID_TAG, String(eventID));
+    return this.http.get<EventInterface[]>(url);
   }
 }

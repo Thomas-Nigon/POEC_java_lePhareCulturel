@@ -3,8 +3,8 @@ import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
-import { EditAvatarInterface } from '../../../../models/editAvatar.model';
-import { UserInterface } from '../../../../models/user.model';
+import { UserEditProfileAvatarInterface } from '../../../../models/editAvatar.model';
+import { UserProfileInterface } from '../../../../models/user-profile-interface.model';
 
 @Component({
   selector: 'app-edit-avatar',
@@ -14,12 +14,12 @@ import { UserInterface } from '../../../../models/user.model';
   styleUrl: './edit-avatar.component.scss',
 })
 export class EditAvatarComponent implements OnInit {
-  @Input() myUser!: UserInterface;
+  @Input() myUser!: UserProfileInterface;
   private avatarService = inject(AvatarService);
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
   selectedId = 0;
-  newAvatar!: EditAvatarInterface;
+  newAvatar!: UserEditProfileAvatarInterface;
 
   ngOnInit() {
     this.avatarService.getAvatarList().subscribe(data => {

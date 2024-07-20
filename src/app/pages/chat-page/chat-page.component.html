@@ -1,33 +1,32 @@
 <main class="chatPage">
   <section class="chatPage__container">
     <aside class="chatPage__container__aside">
-      <article class="chatPage__container__aside__groupMember" *ngFor="let message of messageList">
-        <img class="chatPage__container__aside__avatarPic" src="{{ message.user.picture }}" alt="an avatar picture" />
-        <p class="chatPage__container__aside__userName">{{ message.user.first_name }}</p>
+      <article class="chatPage__container__aside__groupMember" *ngFor="let participant of userProfileparticipant">
+        <img class="chatPage__container__aside__avatarPic" src="{{ participant.avatar }}" alt="an avatar picture" />
+        <p class="chatPage__container__aside__userName">{{ participant.firstname }}</p>
       </article>
     </aside>
 
     <section class="chatPage__container__chatWindow">
       <app-single-message-card
-        *ngFor="let message of messageList"
+        *ngFor="let message of messageList()"
         [message]="message"
-        [ngClass]="{ ownCard: message.user.id === 101 }" />
+        [ngClass]="{ ownCard: message.user_profile.userUID === '0X10X10X10X10' }" />
 
       <div class="textarea__container">
-        <form class="chatPage__container__chatWindow__form" [formGroup]="userMessage">
+        <form class="chatPage__container__chatWindow__form" [formGroup]="formGroup">
           <textarea
             class="chatPage__container__chatWindow__textArea"
             name="userMessage"
             id="userMessage"
             formControlName="userMessage"
             placeholder="Ecrivez votre message"
-            >{{ currentMessage }}</textarea
-          >
+          >{{ currentMessageText }}</textarea>
         </form>
         <button
           type="submit"
-          (click)="submitMessage()"
-          [disabled]="!userMessage.valid"
+          (click)="submitNewMessage()"
+          [disabled]="!formGroup.valid"
           class="chatPage__textarea__sendButton">
           <span class="material-symbols-outlined"> send</span>
         </button>

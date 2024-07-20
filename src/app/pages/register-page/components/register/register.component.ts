@@ -5,7 +5,7 @@ import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { passwordValidator } from '../../../../shared/validators/passwordValidator';
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
-import { NewUser } from '../../../../models/newUser.models';
+import { UserRegistrationData } from '../../../../models/user-registration-data.models';
 import { UserService } from '../../../../shared/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -19,7 +19,7 @@ import Swal from 'sweetalert2';
 export class RegisterComponent {
   pwdHidden = true;
   confirmPwdHidden = true;
-  newUser: NewUser = {
+  userRegistrationInfo: UserRegistrationData = {
     firstname: '',
     password: '',
     confirm_password: '',
@@ -30,6 +30,7 @@ export class RegisterComponent {
     lastname: '',
   };
   userService = inject(UserService);
+
   constructor(private fb: FormBuilder) {}
 
   public registerForm = this.fb.group({
@@ -46,18 +47,14 @@ export class RegisterComponent {
   togglePasswordView() {
     this.pwdHidden = !this.pwdHidden;
   }
+
   toggleConfirPwdView() {
     this.confirmPwdHidden = !this.confirmPwdHidden;
   }
 
   onSubmit(): void {
-    this.newUser.firstname = this.registerForm.value.firstname ?? '';
-    this.newUser.lastname = this.registerForm.value.lastname ?? '';
-    this.newUser.profile_nickname = this.registerForm.value.nickname ?? '';
-    this.newUser.email = this.registerForm.value.credentials?.email ?? '';
-    this.newUser.password = this.registerForm.value.credentials?.password ?? '';
-    this.newUser.confirm_password = this.registerForm.value.credentials?.confirmPassword ?? '';
-    this.userService.createUser(this.newUser).subscribe({
+    this.updateUserRegistrationInfo();
+    this.userService.createUser(this.userRegistrationInfo).subscribe({
       next: response => {
         Swal.fire({
           icon: 'success',
@@ -73,5 +70,28 @@ export class RegisterComponent {
         });
       },
     });
+  }
+
+  // Rename updateRegistrationData to updateUserRegistrationInfo.
+  private updateUserRegistrationInfo(): void {
+    this.userRegistrationInfo = this.getRegistrationDataFromForm();
+  }
+
+  // Extract Method: getRegistrationDataFromForm.
+  private getRegistrationDataFromForm(): UserRegistrationData {
+    const credentials = this.registerForm.value.credentials ?? {};
+    // const { firstname, lastname, nickname, credentials = {} } = this.registerForm.value;
+    const profileUpdates: UserRegistrationData = new UseUserRegistrationData({
+      firstname: this.registerForm.value.firstname ?? '',
+      lastname: this.registerForm.value.lastname ?? '',
+      profile_nickname: this.registerForm.value.nickname ?? '',
+      email: credentials.email ?? '',
+      password: credentials.password ?? '',
+      confirm_password: credentials.confirmPassword ?? '',
+      avatar: this.userRegistrationInfo.avatar,
+      profile_description: this.userRegistrationInfo.profile_description,
+    });
+
+    return profileUpdates;
   }
 }
