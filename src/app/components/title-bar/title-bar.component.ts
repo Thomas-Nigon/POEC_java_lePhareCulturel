@@ -20,6 +20,8 @@ export class TitleBarComponent implements OnInit {
       this.isLoggedIn = isLoggedIn;
       if (isLoggedIn) {
         this.logInState = 'Mon profil';
+      } else {
+        this.logInState = 'Connexion';
       }
     });
   }
