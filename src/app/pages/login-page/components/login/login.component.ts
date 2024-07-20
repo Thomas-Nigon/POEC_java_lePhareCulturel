@@ -17,10 +17,10 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  userLogin!: UserLoginInterface;
   authService = inject(AuthService);
   router = inject(Router);
   location = inject(Location);
-  userLogin!: UserLoginInterface;
   fb: FormBuilder = inject(FormBuilder);
   pwdHidden = true;
   isFocused = false;

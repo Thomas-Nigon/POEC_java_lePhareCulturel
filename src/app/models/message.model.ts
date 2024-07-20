@@ -5,7 +5,7 @@ export interface messageInterface {
     first_name: string;
     last_name: string;
     email: string;
-    picture: string;
+    avatar: string;
   };
   message: string;
   date: string;

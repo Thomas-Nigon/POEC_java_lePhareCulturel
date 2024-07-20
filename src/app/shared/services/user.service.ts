@@ -38,7 +38,16 @@ export class UserService {
       catchError(this.handleError)
     );
   }
-
+  getUser(): Observable<UserInterface> {
+    {
+      return this.http.get<UserInterface>(`${this.apiUrl}/users/profile`, { withCredentials: true }).pipe(
+        tap((response: UserInterface) => {
+          console.warn('User fetched successfully:', response);
+        }),
+        catchError(this.handleError)
+      );
+    }
+  }
   getUserLocal(): UserInterface {
     const userData = localStorage.getItem('user');
     return JSON.parse(userData ?? '{}') as UserInterface;

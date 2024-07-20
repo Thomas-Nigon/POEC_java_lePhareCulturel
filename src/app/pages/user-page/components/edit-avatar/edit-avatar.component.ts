@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
@@ -41,7 +42,9 @@ export class EditAvatarComponent implements OnInit {
         this.myUser.avatar = this.newAvatar.url;
       },
       error: err => {
-        console.error('Error occurred:', err);
+        if (err.status !== 401) {
+          console.error('Error occurred:', err);
+        }
       },
     });
   }
