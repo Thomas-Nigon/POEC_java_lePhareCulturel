@@ -3,10 +3,21 @@
 /* eslint-disable no-console */
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
-import { UserInterface } from '../../models/user.model';
-import { UserLoginInterface } from '../../models/loginModel';
+import {
+  BehaviorSubject,
+  Observable,
+  Subscription,
+  catchError,
+  interval,
+  map,
+  of,
+  switchMap,
+  tap,
+  throwError,
+} from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { UserLoginInterface } from '../../models/loginModel';
+import { UserInterface } from '../../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +28,14 @@ export class AuthService {
   public myUser$: Observable<UserInterface> = this.myUser.asObservable();
 
   private http = inject(HttpClient);
-  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public logoutEvent = new BehaviorSubject<boolean>(false);
+
+  private authCheckSubscription: Subscription | null = null; // Propriété pour stocker l'intervalle
+
+  constructor() {
+    this.initializeAuthState().subscribe();
+  }
 
   private getInitialUser(): UserInterface {
     return {
@@ -51,6 +69,7 @@ export class AuthService {
 
   login(): void {
     this.isLoggedInSubject.next(true);
+    this.startAuthCheckTimer();
   }
 
   userLogin(userCredentials: UserLoginInterface): Observable<UserInterface> {
@@ -60,6 +79,7 @@ export class AuthService {
         tap(response => {
           console.warn('User logged in successfully:', response);
           this.isLoggedInSubject.next(true);
+          this.login();
         }),
         catchError(this.handleError)
         /* map(data => {
@@ -75,12 +95,15 @@ export class AuthService {
     this.isLoggedInSubject.next(false);
     localStorage.removeItem('user');
     this.setUserState(this.getInitialUser(), false);
+    this.logoutEvent.next(true);
+    this.stopAuthCheckTimer(); // Arrêter l'intervalle lors de la déconnexion
   }
 
   refreshToken(): Observable<unknown> {
     return this.http.post<unknown>(`${this.apiUrl}/auth/token/refresh`, {}, { withCredentials: true }).pipe(
       tap(response => {
         console.info('Tokens refreshed successfully', response);
+        this.isLoggedInSubject.next(true);
       }),
       catchError(error => {
         this.logOut();
@@ -93,13 +116,12 @@ export class AuthService {
     return this.http.get<UserInterface>(`${this.apiUrl}/auth/status`, { withCredentials: true }).pipe(
       tap(response => {
         this.setUserState(response, true);
-        console.log('User status initialized successfully:', response);
+        this.isLoggedInSubject.next(true);
       }),
-      catchError(error => {
-        console.log(error);
-
+      catchError(() => {
         this.setUserState(this.getInitialUser(), false);
-        return throwError(() => new Error('Failed to initialize auth state'));
+        // return throwError(() => new Error('Failed to initialize auth state'));
+        return new Observable<never>();
       }),
       map(() => void 0) // Convertir en Observable<void>
     );
@@ -109,5 +131,44 @@ export class AuthService {
     this.myUser.next({ ...user, isLogged });
     localStorage.setItem('user', JSON.stringify({ ...user, isLogged }));
     this.isLoggedInSubject.next(isLogged);
+  }
+
+  private startAuthCheckTimer(): void {
+    if (!this.authCheckSubscription) {
+      this.authCheckSubscription = interval(environment.intervalCheckAuth)
+        .pipe(
+          switchMap(() =>
+            this.checkAuthStatus().pipe(
+              catchError(error => {
+                console.error('Auth status check failed:', error.message);
+                return of(); // Retourne une observable vide pour continuer le timer
+              })
+            )
+          )
+        )
+        .subscribe();
+    }
+  }
+
+  private stopAuthCheckTimer(): void {
+    if (this.authCheckSubscription) {
+      this.authCheckSubscription.unsubscribe();
+      this.authCheckSubscription = null;
+    }
+  }
+
+  private checkAuthStatus(): Observable<void> {
+    return this.http.get<UserInterface>(`${this.apiUrl}/auth/status`, { withCredentials: true }).pipe(
+      tap(response => {
+        if (!response.email) {
+          this.logOut();
+        }
+      }),
+      catchError(() => {
+        this.logOut();
+        return throwError(() => new Error('Failed to verify auth status'));
+      }),
+      map(() => void 0)
+    );
   }
 }
