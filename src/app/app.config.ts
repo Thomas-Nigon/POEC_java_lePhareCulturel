@@ -1,10 +1,11 @@
-import { provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withXsrfConfiguration } from '@angular/common/http';
 import { APP_INITIALIZER, ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 import { routes } from './app.routes';
 import { authInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
+import { errorInterceptor } from './shared/interceptors/error.interceptor';
 
 export function initializeAuth(authService: AuthService) {
   return () => {
@@ -30,5 +31,6 @@ export const appConfig: ApplicationConfig = {
       deps: [AuthService],
       multi: true,
     },
+    { provide: HTTP_INTERCEPTORS, useFactory: errorInterceptor, multi: true },
   ],
 };

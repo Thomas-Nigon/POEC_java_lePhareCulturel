@@ -35,7 +35,7 @@ export class ChatPageComponent implements OnInit {
         first_name: 'John',
         last_name: 'Doe',
         email: 'john.doe@example.com',
-        picture: '/assets/images/avatars/avatar1.svg',
+        avatar: '/assets/images/avatars/avatar1.svg',
       },
       message: this.userMessage.value.userMessage ?? '',
       date: new Date().toLocaleString(),
