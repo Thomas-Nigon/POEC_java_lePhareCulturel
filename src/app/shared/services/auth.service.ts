@@ -59,14 +59,15 @@ export class AuthService {
       .pipe(
         tap(response => {
           console.warn('User logged in successfully:', response);
+          this.isLoggedInSubject.next(true);
         }),
-        catchError(this.handleError),
-        map(data => {
+        catchError(this.handleError)
+        /* map(data => {
           this.myUser.next({ ...data, isLogged: true });
           localStorage.setItem('user', JSON.stringify({ ...data, isLogged: true }));
           this.login();
           return data;
-        })
+        }) */
       );
   }
 
