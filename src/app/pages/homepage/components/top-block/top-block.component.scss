@@ -132,7 +132,8 @@
 @media screen and (min-width: 900px) {
   .container {
     flex-direction: row;
-    height: 55vh;
+    height: 60vh;
+    max-height: 450px;
     align-items: unset;
   }
 }

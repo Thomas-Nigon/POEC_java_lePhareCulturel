@@ -7,10 +7,17 @@
       </article>
     </aside>
     <div class="chatPage__container__main">
-      <section>
-        <h2>le chat du groupe de l'evenement</h2>
-        <p>info:</p>
-        <p>heure de rdv</p>
+      <section class="chatPage__container__main__header">
+        <h3>Bienvenue dans: {{ groupList[groupId].name }}</h3>
+
+        <p>Ce groupe participe à l'évènement: {{ groupList[groupId].eventName }}</p>
+        <article>
+          <p>
+            Quitter ce groupe? cliquez
+            <button class="toggleQuitButton" (click)="this.showQuitButton = !this.showQuitButton">ici</button>
+          </p>
+          <button routerLink="" class="quitButton" [ngClass]="{ hidden: !showQuitButton }">Quitter</button>
+        </article>
       </section>
       <section class="chatPage__container__chatWindow">
         <app-single-message-card
