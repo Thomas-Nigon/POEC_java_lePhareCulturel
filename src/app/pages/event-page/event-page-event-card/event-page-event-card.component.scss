@@ -26,9 +26,23 @@
   background-color: $background;
   max-width: 900px;
 }
+event-card__image__wrapper {
+  position: relative;
+}
 .event-image {
   width: 100%;
   height: auto;
+}
+.event__image__category {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  max-width: 200px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $primary;
+  color: $secondary;
 }
 .eventCard__descriptionContainer {
   display: flex;

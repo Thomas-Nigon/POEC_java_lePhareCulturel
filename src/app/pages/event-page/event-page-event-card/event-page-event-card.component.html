@@ -1,8 +1,11 @@
 <div class="event-card">
-  <img
-    class="event-image"
-    src="{{ eventList && eventList[eventId].event_pic }}"
-    alt="{{ eventList && eventList[eventId].event_desc }}" />
+  <div class="event-card__image__wrapper">
+    <img
+      class="event-image"
+      src="{{ eventList && eventList[eventId].event_pic }}"
+      alt="{{ eventList && eventList[eventId].event_desc }}" />
+    <h2 class="event__image__category">{{ eventList && eventList[eventId].event_category }}</h2>
+  </div>
   <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
     <article class="eventCard__descriptionContainer__participants">
       <div class="eventCard__participant__container">
