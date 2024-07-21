@@ -1,8 +1,9 @@
 <main class="searchPage">
   <h2 class="search_page_title">L'Agenda du Phare</h2>
+  <button (click)="getAllEventsBackend()">Rechercher tous les events</button>
   <button (click)="geteventById()">Rechercher single event</button>
   <button (click)="getGroupListByEvent()">Rechercher all groups of event</button>
-  <button (click)="getSingleGroupByEvent()">Rechercher</button>
+  <button (click)="getSingleGroupByEvent()">Rechercher un groupe sur un event</button>
 
   <div
     class="search-results"

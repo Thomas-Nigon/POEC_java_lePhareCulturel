@@ -71,7 +71,7 @@ export class SearchPageComponent implements OnInit {
   ///////////////////////////
 
   ngOnInit() {
-    this.eventService.getAllEventsbackend().subscribe(data => (console.warn(data), (this.eventList = data)));
+    /* this.eventService.getAllEventsbackend().subscribe(data => (console.warn(data), (this.eventList = data))); */
     this.loadData();
   }
 
@@ -118,6 +118,11 @@ export class SearchPageComponent implements OnInit {
       });
   }
 
+  getAllEventsBackend() {
+    this.eventService.geteventById(4).subscribe(data => {
+      console.warn(data);
+    });
+  }
   geteventById() {
     this.eventService.geteventById(4).subscribe(data => {
       console.warn(data);
