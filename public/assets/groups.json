@@ -10,7 +10,7 @@
         "first_name": "Lissi",
         "last_name": "Hospital",
         "email": "lhospital0@dropbox.com",
-        "picture": "/assets/images/avatars/avatar1.svg",
+        "avatar": "/assets/images/avatars/avatar1.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -18,7 +18,7 @@
         "first_name": "Mariquilla",
         "last_name": "McSaul",
         "email": "mmcsaul1@slate.com",
-        "picture": "/assets/images/avatars/avatar1.svg",
+        "avatar": "/assets/images/avatars/avatar1.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -26,7 +26,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       }
     ]
@@ -42,7 +42,7 @@
         "first_name": "Lissi",
         "last_name": "Hospital",
         "email": "lhospital0@dropbox.com",
-        "picture": "/assets/images/avatars/avatar1.svg",
+        "avatar": "/assets/images/avatars/avatar1.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -50,7 +50,7 @@
         "first_name": "Mariquilla",
         "last_name": "McSaul",
         "email": "mmcsaul1@slate.com",
-        "picture": "/assets/images/avatars/avatar1.svg",
+        "avatar": "/assets/images/avatars/avatar1.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -58,7 +58,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -66,7 +66,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -74,7 +74,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -82,7 +82,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -90,7 +90,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -98,7 +98,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       },
       {
@@ -106,7 +106,7 @@
         "first_name": "Adam",
         "last_name": "Ovitts",
         "email": "aovitts2@twitter.com",
-        "picture": "/assets/images/avatars/avatar2.svg",
+        "avatar": "/assets/images/avatars/avatar2.svg",
         "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem excepturi numquam quia consequuntur dolore saepe pariatur aperiam inventore. Quae hic fuga repudiandae quis eaque esse quibusdam aliquid odio distinctio."
       }
     ]

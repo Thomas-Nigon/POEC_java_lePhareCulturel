@@ -1,4 +1,4 @@
-export interface Avatar {
+export interface AvatarInterface {
   id: number;
   name: string;
   url: string;

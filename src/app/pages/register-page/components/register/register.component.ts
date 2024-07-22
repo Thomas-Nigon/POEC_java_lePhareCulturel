@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
@@ -5,6 +7,7 @@ import { passwordValidator } from '../../../../shared/validators/passwordValidat
 import { matchPasswordValidator } from '../../../../shared/validators/matchPasswordValidator';
 import { NewUser } from '../../../../models/newUser.models';
 import { UserService } from '../../../../shared/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -56,12 +59,18 @@ export class RegisterComponent {
     this.newUser.confirm_password = this.registerForm.value.credentials?.confirmPassword ?? '';
     this.userService.createUser(this.newUser).subscribe({
       next: response => {
-        console.warn('User added:', response);
-        // Handle successful user creation here
+        Swal.fire({
+          icon: 'success',
+          title: 'Inscription réussie',
+          text: 'Votre compte a bien été crée. Vérifiez vos Emails pour activer votre compte.',
+        });
       },
       error: err => {
-        console.error('Error occurred:', err);
-        // Handle the error here, e.g., display a message to the user
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Une erreur est survenue, veuillez réessayer',
+        });
       },
     });
   }

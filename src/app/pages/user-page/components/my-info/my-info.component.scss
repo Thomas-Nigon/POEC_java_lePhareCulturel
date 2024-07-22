@@ -10,11 +10,13 @@
   scrollbar-width: none;
 }
 
+.myInfo__edit__wrapper {
+  align-self: flex-end;
+}
 .myInfo-image {
   margin: 0 auto;
-  width: 50%;
-  max-width: 200px;
-  max-height: 200px;
+  width: max(30%, 130px);
+  height: auto;
 }
 .myInfo__pseudo {
   margin: 0 auto;

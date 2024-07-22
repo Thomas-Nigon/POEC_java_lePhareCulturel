@@ -9,9 +9,9 @@
         <img
           class="eventCard__participants__avatar"
           *ngFor="let user of userList"
-          src="{{ userList && user.picture }}"
+          src="{{ userList && user.avatar }}"
           alt="the avatar of the user" />
-        <p>158 participants</p>
+        <p>{{ userList.length }} participants</p>
       </div>
     </article>
     <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>

@@ -33,6 +33,8 @@ export class UserPageComponent implements OnInit {
     this.eventService.getAllEvents().subscribe(data => {
       this.eventList = data;
     });
-    this.myUser = this.userService.getUserLocal();
+    this.userService.getUser().subscribe(data => {
+      this.myUser = data;
+    });
   }
 }
