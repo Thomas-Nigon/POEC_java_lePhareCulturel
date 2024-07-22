@@ -13,8 +13,12 @@ export class EventsService {
   getAllEvents() {
     return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
   }
-  getAllEventsbackend() {
-    return this.http.get<EventResponse>(`${this.apiUrl}/events`);
+  getAllEventsbackend(size: number, page: number) {
+    const params = {
+      size: size.toString(),
+      page: page.toString(),
+    };
+    return this.http.get<EventResponse>(`${this.apiUrl}/events?`, { params });
   }
   geteventById(id: number) {
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions

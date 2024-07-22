@@ -32,18 +32,21 @@ export class SearchPageComponent implements OnInit {
 
   /////////////////////////////////
 
-  items: string[] = [];
   isLoading = false;
-  currentPage = 1;
+  currentPage = 0;
   itemsPerPage = 20;
-  paginationService = inject(PaginationDummyService);
+
   toggleLoading = () => (this.isLoading = !this.isLoading);
 
   // it will be called when this component gets initialized.
-  loadData = () => {
+  loadData = (size: number = this.itemsPerPage, page: number = this.currentPage) => {
     this.toggleLoading();
-    this.paginationService.getItems(this.currentPage, this.itemsPerPage).subscribe({
-      next: response => (this.items = response),
+    this.eventService.getAllEventsbackend(size, page).subscribe({
+      next: data => {
+        console.warn('my data', data);
+        this.eventList = data.events;
+        console.warn('my event list', this.eventList);
+      },
       error: err => {
         console.error(err);
       },
@@ -51,11 +54,14 @@ export class SearchPageComponent implements OnInit {
     });
   };
 
-  // this method will be called on scrolling the page
   appendData = () => {
     this.toggleLoading();
-    this.paginationService.getItems(this.currentPage, this.itemsPerPage).subscribe({
-      next: response => (this.items = [...this.items, ...response]),
+    this.eventService.getAllEventsbackend(this.itemsPerPage, this.currentPage).subscribe({
+      next: data => {
+        console.warn('my data', data);
+        this.eventList = [...this.eventList, ...data.events];
+        console.warn('my event list', this.eventList);
+      },
       error: err => {
         console.error(err);
       },
@@ -64,18 +70,14 @@ export class SearchPageComponent implements OnInit {
   };
 
   onScroll = () => {
+    console.warn('scrolling');
     this.currentPage++;
     this.appendData();
   };
 
-  ///////////////////////////
+  constructor(private paginationService: PaginationDummyService) {}
 
   ngOnInit() {
-    this.eventService.getAllEventsbackend().subscribe(data => {
-      console.warn('my data', data);
-      this.eventList = data.events;
-      console.warn('my event list', this.eventList);
-    });
     this.loadData();
   }
 

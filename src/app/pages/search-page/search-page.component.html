@@ -5,19 +5,8 @@
   <button (click)="getGroupListByEvent()">Rechercher all groups of event</button>
   <button (click)="getSingleGroupByEvent()">Rechercher un groupe sur un event e</button>
 
-  <div
-    class="search-results"
-    infiniteScroll
-    [infiniteScrollDistance]="2"
-    [infiniteScrollThrottle]="500"
-    (scrolled)="onScroll()"
-    [scrollWindow]="false">
-    <div class="data-card" *ngFor="let item of items">
-      {{ item }}
-    </div>
 
-    <div *ngIf="isLoading">Loading...</div>
-  </div> -->
+ -->
   <app-filter-bar></app-filter-bar>
   <article class="calendar_title_container">
     <h3 class="calendar-title">
@@ -31,7 +20,14 @@
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
-  <section>
-    <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
-  </section>
 </main>
+
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
+  <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
+</div>
