@@ -1,5 +1,8 @@
 <main class="eventPage">
-  <app-event-page-event-card (testhidden)="setHidden($event)" [hidden]="hidden"></app-event-page-event-card>
+  <app-event-page-event-card
+    (testhidden)="setHidden($event)"
+    [hidden]="hidden"
+    [event]="event"></app-event-page-event-card>
   <section class="groupComponents__container" [ngClass]="{ hidden: !hidden }">
     <div class="eventPage__return">
       <button class="test" (click)="hide()">

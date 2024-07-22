@@ -7,11 +7,11 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { CalendarDate } from '../../models/calendarDate.model';
 import { FilterBarComponent } from '../homepage/components/filter-bar/filter-bar.component';
 import { EventsService } from '../../shared/services/events.service';
-import { EventInterface } from '../../models/event.model';
 import { EventCardComponent } from '../../components/event-card/event-card.component';
 import { Router } from '@angular/router';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 import { PaginationDummyService } from '../../shared/services/pagination-dummy.service';
+import { ApiEvent } from '../../models/event.model';
 
 @Component({
   selector: 'app-search-page',
@@ -28,14 +28,14 @@ export class SearchPageComponent implements OnInit {
 
   router = inject(Router);
   eventService = inject(EventsService);
-  eventList!: EventInterface[];
+  eventList: ApiEvent[] = [];
 
   /////////////////////////////////
 
   items: string[] = [];
   isLoading = false;
   currentPage = 1;
-  itemsPerPage = 10;
+  itemsPerPage = 20;
   paginationService = inject(PaginationDummyService);
   toggleLoading = () => (this.isLoading = !this.isLoading);
 
@@ -71,7 +71,11 @@ export class SearchPageComponent implements OnInit {
   ///////////////////////////
 
   ngOnInit() {
-    /* this.eventService.getAllEventsbackend().subscribe(data => (console.warn(data), (this.eventList = data))); */
+    this.eventService.getAllEventsbackend().subscribe(data => {
+      console.warn('my data', data);
+      this.eventList = data.events;
+      console.warn('my event list', this.eventList);
+    });
     this.loadData();
   }
 
@@ -118,7 +122,7 @@ export class SearchPageComponent implements OnInit {
       });
   }
 
-  getAllEventsBackend() {
+  /*   getAllEventsBackend() {
     this.eventService.geteventById(4).subscribe(data => {
       console.warn(data);
     });
@@ -137,5 +141,5 @@ export class SearchPageComponent implements OnInit {
     this.eventService.getSingleGroupByEvent(4, 1).subscribe(data => {
       console.warn(data);
     });
-  }
+  } */
 }

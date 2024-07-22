@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { FilterBarComponent } from '../../homepage/components/filter-bar/filter-bar.component';
 import { EventsService } from '../../../shared/services/events.service';
-import { EventInterface } from '../../../models/event.model';
+import { ApiEvent, EventInterface } from '../../../models/event.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UserService } from '../../../shared/services/user.service';
 import { UserInterface } from '../../../models/user.model';
@@ -24,17 +24,37 @@ export class EventPageEventCardComponent implements OnInit {
   authService = inject(AuthService);
   eventService = inject(EventsService);
   userService = inject(UserService);
+
+  @Input() event!: ApiEvent;
+  @Input() eventId = 0;
+  @Input() hidden!: boolean;
+  @Output() testhidden = new EventEmitter<boolean>();
+
   eventList!: EventInterface[];
   userList!: UserInterface[];
   eventTest!: EventInterface[];
   notLogged = false;
-  @Output() testhidden = new EventEmitter<boolean>();
-  @Input() hidden!: boolean;
+
+  beginDate!: Date;
+  endDate!: Date;
+  isoStartDateString!: Date;
+  isoEndDateString!: Date;
+  localeStartDateString!: string;
+  localeEndDateString!: string;
+
+  dateOptions: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  };
   private route = inject(ActivatedRoute);
-  eventId!: number;
+
   eventDate!: string;
   ngOnInit() {
-    this.eventService.getAllEvents().subscribe(data => {
+    /*     this.eventService.getAllEvents().subscribe(data => {
       this.eventList = data;
     });
     this.route.params.subscribe(params => {
@@ -42,12 +62,23 @@ export class EventPageEventCardComponent implements OnInit {
     });
     this.userService.getAllUser().subscribe(data => {
       this.userList = data;
-    });
+    }); */
+    this.isoStartDateString = this.event.first_timing.begin;
+    this.beginDate = new Date(this.isoStartDateString);
+    this.localeStartDateString =
+      this.beginDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
+      this.beginDate.toLocaleString(undefined, this.dateOptions).slice(1);
+    this.isoEndDateString = this.event.last_timing.begin;
+    this.endDate = new Date(this.isoEndDateString);
+    this.localeEndDateString =
+      this.endDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
+      this.endDate.toLocaleString(undefined, this.dateOptions).slice(1);
   }
   onClick() {
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
       if (isLoggedIn) {
         this.hidden = true;
+
         this.testhidden.emit(this.hidden);
       } else {
         this.notLogged = true;
@@ -60,7 +91,7 @@ export class EventPageEventCardComponent implements OnInit {
     });
   }
 
-  options: MapOptions = {
+  mapOptions: MapOptions = {
     layers: [tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })],
     zoom: 16,
     center: latLng(50.633159, 3.020264),

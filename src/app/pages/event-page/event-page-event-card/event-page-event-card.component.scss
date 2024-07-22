@@ -33,7 +33,7 @@
 }
 .event__card__info__group {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding-bottom: 0.5rem;
 }
 .material-symbols-outlined {
@@ -182,19 +182,19 @@
     border-bottom: 2px solid $primary;
     border-radius: 0 0 0.5rem 0.5rem;
     flex-direction: row;
-    max-width: 1300px;
+    max-width: 1100px;
   }
   .event__card__main {
     flex-direction: column;
     max-width: 800px;
   }
   .event-image {
-    /* max-height: 400px; */
-    object-fit: cover;
+    max-height: 400px;
+    object-fit: contain;
   }
   .event__card__info {
-    padding: 2rem;
-    width: 100%;
+    padding: 1rem;
+    width: 50%;
     border-left: 2px solid $primary;
   }
   .event__card__info__map {
