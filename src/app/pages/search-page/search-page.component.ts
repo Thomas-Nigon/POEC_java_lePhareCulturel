@@ -22,7 +22,7 @@ export class SearchPageComponent implements OnInit {
   isOpen = true;
   clickedDate!: string;
   date!: Date;
-  displayDate = 'Une date en particulier?';
+  displayDate = 'Une date en particulier ?';
 
   router = inject(Router);
   eventService = inject(EventsService);

@@ -63,7 +63,12 @@
   justify-content: left;
   font-weight: bold;
 }
-
+.eventPage__return {
+  //aligner le bouton et le titre
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .button-57 span:first-child {
   position: relative;
   transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);

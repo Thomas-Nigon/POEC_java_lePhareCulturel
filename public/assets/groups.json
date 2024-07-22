@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Le groupe a toto",
-    "description": "On va boire des verre et ecouter del a musique",
+    "name": "Le groupe à Toto",
+    "description": "On va boire des verre et écouter de la musique",
     "time": "12:00",
     "members": [
       {
@@ -33,7 +33,7 @@
   },
   {
     "id": 2,
-    "name": "Le groupe a titi",
+    "name": "Le groupe à Titi",
     "description": "On va manger des gros kebabs",
     "time": "21:00",
     "members": [

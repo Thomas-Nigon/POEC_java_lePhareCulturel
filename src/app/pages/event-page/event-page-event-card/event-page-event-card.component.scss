@@ -66,6 +66,10 @@
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0 1rem 0;
+  background-color: $primary;
+  color: $background;
+  padding: 10px;
+  border-radius: 4px;
 }
 .event__participants {
   color: $primary;

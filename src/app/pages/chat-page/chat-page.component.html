@@ -1,7 +1,9 @@
 <main class="chatPage">
   <section class="chatPage__container">
     <aside class="chatPage__container__aside">
-      <button type="button" class="button-57" role="button"><span class="text">Retour</span><span>Retour</span></button>
+      <div class="chatPage__button__return">
+        <button type="button" class="button-57" role="button"><span class="text">Retour</span><span>Retour</span></button>
+      </div>
       <article class="chatPage__container__aside__groupMember" *ngFor="let message of messageList">
         <img class="chatPage__container__aside__avatarPic" src="{{ message.user.picture }}" alt="an avatar picture" />
         <p class="chatPage__container__aside__userName">{{ message.user.first_name }}</p>

@@ -1,13 +1,13 @@
 <div class="createGroup">
   <div class="createGroup__titleContainer">
-    <h3 class="createGroup__title">Créer !</h3>
+    <h3 class="createGroup__title">Créer</h3>
     <button type="button" (click)="onClick()" class="closeButton">
       <span *ngIf="!hideCreateGroup" class="material-symbols-outlined"> arrow_circle_up </span>
       <span *ngIf="hideCreateGroup" class="material-symbols-outlined"> arrow_circle_down </span>
     </button>
   </div>
   <form class="createGroupForm" [formGroup]="createGroupForm" [ngClass]="{ hidden: hideCreateGroup }">
-    <label for="groupName">Nom du groupe</label>
+    <label for="groupName"><h5>Nom du groupe</h5></label>
     <input
       type="text"
       id="groupName"
@@ -15,17 +15,17 @@
       formControlName="groupName"
       placeholder="Entrez le nom du groupe" />
 
-    <label for="participantNumber">Nombre de participants</label>
+    <label for="participantNumber"><h5>Nombre de participants</h5></label>
     <input
       type="number"
       id="participantNumber"
       class="createGroupForm__input"
       placeholder="Entrez le nombre de participants" />
 
-    <label for="meetingTime">Date et heure de la rencontre</label>
+    <label for="meetingTime"><h5>Date et heure de la rencontre</h5></label>
     <input type="time" id="meetingTime" class="createGroupForm__input" formControlName="meetingTime" />
 
-    <label for="description">Description</label>
+    <label for="description"><h5>Description</h5></label>
     <textarea
       id="description"
       class="createGroupForm__input"
