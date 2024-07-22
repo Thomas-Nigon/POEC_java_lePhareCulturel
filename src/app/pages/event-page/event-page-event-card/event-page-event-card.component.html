@@ -1,34 +1,62 @@
 <div class="event-card">
-  <div class="event-card__image__wrapper">
-    <img
-      class="event-image"
-      src="{{ eventList && eventList[eventId].event_pic }}"
-      alt="{{ eventList && eventList[eventId].event_desc }}" />
-    <h2 class="event__image__category">{{ eventList && eventList[eventId].event_category }}</h2>
+  <div class="event__card__main">
+    <div class="event-card__image__wrapper">
+      <img
+        class="event-image"
+        src="{{ eventList && eventList[eventId].event_pic }}"
+        alt="{{ eventList && eventList[eventId].event_desc }}" />
+      <h2 class="event__image__category">{{ eventList && eventList[eventId].event_category }}</h2>
+    </div>
+    <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
+      <!-- <article class="eventCard__descriptionContainer__participants">
+        <div class="eventCard__participant__container">
+          <img
+            class="eventCard__participants__avatar"
+            *ngFor="let user of userList"
+            src="{{ userList && user.avatar }}"
+            alt="the avatar of the user" />
+          <p>{{ userList.length }} participants</p>
+        </div>
+      </article> -->
+      <h3 class="eventCard__eventDate">
+        {{ eventList && eventList[eventId].event_date }}
+      </h3>
+      <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
+      <p class="eventCard__eventDesc">
+        {{ eventList && eventList[eventId].event_desc }}
+      </p>
+      <!--       <article class="eventCard__descriptionContainer__price">
+        <h3 class="event__price">Tarif:</h3>
+        <p>Gratuit</p>
+      </article> -->
+      <button (click)="onClick()" class="event-button">Je participe</button>
+    </section>
   </div>
-  <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
-    <article class="eventCard__descriptionContainer__participants">
-      <div class="eventCard__participant__container">
-        <img
-          class="eventCard__participants__avatar"
-          *ngFor="let user of userList"
-          src="{{ userList && user.avatar }}"
-          alt="the avatar of the user" />
-        <p>{{ userList.length }} participants</p>
+
+  <div class="event__card__info">
+    <article class="event__card__info__group">
+      <span class="material-symbols-outlined"> group </span>
+      <h5 class="event__card__info__subTitle">4</h5>
+      <span class="event__card__info__text">groupe(s) pour cet évènement</span>
+    </article>
+    <article class="event__card__info__group">
+      <span class="material-symbols-outlined"> confirmation_number </span>
+      <h5>Tarifs:</h5>
+
+      <span class="event__card__info__text">gratuit</span>
+    </article>
+    <article class="event__card__info__group">
+      <span class="material-symbols-outlined">schedule</span>
+      <p>jour et horaire d'ouverture</p>
+    </article>
+    <article class="row">
+      <span class="material-symbols-outlined"> location_on </span>
+      <div class="col">
+        <p class="event__card__info__subTitle">adresse:</p>
+        <p class="event__card__info__subTitle">adresse: rue</p>
+        <p class="event__card__info__subTitle">adresse: ville</p>
       </div>
     </article>
-    <h3 class="eventCard__eventDate">
-      {{ eventList && eventList[eventId].event_date }}
-    </h3>
-    <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
-    <p class="eventCard__eventDesc">
-      {{ eventList && eventList[eventId].event_desc }}
-    </p>
-    <article class="eventCard__descriptionContainer__price">
-      <h3 class="event__price">Tarif:</h3>
-      <p>Gratuit</p>
-    </article>
-    <!-- <p class="notLogged" *ngIf="notLogged">Vous devez etre connecté pour rejoindre un groupe</p> -->
-    <button (click)="onClick()" class="event-button">Je participe</button>
-  </section>
+    <article>MAP?</article>
+  </div>
 </div>
