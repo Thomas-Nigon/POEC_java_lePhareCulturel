@@ -1,4 +1,4 @@
-<!-- <main class="myEvent">
+<main class="myEvent">
   <div class="myEvent_eventContainer">
     <div class="myEvent_nav-container">
       <h2>Mes évènements:</h2>
@@ -14,12 +14,10 @@
       </nav>
     </div>
     <section class="myEvent_incoming" *ngIf="incomingEvents">
-      <a class="eventCard__link" routerLink="/event/{{ event.id - 1 }}" *ngFor="let event of eventList">
+      <a class="eventCard__link" routerLink="/event/{{ event.uid }}" *ngFor="let event of eventList">
         <article class="eventCard">
-          <div class="eventCard__category__wrapper">
-            <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
-            <h2 class="eventCard__category__name">{{ event.description }}</h2>
-          </div>
+          <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
+
           <div class="eventCard_descriptionContainer">
             <div class="title__event__history">
               <h5>{{ event.title }}</h5>
@@ -31,12 +29,10 @@
       </a>
     </section>
     <section class="myEvent_past" *ngIf="!incomingEvents">
-      <a class="eventCard__link" routerLink="/event/{{ event.id - 1 }}" *ngFor="let event of eventList">
+      <a class="eventCard__link" routerLink="/event/{{ event.uid }}" *ngFor="let event of eventList">
         <article class="eventCard">
-          <div class="eventCard__category__wrapper">
-            <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
-            <h2 class="eventCard__category__name">{{ event.description }}</h2>
-          </div>
+          <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
+
           <div class="eventCard_descriptionContainer">
             <div class="title__event__history">
               <h5>{{ event.title }}</h5>
@@ -49,4 +45,3 @@
     </section>
   </div>
 </main>
- -->

@@ -194,10 +194,12 @@
   }
   .event__card__info {
     padding: 1rem;
-    width: 50%;
+    width: 60%;
     border-left: 2px solid $primary;
   }
   .event__card__info__map {
+    margin-top: 0.5rem;
     display: block;
+    width: 400px;
   }
 }

@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MyEventsComponent } from './components/my-events/my-events.component';
 import { EventsService } from '../../shared/services/events.service';
-import { EventInterface } from '../../models/event.model';
+import { ApiEvent } from '../../models/event.model';
 import { ProfilComponent } from './components/profil/profil.component';
 import { UserService } from '../../shared/services/user.service';
 import { ActivatedRoute } from '@angular/router';
@@ -17,21 +17,15 @@ import { UserInterface } from '../../models/user.model';
 export class UserPageComponent implements OnInit {
   private userService = inject(UserService);
   private eventService = inject(EventsService);
-  eventList!: EventInterface[];
+  eventList!: ApiEvent[];
   private route = inject(ActivatedRoute);
   userId!: number;
   testId!: number;
   userList!: UserInterface[];
   myUser!: UserInterface;
   ngOnInit() {
-    this.userService.getAllUser().subscribe(data => {
-      this.userList = data;
-    });
-    this.route.params.subscribe(params => {
-      this.userId = +params['id'];
-    });
-    this.eventService.getAllEvents().subscribe(data => {
-      this.eventList = data;
+    this.eventService.getAllEventsbackend().subscribe(data => {
+      this.eventList = data.events;
     });
     this.userService.getUser().subscribe(data => {
       this.myUser = data;
