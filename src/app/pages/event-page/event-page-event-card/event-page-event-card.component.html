@@ -57,6 +57,11 @@
         <p class="event__card__info__subTitle">adresse: ville</p>
       </div>
     </article>
-    <article>MAP?</article>
+    <div
+      class="event__card__info__map"
+      style="height: 300px"
+      leaflet
+      [leafletOptions]="options"
+      [leafletLayers]="layers"></div>
   </div>
 </div>

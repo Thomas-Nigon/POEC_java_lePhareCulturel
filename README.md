@@ -34,14 +34,16 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 ## Installation
 
 1. Clonez le dépôt :
-    ```bash
-    git clone https://github.com/Thomas-Nigon/POEC_java_lePhareCulturel.git
-    ```
+
+   ```bash
+   git clone https://github.com/Thomas-Nigon/POEC_java_lePhareCulturel.git
+   ```
 
 2. Accédez au répertoire du projet :
-    ```bash
-    cd POEC_java_lePhareCulturel
-    ```
+
+   ```bash
+   cd POEC_java_lePhareCulturel
+   ```
 
 3. Importez le projet dans votre IDE préféré.
 
