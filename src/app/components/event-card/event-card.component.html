@@ -1,16 +1,17 @@
-<a routerLink="/event/{{ event && event.id - 1 }}" class="eventCard__link">
+<a routerLink="/event/{{ event && event.uid }}" class="eventCard__link">
   <article class="eventCard">
-    <div class="eventCard__category__wrapper">
-      <img class="eventCard-img" src="{{ event && event.event_pic }}" alt=" {{ event && event.event_category }}" />
-      <h2 class="eventCard__category__name">{{ event && event.event_category }}</h2>
-    </div>
+    <img class="eventCard-img" src="{{ event && event.images.thumbnail }}" alt=" {{ event && event.description }}" />
+
     <div class="eventCard__description">
-      <h3 class="eventCard__title">{{ event && event.event_name }}</h3>
-      <p class="eventCard__date">
-        {{ event && event.event_date }}
-        <span class="eventCard__time">{{ event && event.event_time }}</span>
-      </p>
-      <p class="eventCard__description">{{ event && event.event_desc }}</p>
+      <h3 class="eventCard__title">{{ event && event.title }}</h3>
+      @if (event.first_timing.begin !== event.last_timing.begin) {
+        <p class="eventCard__date">A Partir du {{ localeStartDateString }}, jusqu'au {{ localeEndDateString }}</p>
+      } @else {
+        <p class="eventCard__date">{{ localeStartDateString }}</p>
+      }
+      <p class="eventCard__address">{{ event && event.location.address }}</p>
+
+      <p class="eventCard__description">{{ event && event.description }}</p>
     </div>
   </article>
 </a>

@@ -16,9 +16,12 @@ export const routes: Routes = [
     component: UserPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'event/:id', component: EventPageComponent },
   {
-    path: 'events/:id/groups/:id/chat',
+    path: 'event/:id',
+    component: EventPageComponent,
+  },
+  {
+    path: 'event/:id/groups/:groupId',
     component: ChatPageComponent,
   },
   {
@@ -36,8 +39,8 @@ export const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'group', component: CreateGroupComponent },
 
-  {
+  /* {
     path: '**',
     redirectTo: '',
-  },
+  }, */
 ];

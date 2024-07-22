@@ -71,6 +71,13 @@
   padding: 0.5rem;
   color: $background;
 }
+.eventCard__address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.5rem;
+  color: $secondary;
+}
 
 @media screen and (min-width: 768px) {
   .eventCard {

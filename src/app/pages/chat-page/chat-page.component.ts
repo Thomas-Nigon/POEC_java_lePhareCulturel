@@ -4,26 +4,41 @@ import { MessagesService } from '../../shared/services/messages.service';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { messageInterface } from '../../models/message.model';
+import { GroupService } from '../../shared/services/group.service';
+import { GroupInterface } from '../../models/group.model';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-chat-page',
   standalone: true,
-  imports: [SingleMessageCardComponent, CommonModule, ReactiveFormsModule],
+  imports: [SingleMessageCardComponent, CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './chat-page.component.html',
   styleUrl: './chat-page.component.scss',
 })
 export class ChatPageComponent implements OnInit {
   scroller = inject(ViewportScroller);
-  messageList!: messageInterface[];
   messageService = inject(MessagesService);
+  groupService = inject(GroupService);
   fb = inject(FormBuilder);
+  route = inject(ActivatedRoute);
+
+  messageList!: messageInterface[];
+  groupList!: GroupInterface[];
+  groupId!: number;
   currentMessage!: string;
+  showQuitButton = false;
   userMessage = this.fb.group({
     userMessage: ['', [Validators.required, Validators.minLength(1)]],
   });
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.groupId = +params['groupId'];
+    });
     this.messageService.getMessagesByGroup().subscribe(messages => {
       this.messageList = messages;
+      this.groupService.getAllGroups().subscribe(data => {
+        this.groupList = data;
+      });
     });
   }
   submitMessage() {

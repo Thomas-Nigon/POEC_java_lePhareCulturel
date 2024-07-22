@@ -1,17 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { EventInterface } from '../../models/event.model';
+import { ApiEvent, EventInterface, EventResponse } from '../../models/event.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventsService {
+  private apiUrl = environment.apiUrl;
   private http = inject(HttpClient);
 
   getAllEvents() {
     return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
   }
-  getAllEventsbackend() {
-    return this.http.get<EventInterface[]>('http://localhost:8080/api/v1/events');
+  getAllEventsbackend(size: number, page: number) {
+    const params = {
+      size: size.toString(),
+      page: page.toString(),
+    };
+    return this.http.get<EventResponse>(`${this.apiUrl}/events?`, { params });
+  }
+  geteventById(id: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<ApiEvent>(`${this.apiUrl}/events/${id}`);
+  }
+  getGroupListByEvent(id: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${id}/groups`);
+  }
+  getSingleGroupByEvent(eventId: number, groupId: number) {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${eventId}/groups/${groupId}`);
   }
 }
