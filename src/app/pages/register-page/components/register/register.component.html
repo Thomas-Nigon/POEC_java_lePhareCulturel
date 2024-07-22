@@ -1,5 +1,5 @@
 <main class="registerForm__container">
-  <h2 class="register__title">Créez votre compte:</h2>
+  <h2 class="register__title">Créez votre compte :</h2>
   <form class="register__form" [formGroup]="registerForm" (submit)="onSubmit()">
     <input
       class="register__form__input"
@@ -99,6 +99,6 @@
       "
       >Attention le mot de passe ne correspond pas</span
     >
-    <button class="register__form__button" [disabled]="!registerForm.valid">Register</button>
+    <button class="register__form__button" [disabled]="!registerForm.valid">Je crée mon compte</button>
   </form>
 </main>

@@ -1,7 +1,7 @@
 @import '../../../../../variables.scss';
 
 .container {
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   background-color: $background;
@@ -51,7 +51,6 @@
   text-decoration-thickness: auto;
   width: 100%;
   max-width: 460px;
-  position: relative;
   cursor: pointer;
   transform: rotate(-2deg);
   user-select: none;
@@ -66,7 +65,7 @@
   display: flex;
   font-size: 1rem;
   justify-content: space-around;
-  width: 65%;
+  width: 100%;
   font-weight: 700;
   line-height: 1.75rem;
   padding: 0.75rem 1.65rem;
@@ -74,9 +73,7 @@
   text-align: center;
   text-decoration: none #000000 solid;
   text-decoration-thickness: auto;
-  width: 100%;
   max-width: 460px;
-  position: relative;
   transform: rotate(-2deg);
   user-select: none;
   -webkit-user-select: none;
@@ -132,7 +129,8 @@
 @media screen and (min-width: 900px) {
   .container {
     flex-direction: row;
-    height: 55vh;
+    height: 60vh;
+    max-height: 450px;
     align-items: unset;
   }
 }

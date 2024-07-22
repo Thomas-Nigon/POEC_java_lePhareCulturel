@@ -1,5 +1,23 @@
 @import '../../../variables.scss';
 
+.search-results {
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.data-card {
+  padding: 5px;
+  margin: 8px 0px;
+  width: 20%;
+  border: 1px solid black;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(236, 234, 111);
+}
+
 .searchPage {
   padding-bottom: 100px;
   display: flex;
@@ -75,7 +93,7 @@
   color: $primary;
 }
 .calendar-title__button span {
-  background-color: $background;
+  background-color: #0000;
   border-radius: 50%;
 }
 .calendar-title__button:hover {

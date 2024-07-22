@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { EventPageEventCardComponent } from './event-page-event-card/event-page-event-card.component';
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { CommonModule } from '@angular/common';
 import { JoinGroupComponent } from './components/join-group/join-group.component';
+import { ActivatedRoute } from '@angular/router';
+import { ApiEvent } from '../../models/event.model';
+import { EventsService } from '../../shared/services/events.service';
 
 @Component({
   selector: 'app-event-page',
@@ -11,12 +14,24 @@ import { JoinGroupComponent } from './components/join-group/join-group.component
   templateUrl: './event-page.component.html',
   styleUrl: './event-page.component.scss',
 })
-export class EventPageComponent {
+export class EventPageComponent implements OnInit {
+  router = inject(ActivatedRoute);
+  eventService = inject(EventsService);
   hidden!: boolean;
+  eventId!: number;
+  event!: ApiEvent;
   setHidden(hidden: boolean) {
     this.hidden = hidden;
   }
   hide() {
     this.hidden = !this.hidden;
+  }
+  ngOnInit() {
+    this.router.params.subscribe(params => {
+      this.eventId = +params['id'];
+      this.eventService.geteventById(this.eventId).subscribe(data => {
+        this.event = data;
+      });
+    });
   }
 }

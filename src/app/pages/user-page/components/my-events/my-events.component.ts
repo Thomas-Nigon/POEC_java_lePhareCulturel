@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { EventInterface } from '../../../../models/event.model';
+import { ApiEvent } from '../../../../models/event.model';
 import { EventCardComponent } from '../../../../components/event-card/event-card.component';
 import { RouterLink } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 })
 export class MyEventsComponent {
   incomingEvents = true;
-  @Input() eventList: EventInterface[] = [];
+  @Input() eventList: ApiEvent[] = [];
   onClickIncoming() {
     this.incomingEvents = true;
   }

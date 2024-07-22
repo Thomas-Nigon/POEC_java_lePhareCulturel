@@ -17,6 +17,7 @@ export class MyInfoComponent implements OnInit {
   @Input() userId!: number;
   @Input() myUser!: UserInterface;
   editedUser!: EditedUserInterface;
+
   edit = false;
   fb = inject(FormBuilder);
   userService = inject(UserService);

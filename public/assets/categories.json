@@ -1,7 +1,12 @@
 [
   {
+    "id": 3,
+    "name": "Art",
+    "img": "/assets/images/culture.jpg"
+  },
+  {
     "id": 1,
-    "name": "Culinaire",
+    "name": "Manger",
     "img": "/assets/images/Restaurant.jpeg"
   },
   {
@@ -10,18 +15,13 @@
     "img": "/assets/images/Musique.jpg"
   },
   {
-    "id": 3,
-    "name": "Arts",
-    "img": "/assets/images/culture.jpg"
+    "id": 5,
+    "name": "Nature",
+    "img": "/assets/images/Nature3.jpg"
   },
   {
     "id": 4,
     "name": "Sport",
     "img": "/assets/images/sport.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Nature",
-    "img": "/assets/images/Nature3.jpg"
   }
 ]
