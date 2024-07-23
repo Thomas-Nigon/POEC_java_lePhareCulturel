@@ -6,6 +6,7 @@ import { JoinGroupComponent } from './components/join-group/join-group.component
 import { ActivatedRoute } from '@angular/router';
 import { ApiEvent } from '../../models/event.model';
 import { EventsService } from '../../shared/services/events.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event-page',
@@ -17,9 +18,9 @@ import { EventsService } from '../../shared/services/events.service';
 export class EventPageComponent implements OnInit {
   router = inject(ActivatedRoute);
   eventService = inject(EventsService);
-  hidden!: boolean;
   eventId!: number;
-  event!: ApiEvent;
+  event!: Observable<ApiEvent>;
+  hidden!: boolean;
   setHidden(hidden: boolean) {
     this.hidden = hidden;
   }
@@ -29,9 +30,8 @@ export class EventPageComponent implements OnInit {
   ngOnInit() {
     this.router.params.subscribe(params => {
       this.eventId = +params['id'];
-      this.eventService.geteventById(this.eventId).subscribe(data => {
-        this.event = data;
-      });
+      this.eventService.geteventById(this.eventId);
+      this.event = this.eventService.event$;
     });
   }
 }

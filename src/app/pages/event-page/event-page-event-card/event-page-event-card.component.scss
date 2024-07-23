@@ -63,11 +63,7 @@
   flex-direction: column;
   align-items: center;
 }
-/* .event-card__image__wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-} */
+
 .event-image {
   width: 100%;
   max-width: 400px;
@@ -91,6 +87,7 @@
 }
 
 .eventCard__eventDate {
+  margin-left: 0.5rem;
   color: $primary;
 }
 .event-title {
@@ -295,8 +292,7 @@
   }
   .event-image {
     width: 100%;
-    max-width: 800px;
-
+    max-width: 600px;
     object-fit: contain;
   }
   .event__card__info {

@@ -32,7 +32,7 @@ export class EventCardComponent implements OnInit {
 
   onClick(event: Event) {
     const clickedId: string | null = (event.target as HTMLInputElement).getAttribute('id');
-    this.targetId = clickedId ? parseInt(clickedId) - 1 : 0;
+    this.targetId = clickedId ? parseInt(clickedId) : 0;
 
     this.router.navigate(['/event', this.targetId]).catch((error: unknown) => {
       console.error(error);

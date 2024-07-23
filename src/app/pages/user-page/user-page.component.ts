@@ -22,13 +22,14 @@ export class UserPageComponent implements OnInit {
   userId!: number;
   testId!: number;
   userList!: UserInterface[];
-  myUser!: UserInterface;
   ngOnInit() {
-    /*    this.eventService.getAllEventsbackend().subscribe(data => {
+    /*  this.eventService.getAllEventsbackend().subscribe(data => {
       this.eventList = data.events;
-    });
-    this.userService.getUser().subscribe(data => {
+    }); */
+    /*  this.userService.getUser().subscribe(data => {
       this.myUser = data;
     }); */
+    /*    this.userService.getUser();
+    this.myUser = this.userService.myUser$; */
   }
 }

@@ -30,15 +30,12 @@ export class SearchPageComponent implements OnInit {
   eventService = inject(EventsService);
   eventList: ApiEvent[] = [];
 
-  /////////////////////////////////
-
   isLoading = false;
   currentPage = 0;
   itemsPerPage = 20;
 
+  //load events with pagination
   toggleLoading = () => (this.isLoading = !this.isLoading);
-
-  // it will be called when this component gets initialized.
   loadData = (size: number = this.itemsPerPage, page: number = this.currentPage) => {
     this.toggleLoading();
     this.eventService.getAllEventsbackend(size, page).subscribe({
@@ -53,7 +50,7 @@ export class SearchPageComponent implements OnInit {
       complete: () => this.toggleLoading(),
     });
   };
-
+  // add next page pagination
   appendData = () => {
     this.toggleLoading();
     this.eventService.getAllEventsbackend(this.itemsPerPage, this.currentPage).subscribe({
@@ -69,6 +66,7 @@ export class SearchPageComponent implements OnInit {
     });
   };
 
+  //toggle on scroll api call
   onScroll = () => {
     console.warn('scrolling');
     this.currentPage++;
@@ -123,25 +121,4 @@ export class SearchPageComponent implements OnInit {
         console.error(err);
       });
   }
-
-  /*   getAllEventsBackend() {
-    this.eventService.geteventById(4).subscribe(data => {
-      console.warn(data);
-    });
-  }
-  geteventById() {
-    this.eventService.geteventById(4).subscribe(data => {
-      console.warn(data);
-    });
-  }
-  getGroupListByEvent() {
-    this.eventService.getGroupListByEvent(4).subscribe(data => {
-      console.warn(data);
-    });
-  }
-  getSingleGroupByEvent() {
-    this.eventService.getSingleGroupByEvent(4, 1).subscribe(data => {
-      console.warn(data);
-    });
-  } */
 }

@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { ApiEvent, EventInterface, EventResponse } from '../../models/event.model';
 import { environment } from '../../../environments/environment';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +11,8 @@ import { environment } from '../../../environments/environment';
 export class EventsService {
   private apiUrl = environment.apiUrl;
   private http = inject(HttpClient);
+  public event: BehaviorSubject<ApiEvent> = new BehaviorSubject<ApiEvent>({} as ApiEvent);
+  public event$: Observable<ApiEvent> = this.event.asObservable();
 
   getAllEvents() {
     return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
@@ -21,15 +25,20 @@ export class EventsService {
     return this.http.get<EventResponse>(`${this.apiUrl}/events?`, { params });
   }
   geteventById(id: number) {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    return this.http.get<ApiEvent>(`${this.apiUrl}/events/${id}`);
+    return this.http
+      .get<ApiEvent>(`${this.apiUrl}/events/${id}`)
+      .pipe(
+        tap(data => {
+          this.event.next(data);
+        })
+      )
+      .subscribe();
   }
+
   getGroupListByEvent(id: number) {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${id}/groups`);
   }
   getSingleGroupByEvent(eventId: number, groupId: number) {
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${eventId}/groups/${groupId}`);
   }
 }
