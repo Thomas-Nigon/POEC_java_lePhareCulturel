@@ -33,9 +33,9 @@
         }
       </span>
     </article>
+    <h3 class="eventCard__title">{{ event && event.title }}</h3>
     <article class="event__card__info__group">
       <span class="material-symbols-outlined">schedule</span>
-      <h3 class="eventCard__title">{{ event && event.title }}</h3>
       @if (event.first_timing.begin !== event.last_timing.begin) {
         <p class="eventCard__date">A Partir du {{ localeStartDateString }}, jusqu'au {{ localeEndDateString }}</p>
       } @else {

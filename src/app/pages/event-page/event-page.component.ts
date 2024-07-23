@@ -17,9 +17,9 @@ import { EventsService } from '../../shared/services/events.service';
 export class EventPageComponent implements OnInit {
   router = inject(ActivatedRoute);
   eventService = inject(EventsService);
-  hidden!: boolean;
   eventId!: number;
   event!: ApiEvent;
+  hidden!: boolean;
   setHidden(hidden: boolean) {
     this.hidden = hidden;
   }
@@ -29,7 +29,8 @@ export class EventPageComponent implements OnInit {
   ngOnInit() {
     this.router.params.subscribe(params => {
       this.eventId = +params['id'];
-      this.eventService.geteventById(this.eventId).subscribe(data => {
+      this.eventService.geteventById(this.eventId);
+      this.eventService.event$.subscribe(data => {
         this.event = data;
       });
     });

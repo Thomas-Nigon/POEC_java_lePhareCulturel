@@ -91,6 +91,7 @@
 }
 
 .eventCard__eventDate {
+  margin-left: 0.5rem;
   color: $primary;
 }
 .event-title {
@@ -296,7 +297,6 @@
   .event-image {
     width: 100%;
     max-width: 800px;
-
     object-fit: contain;
   }
   .event__card__info {

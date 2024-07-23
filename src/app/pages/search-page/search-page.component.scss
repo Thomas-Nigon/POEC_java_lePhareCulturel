@@ -1,8 +1,12 @@
 @import '../../../variables.scss';
 
-.search-results {
+/* .search-results {
   height: 100vh;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+.test {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -19,12 +23,13 @@
 }
 
 .searchPage {
+  overflow: scroll;
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 101px);
+  height: calc(100vh - 101px);
 }
 
 .search_page_title {

@@ -1,12 +1,11 @@
-<main class="searchPage">
+<main
+  class="search-results searchPage"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
   <h2 class="search_page_title">L'Agenda du Phare</h2>
-  <!--   <button (click)="getAllEventsBackend()">Rechercher tous les events</button>
-  <button (click)="geteventById()">Rechercher single event</button>
-  <button (click)="getGroupListByEvent()">Rechercher all groups of event</button>
-  <button (click)="getSingleGroupByEvent()">Rechercher un groupe sur un event e</button>
-
-
- -->
   <app-filter-bar></app-filter-bar>
   <article class="calendar_title_container">
     <h3 class="calendar-title">
@@ -20,14 +19,7 @@
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
+  <div class="test">
+    <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
+  </div>
 </main>
-
-<div
-  class="search-results"
-  infiniteScroll
-  [infiniteScrollDistance]="2"
-  [infiniteScrollThrottle]="500"
-  (scrolled)="onScroll()"
-  [scrollWindow]="false">
-  <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
-</div>
