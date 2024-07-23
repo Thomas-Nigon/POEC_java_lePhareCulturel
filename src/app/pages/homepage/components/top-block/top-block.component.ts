@@ -13,6 +13,18 @@ import { IonIcon } from '@ionic/angular/standalone';
 export class TopBlockComponent {
   scroller = inject(ViewportScroller);
 
+  openInstagram() {
+    window.location.href = 'https://www.instagram.com/lephareculturel/';
+  }
+
+  openFacebook() {
+    window.location.href = 'https://www.facebook.com/profile.php?id=61563414295164';
+  }
+
+  openTwitter() {
+    window.location.href = 'https://x.com/lephareculturel';
+  }
+
   onClick() {
     this.scroller.scrollToAnchor('about-us');
   }
