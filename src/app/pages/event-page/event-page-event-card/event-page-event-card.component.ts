@@ -3,8 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular
 import { RouterLink } from '@angular/router';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Map, MapOptions, Marker, icon, latLng, marker, tileLayer } from 'leaflet';
-import 'leaflet/dist/images/marker-icon.png';
-import 'leaflet/dist/images/marker-shadow.png';
+// import 'leaflet/dist/images/marker-icon.png';
+// import 'leaflet/dist/images/marker-shadow.png';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { ApiEvent } from '../../../models/event.model';
