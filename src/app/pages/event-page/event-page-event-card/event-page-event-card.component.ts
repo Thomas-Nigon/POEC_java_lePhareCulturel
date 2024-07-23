@@ -8,9 +8,10 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../shared/services/auth.service';
 import Swal from 'sweetalert2';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { circle, icon, latLng, MapOptions, marker, polygon, tileLayer } from 'leaflet';
+import { icon, latLng, MapOptions, marker, tileLayer, Map, Marker } from 'leaflet';
 import 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/images/marker-icon.png';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event-page-event-card',
@@ -24,21 +25,23 @@ export class EventPageEventCardComponent implements OnInit {
   eventService = inject(EventsService);
   userService = inject(UserService);
 
-  @Input() event!: ApiEvent;
+  @Input() event!: Observable<ApiEvent>;
   @Input() hidden!: boolean;
   @Output() testhidden = new EventEmitter<boolean>();
 
   notLogged = false;
-
-  eventLongitude = 12;
-  eventLatitude = 12;
-
   beginDate!: Date;
   endDate!: Date;
   isoStartDateString!: Date;
   isoEndDateString!: Date;
   localeStartDateString!: string;
   localeEndDateString!: string;
+
+  mapOptions!: MapOptions;
+  map!: Map;
+  eventMarker!: Marker;
+
+  eventDate!: string;
 
   dateOptions: Intl.DateTimeFormatOptions = {
     weekday: 'long',
@@ -49,23 +52,49 @@ export class EventPageEventCardComponent implements OnInit {
     minute: 'numeric',
   };
 
-  eventDate!: string;
   ngOnInit(): void {
-    this.isoStartDateString = this.event.first_timing.begin;
-    this.beginDate = new Date(this.isoStartDateString);
-    this.localeStartDateString =
-      this.beginDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
-      this.beginDate.toLocaleString(undefined, this.dateOptions).slice(1);
+    this.event.subscribe(event => {
+      this.isoStartDateString = event.first_timing.begin;
+      this.beginDate = new Date(this.isoStartDateString);
+      this.localeStartDateString =
+        this.beginDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
+        this.beginDate.toLocaleString(undefined, this.dateOptions).slice(1);
 
-    this.isoEndDateString = this.event.last_timing.begin;
-    this.endDate = new Date(this.isoEndDateString);
-    this.localeEndDateString =
-      this.endDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
-      this.endDate.toLocaleString(undefined, this.dateOptions).slice(1);
+      this.isoEndDateString = event.last_timing.begin;
+      this.endDate = new Date(this.isoEndDateString);
+      this.localeEndDateString =
+        this.endDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
+        this.endDate.toLocaleString(undefined, this.dateOptions).slice(1);
 
-    this.eventLongitude = this.event.location.coordinates.lon;
-    this.eventLatitude = this.event.location.coordinates.lat;
+      this.mapOptions = {
+        layers: [
+          tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors',
+          }),
+        ],
+        zoom: 16,
+        center: latLng(event.location.coordinates.lat, event.location.coordinates.lon),
+      };
+    });
   }
+
+  onMapReady(map: Map) {
+    this.map = map;
+    this.event.subscribe(event => {
+      this.eventMarker = marker([event.location.coordinates.lat, event.location.coordinates.lon], {
+        icon: icon({
+          iconSize: [25, 41],
+          iconAnchor: [13, 41],
+          iconUrl: 'leaflet/marker-icon.png',
+          shadowUrl: 'leaflet/marker-shadow.png',
+        }),
+      });
+      this.map.setView(latLng(event.location.coordinates.lat, event.location.coordinates.lon), 16);
+      this.eventMarker.addTo(this.map);
+    });
+  }
+
   onClick() {
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
       if (isLoggedIn) {
@@ -82,26 +111,4 @@ export class EventPageEventCardComponent implements OnInit {
       }
     });
   }
-
-  mapOptions: MapOptions = {
-    layers: [tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })],
-    zoom: 16,
-    center: latLng(this.eventLatitude, this.eventLongitude),
-  };
-  layers = [
-    circle([46.95, -122], { radius: 5000 }),
-    polygon([
-      [46.8, -121.85],
-      [46.92, -121.92],
-      [46.87, -121.8],
-    ]),
-    marker([this.eventLatitude, this.eventLongitude], {
-      icon: icon({
-        iconSize: [25, 41],
-        iconAnchor: [13, 41],
-        iconUrl: 'leaflet/marker-icon.png',
-        shadowUrl: 'leaflet/marker-shadow.png',
-      }),
-    }),
-  ];
 }
