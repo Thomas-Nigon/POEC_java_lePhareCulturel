@@ -31,8 +31,9 @@ export class EditAvatarComponent implements OnInit {
     });
   }
 
-  /*   onClick(event: Event) {
-    /    const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
+  onClick(event: Event) {
+    console.warn(event);
+    /*     const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
     this.newAvatar.url = avatarUrl ?? '';
     const avatarId = (event.target as HTMLInputElement).getAttribute('id');
     this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
@@ -40,12 +41,12 @@ export class EditAvatarComponent implements OnInit {
       next: response => {
         console.warn('edit avatar successful:', response);
         this.myUser.avatar = this.newAvatar.url;
-        },
-        error: err => {
-          if (err.status !== 401) {
-            console.error('Error occurred:', err);
-            }
-            },
-            }); 
-  } */
+      },
+      error: err => {
+        if (err.status !== 401) {
+          console.error('Error occurred:', err);
+        }
+      },
+    }); */
+  }
 }
