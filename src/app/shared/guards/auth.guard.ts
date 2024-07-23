@@ -19,6 +19,7 @@ export const AuthGuard: CanActivateFn = () => {
 
   return authService.myUser$.pipe(
     map(user => {
+      console.warn('user inside guard', user);
       if (user.isLogged) {
         return true;
       } else {

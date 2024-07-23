@@ -6,6 +6,7 @@ import { MyInfoComponent } from '../my-info/my-info.component';
 import { EditPasswordComponent } from '../edit-password/edit-password.component';
 import { UserInterface } from '../../../../models/user.model';
 import { AuthService } from '../../../../shared/services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profil',
@@ -19,7 +20,7 @@ export class ProfilComponent {
   router = inject(Router);
   @Input() userId!: number;
   @Input() userList!: UserInterface[];
-  @Input() myUser!: UserInterface;
+  @Input() myUser!: Observable<UserInterface>;
   path: string | null = 'home';
 
   onClick(event: Event) {

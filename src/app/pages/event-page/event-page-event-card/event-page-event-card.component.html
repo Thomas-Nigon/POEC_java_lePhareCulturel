@@ -38,7 +38,7 @@
       <article class="event__card__info__group">
         <span class="material-symbols-outlined">schedule</span>
         @if (e.first_timing.begin !== e.last_timing.begin) {
-          <p class="eventCard__date">A Partir du {{ localeStartDateString }}, jusqu'au {{ localeEndDateString }}</p>
+          <p class="eventCard__date">A partir du {{ localeStartDateString }}, jusqu'au {{ localeEndDateString }}</p>
         } @else {
           <p class="eventCard__date">{{ localeStartDateString }}</p>
         }

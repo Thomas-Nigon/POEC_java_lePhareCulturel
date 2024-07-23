@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
 import { EditedUserInterface } from '../../../../models/editUser.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-info',
@@ -15,8 +16,9 @@ import { EditedUserInterface } from '../../../../models/editUser.model';
 export class MyInfoComponent implements OnInit {
   @Input() userList: UserInterface[] = [];
   @Input() userId!: number;
-  @Input() myUser!: UserInterface;
+  myUser!: UserInterface;
   editedUser!: EditedUserInterface;
+  testUser!: Observable<UserInterface>;
 
   edit = false;
   fb = inject(FormBuilder);
@@ -30,17 +32,15 @@ export class MyInfoComponent implements OnInit {
   });
 
   ngOnInit() {
-    this.editUserForm = this.fb.group({
-      firstname: [
-        this.myUser.firstname ?? '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(30)],
-      ],
-      lastname: [this.myUser.lastname ?? '', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-      nickname: [this.myUser.nickname ?? '', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-      description: [
-        this.myUser.description ?? '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(300)],
-      ],
+    this.userService.getUser();
+    this.testUser = this.userService.myUser$;
+    this.testUser.subscribe(data => {
+      this.editUserForm = this.fb.group({
+        firstname: [data.firstname, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+        lastname: [data.lastname, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+        nickname: [data.nickname, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+        description: [data.description, [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
+      });
     });
   }
   submitEditForm() {
@@ -49,7 +49,8 @@ export class MyInfoComponent implements OnInit {
     this.editedUser = { ...this.editedUser, ...this.editUserForm.value };
     this.userService.editUser(this.editedUser).subscribe({
       next: response => {
-        console.warn('User eited successfully:', response);
+        this.userService.getUser();
+        console.warn('User edited successfully:', response);
       },
       error: err => {
         console.error('Error occurred:', err);

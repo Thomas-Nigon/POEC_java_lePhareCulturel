@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { UserInterface } from '../../models/user.model';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { NewUser } from '../../models/newUser.models';
 import { environment } from '../../../environments/environment';
 import { EditedUserInterface } from '../../models/editUser.model';
@@ -13,6 +13,8 @@ import { EditAvatarInterface } from '../../models/editAvatar.model';
 export class UserService {
   private http = inject(HttpClient);
   private apiUrl = environment.apiUrl;
+  public myUser: BehaviorSubject<UserInterface> = new BehaviorSubject<UserInterface>({} as UserInterface);
+  public myUser$: Observable<UserInterface> = this.myUser.asObservable();
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
@@ -38,14 +40,18 @@ export class UserService {
       catchError(this.handleError)
     );
   }
-  getUser(): Observable<UserInterface> {
+  getUser() {
     {
-      return this.http.get<UserInterface>(`${this.apiUrl}/users/profile`, { withCredentials: true }).pipe(
-        tap((response: UserInterface) => {
-          console.warn('User fetched successfully:', response);
-        }),
-        catchError(this.handleError)
-      );
+      return this.http
+        .get<UserInterface>(`${this.apiUrl}/users/profile`, { withCredentials: true })
+        .pipe(
+          tap((response: UserInterface) => {
+            this.myUser.next(response);
+            console.warn('User fetched successfully:', response);
+          }),
+          catchError(this.handleError)
+        )
+        .subscribe();
     }
   }
   getUserLocal(): UserInterface {

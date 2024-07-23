@@ -31,10 +31,6 @@ export class EventPageComponent implements OnInit {
     this.router.params.subscribe(params => {
       this.eventId = +params['id'];
       this.eventService.geteventById(this.eventId);
-      /* this.eventService.event$.subscribe(data => {
-        this.event = data;
-      });
-      */
       this.event = this.eventService.event$;
     });
   }

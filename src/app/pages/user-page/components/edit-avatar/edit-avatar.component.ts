@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
@@ -6,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../shared/services/user.service';
 import { EditAvatarInterface } from '../../../../models/editAvatar.model';
 import { UserInterface } from '../../../../models/user.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-avatar',
@@ -15,7 +15,7 @@ import { UserInterface } from '../../../../models/user.model';
   styleUrl: './edit-avatar.component.scss',
 })
 export class EditAvatarComponent implements OnInit {
-  @Input() myUser!: UserInterface;
+  @Input() myUser!: Observable<UserInterface>;
   private avatarService = inject(AvatarService);
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
@@ -31,8 +31,8 @@ export class EditAvatarComponent implements OnInit {
     });
   }
 
-  onClick(event: Event) {
-    const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
+  /*   onClick(event: Event) {
+    /    const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
     this.newAvatar.url = avatarUrl ?? '';
     const avatarId = (event.target as HTMLInputElement).getAttribute('id');
     this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
@@ -40,12 +40,12 @@ export class EditAvatarComponent implements OnInit {
       next: response => {
         console.warn('edit avatar successful:', response);
         this.myUser.avatar = this.newAvatar.url;
-      },
-      error: err => {
-        if (err.status !== 401) {
-          console.error('Error occurred:', err);
-        }
-      },
-    });
-  }
+        },
+        error: err => {
+          if (err.status !== 401) {
+            console.error('Error occurred:', err);
+            }
+            },
+            }); 
+  } */
 }
