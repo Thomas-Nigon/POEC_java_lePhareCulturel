@@ -1,5 +1,5 @@
 <section class="myInfo">
-  @if (testUser | async; as user) {
+  @if (observableUser | async; as user) {
     <div class="myInfo__edit__wrapper">
       <button *ngIf="!edit" (click)="edit = !edit">
         <span class="material-symbols-outlined"> edit</span>

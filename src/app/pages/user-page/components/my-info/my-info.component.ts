@@ -18,7 +18,7 @@ export class MyInfoComponent implements OnInit {
   @Input() userId!: number;
   myUser!: UserInterface;
   editedUser!: EditedUserInterface;
-  testUser!: Observable<UserInterface>;
+  observableUser!: Observable<UserInterface>;
 
   edit = false;
   fb = inject(FormBuilder);
@@ -33,8 +33,8 @@ export class MyInfoComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUser();
-    this.testUser = this.userService.myUser$;
-    this.testUser.subscribe(data => {
+    this.observableUser = this.userService.myUser$;
+    this.observableUser.subscribe(data => {
       this.editUserForm = this.fb.group({
         firstname: [data.firstname, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
         lastname: [data.lastname, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],

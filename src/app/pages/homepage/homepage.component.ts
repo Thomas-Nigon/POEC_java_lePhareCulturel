@@ -3,7 +3,7 @@ import { FilterBarComponent } from './components/filter-bar/filter-bar.component
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { EventCardComponent } from '../../components/event-card/event-card.component';
 import { EventsService } from '../../shared/services/events.service';
-import { EventInterface } from '../../models/event.model';
+import { ApiEvent } from '../../models/event.model';
 import { FavoriteCardComponent } from './components/favorite-card/favorite-card.component';
 import { TopBlockComponent } from './components/top-block/top-block.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -24,11 +24,15 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class HomepageComponent implements OnInit {
   eventService = inject(EventsService);
-  eventList!: EventInterface[];
+  eventList: ApiEvent[] = [];
+  event!: ApiEvent;
+  size = 20;
+  page = 0;
 
   ngOnInit() {
-    this.eventService.getAllEvents().subscribe(data => {
-      this.eventList = data;
+    this.eventService.geteventById(3106007);
+    this.eventService.event$.subscribe(data => {
+      this.event = data;
     });
   }
 }
