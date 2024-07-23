@@ -14,10 +14,10 @@ export class EventsService {
   public event: BehaviorSubject<ApiEvent> = new BehaviorSubject<ApiEvent>({} as ApiEvent);
   public event$: Observable<ApiEvent> = this.event.asObservable();
 
-  getAllEvents() {
+  /*  getAllEvents() {
     return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
-  }
-  getAllEventsbackend(size: number, page: number) {
+  } */
+  getAllEvents(size: number, page: number) {
     const params = {
       size: size.toString(),
       page: page.toString(),

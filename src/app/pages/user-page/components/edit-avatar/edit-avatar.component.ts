@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { Component, OnInit, inject } from '@angular/core';
 import { AvatarService } from '../../../../shared/services/avatar.service';
 import { AvatarInterface } from '../../../../models/avatar.model';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs';
   styleUrl: './edit-avatar.component.scss',
 })
 export class EditAvatarComponent implements OnInit {
-  @Input() myUser!: Observable<UserInterface>;
+  myUser!: Observable<UserInterface>;
   private avatarService = inject(AvatarService);
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
@@ -32,21 +33,20 @@ export class EditAvatarComponent implements OnInit {
   }
 
   onClick(event: Event) {
-    console.warn(event);
-    /*     const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
+    const avatarUrl = (event.target as HTMLInputElement).getAttribute('name');
     this.newAvatar.url = avatarUrl ?? '';
     const avatarId = (event.target as HTMLInputElement).getAttribute('id');
     this.selectedId = avatarId ? parseInt(avatarId) - 1 : 0;
     this.userService.editUserAvatar(this.newAvatar).subscribe({
       next: response => {
         console.warn('edit avatar successful:', response);
-        this.myUser.avatar = this.newAvatar.url;
+        //this.myUser = this.newAvatar.url;
       },
       error: err => {
         if (err.status !== 401) {
           console.error('Error occurred:', err);
         }
       },
-    }); */
+    });
   }
 }

@@ -38,7 +38,7 @@ export class SearchPageComponent implements OnInit {
   toggleLoading = () => (this.isLoading = !this.isLoading);
   loadData = (size: number = this.itemsPerPage, page: number = this.currentPage) => {
     this.toggleLoading();
-    this.eventService.getAllEventsbackend(size, page).subscribe({
+    this.eventService.getAllEvents(size, page).subscribe({
       next: data => {
         console.warn('my data', data);
         this.eventList = data.events;
@@ -53,7 +53,7 @@ export class SearchPageComponent implements OnInit {
   // add next page pagination
   appendData = () => {
     this.toggleLoading();
-    this.eventService.getAllEventsbackend(this.itemsPerPage, this.currentPage).subscribe({
+    this.eventService.getAllEvents(this.itemsPerPage, this.currentPage).subscribe({
       next: data => {
         console.warn('my data', data);
         this.eventList = [...this.eventList, ...data.events];
