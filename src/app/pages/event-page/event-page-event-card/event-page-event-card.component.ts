@@ -1,17 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
-import { FilterBarComponent } from '../../homepage/components/filter-bar/filter-bar.component';
-import { EventsService } from '../../../shared/services/events.service';
-import { ApiEvent } from '../../../models/event.model';
-import { RouterLink } from '@angular/router';
-import { UserService } from '../../../shared/services/user.service';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../../shared/services/auth.service';
-import Swal from 'sweetalert2';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { icon, latLng, MapOptions, marker, tileLayer, Map, Marker } from 'leaflet';
-import 'leaflet/dist/images/marker-shadow.png';
+import { Map, MapOptions, Marker, icon, latLng, marker, tileLayer } from 'leaflet';
 import 'leaflet/dist/images/marker-icon.png';
+import 'leaflet/dist/images/marker-shadow.png';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
+import { ApiEvent } from '../../../models/event.model';
+import { AuthService } from '../../../shared/services/auth.service';
+import { EventsService } from '../../../shared/services/events.service';
+import { UserService } from '../../../shared/services/user.service';
+import { FilterBarComponent } from '../../homepage/components/filter-bar/filter-bar.component';
 
 @Component({
   selector: 'app-event-page-event-card',
@@ -96,8 +96,8 @@ export class EventPageEventCardComponent implements OnInit {
   }
 
   onClick() {
-    this.authService.isLoggedIn().subscribe(isLoggedIn => {
-      if (isLoggedIn) {
+    this.authService.user$.subscribe(user => {
+      if (user) {
         this.hidden = true;
 
         this.testhidden.emit(this.hidden);
