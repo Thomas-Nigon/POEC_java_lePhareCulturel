@@ -7,7 +7,7 @@
       <span class="material-symbols-outlined"> save</span>
     </button>
   </div>
-  <img class="myInfo-image" src="{{ myUser ? myUser.avatar : '' }}" alt="la photo de profil d'un utilisateur" />
+  <img class="myInfo-image" src="{{ myUser ? myUser.avatar : '' }}" alt="La photo de profil d'un utilisateur" />
   @if (edit) {
     <form [formGroup]="editUserForm">
       <input
@@ -27,7 +27,7 @@
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
         <span class="material-symbols-outlined"> id_card </span>
-        Nom:
+        Nom :
       </h5>
       <div class="myInfo__item__container">
         @if (edit) {
@@ -50,7 +50,7 @@
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
         <span class="material-symbols-outlined"> id_card </span>
-        Prénom:
+        Prénom :
       </h5>
 
       <div class="myInfo__item__container">
@@ -73,8 +73,8 @@
     </li>
     <li class="myInfo-item">
       <h5 class="myInfo__item__title">
-        <span class="material-symbols-outlined"> mail </span>
-        Email:
+        <span class="material-symbols-outlined"> Mail </span>
+        Email :
       </h5>
       <div class="myInfo__item__container">
         {{ myUser ? myUser.email : '' }}
@@ -82,8 +82,8 @@
     </li>
     <li class="myInfo-item__description">
       <h5 class="myInfo__aboutMe__title">
-        <span class="material-symbols-outlined"> description </span>
-        A propos de moi:
+        <span class="material-symbols-outlined"> Description </span>
+        À propos de moi :
       </h5>
       <div class="myInfo__item__container">
         @if (edit) {

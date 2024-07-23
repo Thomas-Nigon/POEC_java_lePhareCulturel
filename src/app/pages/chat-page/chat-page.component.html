@@ -7,7 +7,7 @@
         </button>
       </div>
       <article class="chatPage__container__aside__groupMember" *ngFor="let message of messageList">
-        <img class="chatPage__container__aside__avatarPic" src="{{ message.user.picture }}" alt="an avatar picture" />
+        <img class="chatPage__container__aside__avatarPic" src="{{ message.user.avatar }}" alt="an avatar picture" />
         <p class="chatPage__container__aside__userName">{{ message.user.first_name }}</p>
       </article>
     </aside>
