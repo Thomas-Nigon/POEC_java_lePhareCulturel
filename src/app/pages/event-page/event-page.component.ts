@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { EventPageEventCardComponent } from './event-page-event-card/event-page-event-card.component';
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
   templateUrl: './event-page.component.html',
   styleUrl: './event-page.component.scss',
 })
-export class EventPageComponent implements OnInit {
+export class EventPageComponent {
   router = inject(ActivatedRoute);
   eventService = inject(EventsService);
   eventId!: number;
@@ -27,7 +27,7 @@ export class EventPageComponent implements OnInit {
   hide() {
     this.hidden = !this.hidden;
   }
-  ngOnInit() {
+  constructor() {
     this.router.params.subscribe(params => {
       this.eventId = +params['id'];
       this.eventService.geteventById(this.eventId);
