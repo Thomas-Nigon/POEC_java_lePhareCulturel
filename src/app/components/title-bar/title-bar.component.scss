@@ -36,6 +36,7 @@
   .titleBar_nav-title {
     border-top: 1px solid $background;
     color: $background;
+    cursor: pointer;
   }
   .titleBar_nav-container {
     display: flex;
