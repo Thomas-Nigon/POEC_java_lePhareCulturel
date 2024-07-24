@@ -14,8 +14,8 @@ export function initializeAuth(authService: AuthService) {
   return () =>
     firstValueFrom(
       authService.initializeAuthState().pipe(
-        catchError(error => {
-          console.log("Erreur lors de l'initialisation de l'authentification:", error);
+        catchError(() => {
+          // console.log("Erreur lors de l'initialisation de l'authentification:", error);
           return [];
         })
       )
@@ -34,7 +34,7 @@ export const appConfig: ApplicationConfig = {
         cookieName: 'XSRF-TOKEN',
         headerName: 'X-XSRF-TOKEN',
       }),
-      withInterceptors([authInterceptor, errorInterceptor])
+      withInterceptors([authInterceptor, errorInterceptor]) // Assurez-vous que l'ordre est correct
     ),
     // Fournir Ionic Angular
     provideIonicAngular(),
