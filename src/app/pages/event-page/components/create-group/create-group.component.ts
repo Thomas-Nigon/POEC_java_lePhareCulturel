@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GroupService } from '../../../../shared/services/group.service';
 import { NewGroupInterface } from '../../../../models/newGroup.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creat-group',
@@ -12,10 +13,12 @@ import { NewGroupInterface } from '../../../../models/newGroup.model';
   styleUrl: './create-group.component.scss',
 })
 export class CreateGroupComponent {
-  newGroup!: NewGroupInterface;
   groupService = inject(GroupService);
-  hideCreateGroup = true;
   fb = inject(FormBuilder);
+  router: Router = inject(Router);
+
+  newGroup!: NewGroupInterface;
+  hideCreateGroup = true;
 
   public createGroupForm = this.fb.group({
     groupName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -31,5 +34,8 @@ export class CreateGroupComponent {
     this.newGroup = this.createGroupForm.value as NewGroupInterface;
     this.groupService.createGroup(this.newGroup);
     this.createGroupForm.reset();
+    this.router.navigate(['user']).catch((error: unknown) => {
+      console.error(error);
+    });
   }
 }

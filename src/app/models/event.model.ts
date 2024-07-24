@@ -1,45 +1,3 @@
-/* 
-export interface EventPageInterface {
-  size: number;
-  total_pages: number;
-  total_elements: number;
-  events: {
-    id: number;
-    uid: number;
-    images: {
-      thumbnail: string;
-      base: string;
-    };
-    description: string;
-    longDescription: string;
-    title: string;
-    location: {
-      name: string;
-      address: string;
-      postalCode: string;
-      city: string;
-      coordinates: {
-        lon: number;
-        lat: number;
-      };
-    };
-    tarifs: null;
-    dateRange: string;
-    image_credits: null;
-    first_timing: {
-      begin: Date;
-      end: Date;
-    };
-    last_timing: {
-      begin: Date;
-      end: Date;
-    };
-  };
-}
-
- */
-// event.model.ts
-
 export interface EventInterface {
   id: number;
   event_name: string;
@@ -82,6 +40,7 @@ export interface ApiEvent {
   tarifs: string | null;
   dateRange: string;
   image_credits: string | null;
+  groups: Group[];
   first_timing: Timing;
   last_timing: Timing;
 }
@@ -89,4 +48,21 @@ export interface ApiEvent {
 export interface EventResponse {
   size: number;
   events: ApiEvent[];
+}
+
+export interface Group {
+  id: number;
+  group_name: string;
+  description: string;
+  author: Author;
+  messages: Message;
+  time_meet: Date;
+}
+export interface Author {
+  profileNickname: string;
+  avatar: string;
+}
+export interface Message {
+  text: string;
+  author: Author;
 }

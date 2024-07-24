@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SingleMessageCardComponent } from './components/single-message-card/single-message-card.component';
-import { MessagesService } from '../../shared/services/messages.service';
-import { CommonModule, ViewportScroller } from '@angular/common';
+//import { MessagesService } from '../../shared/services/messages.service';
+import { CommonModule, ViewportScroller, Location } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { messageInterface } from '../../models/message.model';
-import { GroupService } from '../../shared/services/group.service';
+//import { GroupService } from '../../shared/services/group.service';
 import { GroupInterface } from '../../models/group.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { EventsService } from '../../shared/services/events.service';
 
 @Component({
   selector: 'app-chat-page',
@@ -17,14 +18,17 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 })
 export class ChatPageComponent implements OnInit {
   scroller = inject(ViewportScroller);
-  messageService = inject(MessagesService);
-  groupService = inject(GroupService);
+  /*   messageService = inject(MessagesService);
+  groupService = inject(GroupService); */
+  eventService = inject(EventsService);
   fb = inject(FormBuilder);
   route = inject(ActivatedRoute);
+  public location = inject(Location);
 
   messageList!: messageInterface[];
   groupList!: GroupInterface[];
   groupId!: number;
+  eventId!: number;
   currentMessage!: string;
   showQuitButton = false;
   userMessage = this.fb.group({
@@ -34,12 +38,21 @@ export class ChatPageComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.groupId = +params['groupId'];
     });
-    this.messageService.getMessagesByGroup().subscribe(messages => {
+    this.route.params.subscribe(params => {
+      this.eventId = +params['id'];
+    });
+    /*   this.messageService.getMessagesByGroup().subscribe(messages => {
       this.messageList = messages;
       this.groupService.getAllGroups().subscribe(data => {
         this.groupList = data;
       });
-    });
+    }); */
+    /*  this.eventService.geteventById(this.eventId).subscribe(data => {
+      this.messageList = data.messages;
+    }); */
+  }
+  onClick() {
+    this.location.back();
   }
   submitMessage() {
     this.currentMessage = this.userMessage.value.userMessage ?? '';

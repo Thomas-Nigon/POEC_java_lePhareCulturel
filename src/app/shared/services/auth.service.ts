@@ -15,7 +15,7 @@ import { UserInterface } from '../../models/user.model';
 })
 export class AuthService {
   private apiUrl = environment.apiUrl;
-  private user = new BehaviorSubject<UserInterface | null>(null);
+  private user: BehaviorSubject<UserInterface | null> = new BehaviorSubject<UserInterface | null>(null);
   public user$: Observable<UserInterface | null> = this.user.asObservable();
 
   private http = inject(HttpClient);
