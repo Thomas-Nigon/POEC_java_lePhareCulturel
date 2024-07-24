@@ -1,11 +1,12 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { UserInterface } from '../../models/user.model';
-import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
-import { NewUser } from '../../models/newUser.models';
+import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { EditedUserInterface } from '../../models/editUser.model';
 import { EditAvatarInterface } from '../../models/editAvatar.model';
+import { EditedUserInterface } from '../../models/editUser.model';
+import { NewUser } from '../../models/newUser.models';
+import { UserInterface } from '../../models/user.model';
+import { EventFutureOrLast } from '../../models/event_future_or_last.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,11 @@ export class UserService {
   private apiUrl = environment.apiUrl;
   public myUser: BehaviorSubject<UserInterface> = new BehaviorSubject<UserInterface>({} as UserInterface);
   public myUser$: Observable<UserInterface> = this.myUser.asObservable();
+
+  private myEvents: BehaviorSubject<EventFutureOrLast> = new BehaviorSubject<EventFutureOrLast>(
+    {} as EventFutureOrLast
+  );
+  public myEvents$: Observable<EventFutureOrLast> = this.myEvents.asObservable();
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
@@ -76,5 +82,18 @@ export class UserService {
       }),
       catchError(this.handleError)
     );
+  }
+
+  getMyEventsFutureOrLast() {
+    return this.http
+      .get<EventFutureOrLast>(`${this.apiUrl}/users/events`, { withCredentials: true })
+      .pipe(
+        tap((response: EventFutureOrLast) => {
+          this.myEvents.next(response);
+          console.warn('Events fetched successfully:', response);
+        }),
+        catchError(this.handleError)
+      )
+      .subscribe();
   }
 }

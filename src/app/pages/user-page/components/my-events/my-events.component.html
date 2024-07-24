@@ -13,35 +13,45 @@
         </button>
       </nav>
     </div>
-    <section class="myEvent_incoming" *ngIf="incomingEvents">
-      <a class="eventCard__link" routerLink="/event/{{ event.uid }}" *ngFor="let event of eventList">
-        <article class="eventCard">
-          <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
+    @if (events | async; as e) {
+      <section class="myEvent_incoming">
+        @if (incomingEvents) {
+          @for (event of e.future; track event.uid) {
+            <a class="eventCard__link" routerLink="/event/{{ event.uid }}">
+              <article class="eventCard">
+                <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
 
-          <div class="eventCard_descriptionContainer">
-            <div class="title__event__history">
-              <h5>{{ event.title }}</h5>
-            </div>
-            <p class="event__history__date">{{ event.dateRange }}</p>
-            <p class="eventCard__textDesc">{{ event.description }}</p>
-          </div>
-        </article>
-      </a>
-    </section>
-    <section class="myEvent_past" *ngIf="!incomingEvents">
-      <a class="eventCard__link" routerLink="/event/{{ event.uid }}" *ngFor="let event of eventList">
-        <article class="eventCard">
-          <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
+                <div class="eventCard_descriptionContainer">
+                  <div class="title__event__history">
+                    <h5>{{ event.title }}</h5>
+                  </div>
+                  <p class="event__history__date">{{ event.date_range }}</p>
+                  <p class="eventCard__textDesc">{{ event.description }}</p>
+                </div>
+              </article>
+            </a>
+          }
+        }
+      </section>
+      <section class="myEvent_past">
+        @if (!incomingEvents) {
+          @for (event of e.last; track event.uid) {
+            <a class="eventCard__link" routerLink="/event/{{ event.uid }}">
+              <article class="eventCard">
+                <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
 
-          <div class="eventCard_descriptionContainer">
-            <div class="title__event__history">
-              <h5>{{ event.title }}</h5>
-            </div>
-            <p class="event__history__date">{{ event.dateRange }}</p>
-            <p class="eventCard__textDesc">{{ event.description }}</p>
-          </div>
-        </article>
-      </a>
-    </section>
+                <div class="eventCard_descriptionContainer">
+                  <div class="title__event__history">
+                    <h5>{{ event.title }}</h5>
+                  </div>
+                  <p class="event__history__date">{{ event.date_range }}</p>
+                  <p class="eventCard__textDesc">{{ event.description }}</p>
+                </div>
+              </article>
+            </a>
+          }
+        }
+      </section>
+    }
   </div>
 </main>
