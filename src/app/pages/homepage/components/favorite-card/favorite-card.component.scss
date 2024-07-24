@@ -39,6 +39,17 @@
 u:hover {
   color: $text;
 }
+.h2__favorite {
+  color: $primary;
+  display: flex;
+  align-items: center;
+}
+.link {
+  color: $primary;
+}
+.link:hover {
+  color: $text;
+}
 
 @media screen and (min-width: 768px) {
   .container {

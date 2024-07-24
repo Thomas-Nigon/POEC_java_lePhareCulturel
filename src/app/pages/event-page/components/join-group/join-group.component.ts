@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { GroupCardComponent } from '../group-card/group-card.component';
 import { ApiEvent, Group } from '../../../../models/event.model';
 import { Observable } from 'rxjs';
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   styleUrl: './join-group.component.scss',
 })
 export class JoinGroupComponent implements OnInit {
+  scroller = inject(ViewportScroller);
   @Input() event!: Observable<ApiEvent>;
   hideJoinGroup = false;
   groupList!: Group[];
@@ -24,5 +25,8 @@ export class JoinGroupComponent implements OnInit {
 
   onClick() {
     this.hideJoinGroup = !this.hideJoinGroup;
+    setTimeout(() => {
+      this.scroller.scrollToAnchor('bottomCreate');
+    });
   }
 }

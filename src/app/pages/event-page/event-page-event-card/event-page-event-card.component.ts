@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -24,6 +24,7 @@ export class EventPageEventCardComponent implements OnInit {
   authService = inject(AuthService);
   eventService = inject(EventsService);
   userService = inject(UserService);
+  scroller = inject(ViewportScroller);
 
   @Input() event!: Observable<ApiEvent>;
   @Input() hidden!: boolean;
@@ -99,7 +100,9 @@ export class EventPageEventCardComponent implements OnInit {
     this.authService.user$.subscribe(user => {
       if (user) {
         this.hidden = true;
-
+        setTimeout(() => {
+          this.scroller.scrollToAnchor('bottom');
+        }, 250);
         this.testhidden.emit(this.hidden);
       } else {
         this.notLogged = true;

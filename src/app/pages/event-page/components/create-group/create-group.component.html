@@ -12,7 +12,7 @@
       type="text"
       id="groupName"
       class="createGroupForm__input"
-      formControlName="groupName"
+      formControlName="group_name"
       placeholder="Entrez le nom du groupe" />
 
     <label for="participantNumber"><h5>Nombre de participants :</h5></label>
@@ -20,10 +20,11 @@
       type="number"
       id="participantNumber"
       class="createGroupForm__input"
-      placeholder="Entrez le nombre de participants" />
+      placeholder="Entrez le nombre de participants"
+      formControlName="group_size" />
 
     <label for="meetingTime"><h5>Date et heure de la rencontre :</h5></label>
-    <input type="time" id="meetingTime" class="createGroupForm__input" formControlName="meetingTime" />
+    <input type="time" id="meetingTime" class="createGroupForm__input" formControlName="time_meet" />
 
     <label for="description"><h5>Description :</h5></label>
     <textarea
@@ -33,7 +34,7 @@
       formControlName="description"
       placeholder="Entrez la description du groupe"></textarea>
     <!-- <button (click)="submitGroupForm()" class="create-button">Créer un groupe</button> -->
-    <button (click)="submitGroupForm()" type="button" class="button-57" role="button">
+    <button id="bottomCreate" (click)="submitGroupForm()" type="button" class="button-57" role="button">
       <span class="text">Créer un groupe</span><span>Créer un groupe</span>
     </button>
   </form>

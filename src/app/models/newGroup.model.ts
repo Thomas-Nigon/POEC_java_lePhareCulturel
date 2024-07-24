@@ -1,6 +1,6 @@
 export interface NewGroupInterface {
-  name: string;
-  members: number;
-  time: string;
-  description: string;
+  group_name: string | null;
+  group_size: number | null;
+  time_meet: string | null;
+  description: string | null;
 }
