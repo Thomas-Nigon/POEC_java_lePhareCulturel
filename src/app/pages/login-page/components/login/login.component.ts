@@ -2,12 +2,12 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { CommonModule, Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../../shared/services/auth.service';
-import { UserLoginInterface } from '../../../../models/loginModel';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import Swal from 'sweetalert2';
+import { UserLoginInterface } from '../../../../models/loginModel';
+import { AuthService } from '../../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',

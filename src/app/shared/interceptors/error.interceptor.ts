@@ -2,14 +2,15 @@ import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
-  const errorReq = req.clone();
+  // const authService = inject(AuthService);
+  const errorReq = req.clone({ withCredentials: true });
   return next(errorReq).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === 401) {
-        // Handle 401 Unauthorized errors
+        // authService.handleUnauthorized();
       }
-      console.error('HTTP Error Interceptor:', error.message);
-      return throwError(error);
+      // console.log('HTTP Error Interceptor:', error.message);
+      return throwError(() => new Error(error.message));
     })
   );
 };

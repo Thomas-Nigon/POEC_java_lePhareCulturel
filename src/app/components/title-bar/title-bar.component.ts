@@ -15,11 +15,11 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class TitleBarComponent {
   authService = inject(AuthService);
-  isLoggedIn$ = this.authService.isLoggedIn();
+  user$ = this.authService.user$;
 
   constructor(private router: Router) {
-    this.authService.logoutEvent.subscribe(loggedOut => {
-      if (loggedOut && this.router.url === '/user') {
+    this.authService.user$.subscribe(user => {
+      if (user && this.router.url === '/user') {
         this.router.navigate(['/']).catch(() => {
           console.error('Error redirecting to /');
         });
