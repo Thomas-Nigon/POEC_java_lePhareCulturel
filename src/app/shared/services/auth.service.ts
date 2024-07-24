@@ -4,7 +4,6 @@
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { UserLoginInterface } from '../../models/loginModel';
@@ -19,7 +18,7 @@ export class AuthService {
   public user$: Observable<UserInterface | null> = this.user.asObservable();
 
   private http = inject(HttpClient);
-  private router = inject(Router);
+  // private router = inject(Router);
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';

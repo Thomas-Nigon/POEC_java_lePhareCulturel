@@ -19,10 +19,12 @@ export const routes: Routes = [
   {
     path: 'event/:id',
     component: EventPageComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'event/:id/groups/:groupId',
     component: ChatPageComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'events',
