@@ -18,6 +18,7 @@ import { Observable } from 'rxjs';
 export class EventPageComponent {
   router = inject(ActivatedRoute);
   eventService = inject(EventsService);
+
   eventId!: number;
   event!: Observable<ApiEvent>;
   hidden!: boolean;

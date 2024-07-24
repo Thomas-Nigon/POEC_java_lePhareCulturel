@@ -34,6 +34,9 @@ export class EventsService {
       )
       .subscribe();
   }
+  getRandomEvent() {
+    return this.http.get<ApiEvent>(`${this.apiUrl}/events/random`);
+  }
 
   getGroupListByEvent(id: number) {
     return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${id}/groups`);

@@ -16,4 +16,15 @@ export class TopBlockComponent {
   onClick() {
     this.scroller.scrollToAnchor('about-us');
   }
+  openInstagram() {
+    window.location.href = 'https://www.instagram.com/lephareculturel/';
+  }
+
+  openFacebook() {
+    window.location.href = 'https://www.facebook.com/profile.php?id=61563414295164';
+  }
+
+  openTwitter() {
+    window.location.href = 'https://x.com/lephareculturel';
+  }
 }

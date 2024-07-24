@@ -30,8 +30,7 @@ export class HomepageComponent implements OnInit {
   page = 0;
 
   ngOnInit() {
-    this.eventService.geteventById(3106007);
-    this.eventService.event$.subscribe(data => {
+    this.eventService.getRandomEvent().subscribe(data => {
       this.event = data;
     });
   }

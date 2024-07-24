@@ -7,7 +7,11 @@
         <article class="eventCard__descriptionContainer__participants"></article>
         <h2 class="event-title">{{ e.title }}</h2>
         <p class="eventCard__eventDesc">
-          {{ e.longDescription }}
+          @if (event && e.longDescription) {
+            {{ event && e.longDescription }}
+          } @else {
+            {{ event && e.description }}
+          }
         </p>
 
         <button (click)="onClick()" class="button-57" role="button">
@@ -19,20 +23,20 @@
     <div class="event__card__info">
       <article class="event__card__info__group">
         <span class="material-symbols-outlined"> group </span>
-        <h5 class="event__card__info__subTitle">4</h5>
-        <span class="event__card__info__text">groupe(s) pour cet évènement</span>
+        <h5 class="event__card__info__subTitle">{{ event && e.groups.length }}</h5>
+        <p class="event__card__info__text">Groupe(s) pour cet évènement</p>
       </article>
       <article class="event__card__info__group">
         <span class="material-symbols-outlined"> confirmation_number </span>
         <h5>Tarifs:</h5>
 
-        <span class="event__card__info__text">
+        <p class="event__card__info__text">
           @if (e.tarifs === null) {
             non disponible
           } @else {
             {{ event && e.tarifs }}
           }
-        </span>
+        </p>
       </article>
       <h3 class="eventCard__title">{{ event && e.title }}</h3>
       <article class="event__card__info__group">

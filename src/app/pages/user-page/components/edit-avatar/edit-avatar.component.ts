@@ -20,12 +20,15 @@ export class EditAvatarComponent implements OnInit {
   private avatarService = inject(AvatarService);
   private userService = inject(UserService);
   avatarList!: AvatarInterface[];
-  selectedId = 0;
+  selectedId!: number;
   newAvatar!: EditAvatarInterface;
 
   ngOnInit() {
     this.avatarService.getAvatarList().subscribe(data => {
       this.avatarList = data;
+      this.userService.myUser$.subscribe(data => {
+        this.selectedId = this.avatarList.findIndex(avatar => avatar.url === data.avatar);
+      });
       this.newAvatar = {
         url: this.avatarList[this.selectedId].url,
       };
