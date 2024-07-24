@@ -7,6 +7,7 @@ import { ApiEvent } from '../../models/event.model';
 import { FavoriteCardComponent } from './components/favorite-card/favorite-card.component';
 import { TopBlockComponent } from './components/top-block/top-block.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FavoriteCardComponent,
     TopBlockComponent,
     FooterComponent,
+    CommonModule,
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
