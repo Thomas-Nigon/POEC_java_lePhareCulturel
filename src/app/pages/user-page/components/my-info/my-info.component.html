@@ -1,10 +1,10 @@
 <section class="myInfo">
   @if (observableUser | async; as user) {
     <div class="myInfo__edit__wrapper">
-      <button *ngIf="!edit" (click)="edit = !edit">
+      <button class="editInfo__form__button" *ngIf="!edit" (click)="edit = !edit">
         <span class="material-symbols-outlined"> edit</span>
       </button>
-      <button *ngIf="edit" (click)="submitEditForm()">
+      <button class="editInfo__form__button" *ngIf="edit" (click)="submitEditForm()">
         <span class="material-symbols-outlined"> save</span>
       </button>
     </div>
@@ -28,7 +28,7 @@
       <li class="myInfo-item">
         <h5 class="myInfo__item__title">
           <span class="material-symbols-outlined"> id_card </span>
-          Nom:
+          Nom :
         </h5>
         <div class="myInfo__item__container">
           @if (edit) {
@@ -51,7 +51,7 @@
       <li class="myInfo-item">
         <h5 class="myInfo__item__title">
           <span class="material-symbols-outlined"> id_card </span>
-          Prénom:
+          Prénom :
         </h5>
 
         <div class="myInfo__item__container">
@@ -84,7 +84,7 @@
       <li class="myInfo-item__description">
         <h5 class="myInfo__aboutMe__title">
           <span class="material-symbols-outlined"> description </span>
-          A propos de moi:
+          A propos de moi :
         </h5>
         <div class="myInfo__item__container">
           @if (edit) {

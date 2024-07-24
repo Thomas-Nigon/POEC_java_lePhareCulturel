@@ -8,6 +8,7 @@
   min-width: 100%;
   overflow-y: scroll;
   scrollbar-width: none;
+  padding: 0.5rem;
 }
 
 .myInfo__edit__wrapper {
@@ -20,6 +21,7 @@
 }
 .myInfo__pseudo {
   margin: 0 auto;
+  color: $primary;
 }
 
 .myInfo__list {
@@ -34,13 +36,16 @@
   color: $primary;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .myInfo__aboutMe__title {
   display: flex;
   color: $primary;
   padding-top: 0.5rem;
+  align-items: center;
 }
 .myInfo__item__container {
+  padding-left: 0.3rem;
   display: flex;
 }
 .myInfo__item__container span {
@@ -81,6 +86,10 @@
   width: 100%;
   height: 150px;
   resize: none;
+}
+.material-symbols-outlined {
+  padding: 0.2rem;
+  color: $primary;
 }
 
 @media screen and (min-width: 900px) {
