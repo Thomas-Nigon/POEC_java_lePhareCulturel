@@ -4,6 +4,7 @@ import { Injectable, inject } from '@angular/core';
 import { ApiEvent, EventInterface, EventResponse } from '../../models/event.model';
 import { environment } from '../../../environments/environment';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { CoupDeCoeur } from '../../models/coupDeCoeur.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,9 +15,9 @@ export class EventsService {
   public event: BehaviorSubject<ApiEvent> = new BehaviorSubject<ApiEvent>({} as ApiEvent);
   public event$: Observable<ApiEvent> = this.event.asObservable();
 
-  /*  getAllEvents() {
-    return this.http.get<EventInterface[]>('assets/mokarooEvents.json');
-  } */
+  getCoupDeCoeur() {
+    return this.http.get<CoupDeCoeur[]>('assets/coupDeCoeur.json');
+  }
   getAllEvents(size: number, page: number) {
     const params = {
       size: size.toString(),

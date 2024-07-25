@@ -8,6 +8,7 @@ import { FavoriteCardComponent } from './components/favorite-card/favorite-card.
 import { TopBlockComponent } from './components/top-block/top-block.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { CoupDeCoeur } from '../../models/coupDeCoeur.model';
 
 @Component({
   selector: 'app-homepage',
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
 export class HomepageComponent implements OnInit {
   eventService = inject(EventsService);
   eventList: ApiEvent[] = [];
+  coupDeCoeurList: CoupDeCoeur[] = [];
   event!: ApiEvent;
   size = 20;
   page = 0;
@@ -34,6 +36,9 @@ export class HomepageComponent implements OnInit {
   ngOnInit() {
     this.eventService.getRandomEvent().subscribe(data => {
       this.event = data;
+    });
+    this.eventService.getCoupDeCoeur().subscribe(data => {
+      this.coupDeCoeurList = data;
     });
   }
 }

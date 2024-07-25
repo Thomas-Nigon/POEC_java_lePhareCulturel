@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "sur la façade de l'Hôtel de Ville. Venez découvrir des projections spectaculaires célébrant l'esprit des Jeux avec des animations et effets visuels impressionnants. Un événement à ne pas rater pour tous les âges !",
+    "link": "event/10682724",
+    "name": "Vidéomapping spécial Jeux Olympiques"
+  },
+  {
+    "id": 2,
+    "desc": "Vous aimez l’architecture et l’art urbain ? Déambulez en compagnie d’un guide conférencier et d’un membre du Collectif Renart pour découvrir la ville à travers les oeuvres peintes sur les murs du quartier ! ",
+    "link": "event/10307733",
+    "name": "Street art et architecture à pied à Wazemmes"
+  }
+]
