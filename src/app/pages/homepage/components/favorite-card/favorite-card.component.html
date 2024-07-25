@@ -5,9 +5,12 @@
     </h3>
     <p>
       Ce week-end à Lille, ne manquez pas le
-      <strong><a class="link" routerLink="event/10682724">Vidéomapping spécial Jeux Olympiques</a></strong> sur la
-      façade de l'Hôtel de Ville. Venez découvrir des projections spectaculaires célébrant l'esprit des Jeux avec des
-      animations et effets visuels impressionnants. Un événement à ne pas rater pour tous les âges !
+      <strong
+        ><a class="link" routerLink="{{ coupDeCoeur && coupDeCoeur.link }}">{{
+          coupDeCoeur && coupDeCoeur.name
+        }}</a></strong
+      >
+      {{ coupDeCoeur && coupDeCoeur.desc }}
     </p>
   </div>
 </div>

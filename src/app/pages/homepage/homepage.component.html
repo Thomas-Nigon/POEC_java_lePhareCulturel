@@ -6,8 +6,8 @@
     <app-event-card *ngIf="event" [event]="event"></app-event-card>
   </div>
   <section class="homepage__favorite">
-    <app-favorite-card></app-favorite-card>
-    <app-favorite-card></app-favorite-card>
+    <app-favorite-card [coupDeCoeur]="coupDeCoeurList[0]"></app-favorite-card>
+    <app-favorite-card [coupDeCoeur]="coupDeCoeurList[1]"></app-favorite-card>
   </section>
   <app-about-us id="about-us"></app-about-us>
   <app-footer class="footer"></app-footer>
