@@ -17,7 +17,7 @@
       <section class="myEvent_incoming">
         @if (incomingEvents) {
           @for (event of e.future; track event.uid) {
-            <a class="eventCard__link" routerLink="/event/{{ event.uid }}/groups/{{ event.uid }}/messages}}">
+            <a class="eventCard__link" routerLink="/event/{{ event.uid }}/groups/{{ event.group_id }}">
               <article class="eventCard">
                 <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
 
@@ -36,7 +36,7 @@
       <section class="myEvent_past">
         @if (!incomingEvents) {
           @for (event of e.last; track event.uid) {
-            <a class="eventCard__link" routerLink="/event/{{ event.uid }}">
+            <a class="eventCard__link" routerLink="/event/{{ event.uid }}/groups/{{ event.group_id }}">
               <article class="eventCard">
                 <img class="eventCard-img" src="{{ event.images.thumbnail }}" alt="" />
 
