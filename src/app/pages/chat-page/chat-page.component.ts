@@ -26,7 +26,7 @@ export class ChatPageComponent implements OnInit {
   public location = inject(Location);
 
   messageList!: messageInterface[];
-  groupList!: GroupInterface[];
+  // groupList!: GroupInterface[];
   groupId!: number;
   eventId!: number;
   currentMessage!: string;
@@ -34,13 +34,18 @@ export class ChatPageComponent implements OnInit {
   userMessage = this.fb.group({
     userMessage: ['', [Validators.required, Validators.minLength(1)]],
   });
+
+  constructor() {
+    this.groupId = +this.route.snapshot.params['groupId'];
+    this.eventId = +this.route.snapshot.params['id'];
+  }
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.groupId = +params['groupId'];
-    });
-    this.route.params.subscribe(params => {
-      this.eventId = +params['id'];
-    });
+    // this.route.params.subscribe(params => {
+    //   this.groupId = +params['groupId'];
+    // });
+    // this.route.params.subscribe(params => {
+    //   this.eventId = +params['id'];
+    // });
     /*   this.messageService.getMessagesByGroup().subscribe(messages => {
       this.messageList = messages;
       this.groupService.getAllGroups().subscribe(data => {

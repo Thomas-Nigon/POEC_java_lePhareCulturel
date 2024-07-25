@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { EventPageEventCardComponent } from './event-page-event-card/event-page-event-card.component';
 import { CreateGroupComponent } from './components/create-group/create-group.component';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
   templateUrl: './event-page.component.html',
   styleUrl: './event-page.component.scss',
 })
-export class EventPageComponent {
+export class EventPageComponent implements OnDestroy {
   router = inject(ActivatedRoute);
   eventService = inject(EventsService);
 
@@ -34,5 +34,9 @@ export class EventPageComponent {
       this.eventService.geteventById(this.eventId);
       this.event = this.eventService.event$;
     });
+  }
+
+  ngOnDestroy() {
+    this.eventService.clearEvent();
   }
 }
