@@ -1,13 +1,8 @@
-export interface messageInterface {
-  id: number;
-  user: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
+export interface MessageInterface {
+  author: {
+    profileNickname: string;
     avatar: string;
   };
-  message: string;
+  text: string;
   date: string;
-  group: number;
 }

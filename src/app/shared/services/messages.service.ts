@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { messageInterface } from '../../models/message.model';
+import { MessageInterface } from '../../models/message.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { messageInterface } from '../../models/message.model';
 export class MessagesService {
   private http = inject(HttpClient);
 
-  getMessagesByGroup(): Observable<messageInterface[]> {
-    return this.http.get<messageInterface[]>('assets/chat.json');
+  getMessagesByGroup(): Observable<MessageInterface[]> {
+    return this.http.get<MessageInterface[]>('assets/chat.json');
   }
 }

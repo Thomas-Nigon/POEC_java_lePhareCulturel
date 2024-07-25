@@ -1,55 +1,59 @@
-<main class="chatPage">
-  <section class="chatPage__container">
-    <aside class="chatPage__container__aside">
-      <div class="chatPage__button__return">
-        <button (click)="onClick()" type="button" class="button-57" role="button">
-          <span class="text">Retour</span><span>Retour</span>
-        </button>
-      </div>
-      <article class="chatPage__container__aside__groupMember" *ngFor="let message of messageList">
-        <img class="chatPage__container__aside__avatarPic" src="{{ message.user.avatar }}" alt="an avatar picture" />
-        <p class="chatPage__container__aside__userName">{{ message.user.first_name }}</p>
-      </article>
-    </aside>
-    <div class="chatPage__container__main">
-      <section class="chatPage__container__main__header">
-        <!-- <h3>Bienvenue dans: {{ groupList[groupId].name }}</h3> -->
-        <!---->
-        <!-- <p>Ce groupe participe à l'évènement: {{ groupList[groupId].eventName }}</p> -->
-        <article>
-          <p>
-            Quitter ce groupe? cliquez
-            <button class="toggleQuitButton" (click)="this.showQuitButton = !this.showQuitButton">ici</button>
-          </p>
-          <button routerLink="" class="quitButton" [ngClass]="{ hidden: !showQuitButton }">Quitter</button>
-        </article>
-      </section>
-      <section class="chatPage__container__chatWindow">
-        <app-single-message-card
-          *ngFor="let message of messageList"
-          [message]="message"
-          [ngClass]="{ ownCard: message.user.id === 101 }" />
-
-        <div class="textarea__container">
-          <form class="chatPage__container__chatWindow__form" [formGroup]="userMessage">
-            <textarea
-              class="chatPage__container__chatWindow__textArea"
-              name="userMessage"
-              id="userMessage"
-              formControlName="userMessage"
-              placeholder="Ecrivez votre message"
-              >{{ currentMessage }}</textarea
-            >
-          </form>
-          <button
-            type="submit"
-            (click)="submitMessage()"
-            [disabled]="!userMessage.valid"
-            class="chatPage__textarea__sendButton">
-            <span class="material-symbols-outlined"> send</span>
-          </button>
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
+<!-- <main class="chatPage"> -->
+<!--   <section class="chatPage__container"> -->
+<!--     <aside class="chatPage__container__aside"> -->
+<!--       <div class="chatPage__button__return"> -->
+<!--         <button (click)="onClick()" type="button" class="button-57" role="button"> -->
+<!--           <span class="text">Retour</span><span>Retour</span> -->
+<!--         </button> -->
+<!--       </div> -->
+<!--       <article class="chatPage__container__aside__groupMember" *ngFor="let message of messageList"> -->
+<!--         <!-- <img class="chatPage__container__aside__avatarPic" src="{{ message.user.avatar }}" alt="an avatar picture" /> -->
+-->
+<!--         <!-- <p class="chatPage__container__aside__userName">{{ message.user.first_name }}</p> -->
+-->
+<!--       </article> -->
+<!--     </aside> -->
+<!--     <div class="chatPage__container__main"> -->
+<!--       @if (group | async; as g) { -->
+<!--         <section class="chatPage__container__main__header"> -->
+<!--           <h3>Bienvenue dans: {{ g.name }}</h3> -->
+<!---->
+<!--           <p>Ce groupe participe à l'évènement: {{ g.name }}</p> -->
+<!--           <article> -->
+<!--             <p> -->
+<!--               Quitter ce groupe? cliquez -->
+<!--               <button class="toggleQuitButton" (click)="this.showQuitButton = !this.showQuitButton">ici</button> -->
+<!--             </p> -->
+<!--             <button routerLink="" class="quitButton" [ngClass]="{ hidden: !showQuitButton }">Quitter</button> -->
+<!--           </article> -->
+<!--         </section> -->
+<!--         <section class="chatPage__container__chatWindow"> -->
+<!--           <app-single-message-card -->
+<!--             *ngFor="let message of messageList" -->
+<!--             [message]="message" -->
+<!--             [ngClass]="{ ownCard: message.user.id === 101 }" /> -->
+<!---->
+<!--           <div class="textarea__container"> -->
+<!--             <form class="chatPage__container__chatWindow__form" [formGroup]="userMessage"> -->
+<!--               <textarea -->
+<!--                 class="chatPage__container__chatWindow__textArea" -->
+<!--                 name="userMessage" -->
+<!--                 id="userMessage" -->
+<!--                 formControlName="userMessage" -->
+<!--                 placeholder="Ecrivez votre message" -->
+<!--                 >{{ currentMessage }}</textarea -->
+<!--               > -->
+<!--             </form> -->
+<!--             <button -->
+<!--               type="submit" -->
+<!--               (click)="submitMessage()" -->
+<!--               [disabled]="!userMessage.valid" -->
+<!--               class="chatPage__textarea__sendButton"> -->
+<!--               <span class="material-symbols-outlined"> send</span> -->
+<!--             </button> -->
+<!--           </div> -->
+<!--         </section> -->
+<!--       } -->
+<!--     </div> -->
+<!--   </section> -->
+<!-- </main> -->
