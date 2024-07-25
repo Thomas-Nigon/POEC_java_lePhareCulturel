@@ -5,7 +5,7 @@
   border: 2px solid $primary;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin: 1rem;
+  // margin: 1rem;
   width: 100%;
   max-width: 360px;
   display: flex;
@@ -16,8 +16,8 @@
 }
 .groupCard__title5 {
   color: $secondary;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .groupCard__membersList {

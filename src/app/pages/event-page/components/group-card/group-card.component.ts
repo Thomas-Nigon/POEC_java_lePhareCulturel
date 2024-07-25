@@ -31,8 +31,7 @@ export class GroupCardComponent implements OnInit {
     this.localeStartDateString =
       this.beginDate.toLocaleString(undefined, this.dateOptions).charAt(0).toUpperCase() +
       this.beginDate.toLocaleString(undefined, this.dateOptions).slice(1); */
-
-    this.date = new Date(this.group && this.group.time_meet);
-    this.displayDate = this.date.toLocaleString(undefined, this.dateOptions);
+    /*     this.date = new Date(this.group && this.group.time_meet);
+    this.displayDate = this.date.toLocaleString(undefined, this.dateOptions); */
   }
 }

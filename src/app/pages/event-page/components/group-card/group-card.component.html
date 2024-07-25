@@ -1,13 +1,14 @@
 <article class="groupCard">
-  <h4 class="groupCard__title">{{ group.group_name }} <span>(4pers)</span></h4>
+  <h4 class="groupCard__title">{{ group.group_name }}</h4>
 
   <h5 class="groupCard__title5">Informations :</h5>
   <p>{{ group.description }}</p>
   <h5 class="groupCard__title5">Heure du rendez-vous :</h5>
-  <p>{{ displayDate }}</p>
-  <h5 class="groupCard__title5">Membres du groupe :</h5>
-  <!--  <div class="groupCard__membersList">
-    <div class="groupCard__member" *ngFor="let member of group.members">
+  <p>{{ group.time_meet }}</p>
+
+  <!--  <h5 class="groupCard__title5">Membres du groupe :</h5>
+  <div class="groupCard__membersList">
+    <div class="groupCard__member" *ngFor="let participant of group.participants">
       <span class="groupCard__member__name">
         {{ member.firstname }}
       </span>
