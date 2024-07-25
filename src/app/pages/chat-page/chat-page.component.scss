@@ -20,6 +20,7 @@
   width: 100%;
 }
 .chatPage__container__main__header {
+  min-height: calc(100vh - 101px - 45px - 70px);
   background-color: $secondary;
   padding: 1rem;
 }
@@ -116,6 +117,7 @@
   margin: 1rem;
 }
 .chatPage__container__aside__userName {
+  color: $text;
   display: none;
   margin-left: 10px;
 }
@@ -227,6 +229,9 @@
   }
   .chatPage__container {
     min-height: calc(100vh - 91.5px);
+  }
+  .chatPage__container__main__header {
+    min-height: calc(100vh - 91.5px - 45px);
   }
   .chatPage__container__aside {
     max-width: 400px;
