@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { ApiEvent, EventInterface, EventResponse } from '../../models/event.model';
-import { environment } from '../../../environments/environment';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { ApiEvent, EventInterface, EventResponse } from '../../models/event.model';
 
 @Injectable({
   providedIn: 'root',
@@ -43,5 +43,9 @@ export class EventsService {
   }
   getSingleGroupByEvent(eventId: number, groupId: number) {
     return this.http.get<EventInterface[]>(`${this.apiUrl}/events/${eventId}/groups/${groupId}`);
+  }
+
+  clearEvent() {
+    this.event.next({} as ApiEvent);
   }
 }

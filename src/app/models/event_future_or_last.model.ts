@@ -11,4 +11,5 @@ export interface EventFutureOrLast {
   description: string;
   title: string;
   date_range: string;
+  group_id: number;
 }
