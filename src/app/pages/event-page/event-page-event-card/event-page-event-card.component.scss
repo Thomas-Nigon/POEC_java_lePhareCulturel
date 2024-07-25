@@ -20,15 +20,67 @@
 
 .event-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: left;
   margin: 0 auto;
   background-color: $background;
-  max-width: 900px;
+  max-width: 800px;
 }
+.event__card__info {
+  background-color: $secondary;
+  padding: 0.5rem;
+  width: 100%;
+}
+.event__card__info__group {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 0.5rem;
+}
+.material-symbols-outlined {
+  color: $primary;
+}
+.event__card__info__group h5 {
+  margin-right: 0.5rem;
+  color: $primary;
+}
+.event__card__info__group span {
+  margin-right: 0.5rem;
+}
+.event__card__info__group p {
+  padding-top: 2px;
+}
+.row {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+.row span {
+  margin-right: 0.5rem;
+}
+.col {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.event__card__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .event-image {
   width: 100%;
-  height: auto;
+  max-width: 400px;
+}
+.event__image__category {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  max-width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $primary;
+  color: $secondary;
 }
 .eventCard__descriptionContainer {
   display: flex;
@@ -38,12 +90,16 @@
 }
 
 .eventCard__eventDate {
+  margin-left: 0.5rem;
   color: $primary;
 }
 .event-title {
   margin-bottom: 1rem;
   text-align: left;
   color: $primary;
+}
+.eventCard__title {
+  margin: 1rem 0;
 }
 .eventCard__eventDesc {
   margin-bottom: 1rem;
@@ -66,6 +122,10 @@
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0 1rem 0;
+  background-color: $primary;
+  color: $background;
+  padding: 10px;
+  border-radius: 4px;
 }
 .event__participants {
   color: $primary;
@@ -74,7 +134,7 @@
 .eventCard__participants__avatar {
   width: 20px;
 }
-
+/**
 .event-button {
   all: unset;
   width: 50%;
@@ -106,10 +166,121 @@
     0 6px 8px rgba(0, 0, 0, 0.2),
     0 3px 6px rgba(0, 0, 0, 0.15);
 }
+**/
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: $background;
+  margin: 1rem;
+  align-self: center;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: $primary;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 300px;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: $primary;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.button__wrapper {
+  width: 100%;
+  max-width: 460px;
+}
+.button-53 {
+  z-index: 5;
+  background-color: $primary;
+  border: 0 solid #000000;
+  box-sizing: border-box;
+  border: 1px solid #18181a;
+  color: $background;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 1.5rem;
+}
+
 .eventCard__link {
   all: unset;
   text-decoration: none;
   color: white;
+}
+.notLogged {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: red;
+}
+.event__card__info__map {
+  display: none;
+  border: 2px solid $primary;
+  border-radius: 0.3rem;
 }
 
 @media screen and (min-width: 900px) {
@@ -118,9 +289,28 @@
     border-right: 2px solid $primary;
     border-bottom: 2px solid $primary;
     border-radius: 0 0 0.5rem 0.5rem;
+    flex-direction: row;
+    max-width: 1100px;
+  }
+  .event__card__main {
+    flex-direction: column;
+    max-width: 800px;
   }
   .event-image {
-    max-height: 400px;
-    object-fit: cover;
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: contain;
+  }
+  .event__card__info {
+    padding: 1rem;
+    width: 60%;
+    border-left: 2px solid $primary;
+  }
+  .event__card__info__map {
+    margin: 0.5rem auto;
+
+    display: block;
+    width: 400px;
   }
 }

@@ -11,10 +11,15 @@
       <button class="profil__nav__button" (click)="onClick($event)" type="button" name="password">
         <span name="password" class="material-symbols-outlined"> lock_reset </span>
       </button>
+      <button class="profil__nav__button" (click)="logout()" type="button" name="password">
+        <span name="logout" class="material-symbols-outlined"> logout </span>
+      </button>
     </nav>
   </div>
 
-  <section class="profil__component__container" *ngIf="path === 'avatar'"><app-edit-avatar></app-edit-avatar></section>
+  <section class="profil__component__container" *ngIf="path === 'avatar'">
+    <app-edit-avatar></app-edit-avatar>
+  </section>
   <section class="profil__component__container" *ngIf="path === 'password'">
     <app-edit-password></app-edit-password>
   </section>

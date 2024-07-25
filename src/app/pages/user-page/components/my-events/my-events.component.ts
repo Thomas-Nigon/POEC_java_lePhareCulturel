@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { EventInterface } from '../../../../models/event.model';
-import { EventCardComponent } from '../../../../components/event-card/event-card.component';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { EventCardComponent } from '../../../../components/event-card/event-card.component';
+import { EventFutureOrLast } from '../../../../models/event_future_or_last.model';
+import { UserService } from '../../../../shared/services/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-events',
@@ -13,7 +15,14 @@ import { RouterLink } from '@angular/router';
 })
 export class MyEventsComponent {
   incomingEvents = true;
-  @Input() eventList: EventInterface[] = [];
+  userService = inject(UserService);
+  events!: Observable<EventFutureOrLast>;
+
+  constructor() {
+    this.userService.getMyEventsFutureOrLast();
+    this.events = this.userService.myEvents$;
+  }
+
   onClickIncoming() {
     this.incomingEvents = true;
   }

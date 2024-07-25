@@ -1,0 +1,24 @@
+@import '../../../../../variables.scss';
+
+.singleMessage {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin-left: 1rem;
+  margin: 1rem;
+}
+.singleMessage__container {
+  background-color: $primary;
+  color: $background;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+.singleMessage__userName {
+  color: $secondary;
+}
+.singleMessage p {
+  margin-left: 1rem;
+}
+.singleMessage__date {
+  color: $text;
+}

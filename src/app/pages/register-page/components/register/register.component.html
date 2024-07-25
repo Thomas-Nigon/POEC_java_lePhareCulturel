@@ -1,15 +1,35 @@
 <main class="registerForm__container">
-  <h2 class="register__title">Créez votre compte:</h2>
+  <h2 class="register__title">Créez votre compte :</h2>
   <form class="register__form" [formGroup]="registerForm" (submit)="onSubmit()">
     <input
       class="register__form__input"
       [ngClass]="{
         invalid: registerForm.get('username')?.invalid,
       }"
-      id="username"
+      id="firstname"
       type="text"
-      placeholder="Nom d'utilisateur..."
-      formControlName="username"
+      placeholder="Votre nom ..."
+      formControlName="firstname"
+      required />
+    <input
+      class="register__form__input"
+      [ngClass]="{
+        invalid: registerForm.get('lastname')?.invalid,
+      }"
+      id="lastname"
+      type="text"
+      placeholder="Votre Prénom..."
+      formControlName="lastname"
+      required />
+    <input
+      class="register__form__input"
+      [ngClass]="{
+        invalid: registerForm.get('nickname')?.invalid,
+      }"
+      id="nickname"
+      type="text"
+      placeholder="Votre pseudo ..."
+      formControlName="nickname"
       required />
     <div class="register__form__credentials" formGroupName="credentials">
       <input
@@ -79,6 +99,6 @@
       "
       >Attention le mot de passe ne correspond pas</span
     >
-    <button class="register__form__button" [disabled]="!registerForm.valid">Register</button>
+    <button class="register__form__button" [disabled]="!registerForm.valid">Je crée mon compte</button>
   </form>
 </main>

@@ -1,12 +1,35 @@
 @import '../../../variables.scss';
 
+/* .search-results {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} */
+.test {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.data-card {
+  padding: 5px;
+  margin: 8px 0px;
+  width: 20%;
+  border: 1px solid black;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(236, 234, 111);
+}
+
 .searchPage {
+  overflow: scroll;
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 101px);
+  height: calc(100vh - 101px);
 }
 
 .search_page_title {
@@ -41,7 +64,8 @@
   opacity: 1;
   cursor: pointer;
   font-size: 1rem;
-  backdrop-filter: blur(20px);
+  //backdrop-filter: blur(20px);
+  background-color: $background;
   border: 1px solid $primary;
   border-radius: 0.8rem;
 }
@@ -71,10 +95,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   cursor: pointer;
   color: $primary;
-  background-color: $background;
+}
+.calendar-title__button span {
+  background-color: #0000;
+  border-radius: 50%;
 }
 .calendar-title__button:hover {
   background-color: $primary;

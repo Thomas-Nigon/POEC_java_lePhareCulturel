@@ -6,12 +6,12 @@
   background-color: $primary;
   border-radius: 15px;
   overflow: hidden;
-  max-width: 900px;
-  width: 100%;
+  max-width: 600%;
   color: $background;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  margin: 1rem auto;
+  width: 75%;
+  margin: 2rem auto;
+  align-items: center;
 }
 
 .text-block {
@@ -37,6 +37,8 @@
   flex: 1;
   display: flex;
   align-items: stretch;
+  position: relative;
+  padding: 1rem;
 }
 
 .image-block img {
@@ -44,9 +46,15 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  max-width: 600px;
+  border-radius: 0.8rem;
 }
 @media screen and (min-width: 768px) {
   .container {
     flex-direction: row;
+  }
+
+  .image-block img {
+    height: 60%;
   }
 }

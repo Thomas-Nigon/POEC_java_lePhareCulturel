@@ -1,7 +1,13 @@
-<main class="searchPage">
+<main
+  class="search-results searchPage"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
   <h2 class="search_page_title">L'Agenda du Phare</h2>
   <app-filter-bar></app-filter-bar>
-  <article class="calendar_title_container">
+  <!--  <article class="calendar_title_container">
     <h3 class="calendar-title">
       {{ displayDate }}
       <button class="calendar-title__button" (click)="onClick()">
@@ -12,8 +18,8 @@
   </article>
   <div class="calendar-container" [ngClass]="{ close: !isOpen }">
     <full-calendar [options]="calendarOptions"></full-calendar>
-  </div>
-  <section>
+  </div> -->
+  <div class="test">
     <app-event-card *ngFor="let event of eventList" [event]="event"></app-event-card>
-  </section>
+  </div>
 </main>

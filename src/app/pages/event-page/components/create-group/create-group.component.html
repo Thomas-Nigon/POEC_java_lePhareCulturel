@@ -1,0 +1,41 @@
+<div class="createGroup">
+  <div class="createGroup__titleContainer">
+    <h3 class="createGroup__title">Créer</h3>
+    <button type="button" (click)="onClick()" class="closeButton">
+      <span *ngIf="!hideCreateGroup" class="material-symbols-outlined"> arrow_circle_up </span>
+      <span *ngIf="hideCreateGroup" class="material-symbols-outlined"> arrow_circle_down </span>
+    </button>
+  </div>
+  <form class="createGroupForm" [formGroup]="createGroupForm" [ngClass]="{ hidden: hideCreateGroup }">
+    <label for="groupName"><h5>Nom du groupe</h5></label>
+    <input
+      type="text"
+      id="groupName"
+      class="createGroupForm__input"
+      formControlName="group_name"
+      placeholder="Entrez le nom du groupe" />
+
+    <label for="participantNumber"><h5>Nombre de participants :</h5></label>
+    <input
+      type="number"
+      id="participantNumber"
+      class="createGroupForm__input"
+      placeholder="Entrez le nombre de participants"
+      formControlName="group_size" />
+
+    <label for="meetingTime"><h5>Date et heure de la rencontre :</h5></label>
+    <input type="time" id="meetingTime" class="createGroupForm__input" formControlName="time_meet" />
+
+    <label for="description"><h5>Description :</h5></label>
+    <textarea
+      id="description"
+      class="createGroupForm__input"
+      rows="3"
+      formControlName="description"
+      placeholder="Entrez la description du groupe"></textarea>
+    <!-- <button (click)="submitGroupForm()" class="create-button">Créer un groupe</button> -->
+    <button id="bottomCreate" (click)="submitGroupForm()" type="button" class="button-57" role="button">
+      <span class="text">Créer un groupe</span><span>Créer un groupe</span>
+    </button>
+  </form>
+</div>

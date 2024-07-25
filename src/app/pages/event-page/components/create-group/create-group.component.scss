@@ -1,0 +1,190 @@
+@import '../../../../../variables.scss';
+.createGroup {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $background;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+.closeButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.closeButton span {
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: $primary;
+}
+.closeButton span:hover {
+  background-color: $primary;
+  color: $background;
+}
+
+.createGroup__titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createGroup__title {
+  text-align: center;
+  color: $primary;
+}
+
+.createGroupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 0.3rem;
+  border: 2px solid $primary;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: $primary;
+}
+.createGroupForm label {
+  color: $secondary;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+}
+
+.createGroupForm__input {
+  width: 100%;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid $primary;
+  background-color: $background;
+  color: $text;
+}
+.createGroupForm__input:focus {
+  background-color: white;
+  outline: $accent;
+  border: none;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.create-button {
+  width: 50%;
+  font-size: 1rem;
+  align-self: center;
+  padding: 1rem 1.5rem;
+  color: $background;
+  background-color: $primary;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 2px solid $primary;
+}
+
+.create-button:hover {
+  background-color: $secondary;
+  color: $primary;
+}
+.hidden {
+  height: 0;
+  animation: closeIn 0.2s ease-out;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: $background;
+}
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: $primary;
+  margin: 1rem;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  width: 300px;
+  align-self: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: $background;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: bold;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: $background;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+@keyframes closeIn {
+  0% {
+    height: 100%;
+  }
+
+  10% {
+    height: 300px;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+}

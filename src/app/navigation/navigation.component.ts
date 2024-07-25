@@ -1,9 +1,9 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   standalone: true,
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
@@ -11,8 +11,8 @@ import { RouterLink } from '@angular/router';
 })
 export class NavigationComponent implements AfterViewInit {
   ngAfterViewInit() {
-    const list = document.querySelectorAll('.list');
-    function activeLink(this: HTMLElement) {
+    /* const list = document.querySelectorAll('.list');
+        function activeLink(this: HTMLElement) {
       list.forEach(item => {
         item.classList.remove('active');
       });
@@ -21,5 +21,6 @@ export class NavigationComponent implements AfterViewInit {
     list.forEach(item => {
       item.addEventListener('click', activeLink);
     });
+  } */
   }
 }

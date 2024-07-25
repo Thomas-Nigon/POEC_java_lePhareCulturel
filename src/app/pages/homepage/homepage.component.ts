@@ -3,10 +3,12 @@ import { FilterBarComponent } from './components/filter-bar/filter-bar.component
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { EventCardComponent } from '../../components/event-card/event-card.component';
 import { EventsService } from '../../shared/services/events.service';
-import { EventInterface } from '../../models/event.model';
+import { ApiEvent } from '../../models/event.model';
 import { FavoriteCardComponent } from './components/favorite-card/favorite-card.component';
 import { TopBlockComponent } from './components/top-block/top-block.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
+import { CoupDeCoeur } from '../../models/coupDeCoeur.model';
 
 @Component({
   selector: 'app-homepage',
@@ -18,17 +20,25 @@ import { FooterComponent } from './components/footer/footer.component';
     FavoriteCardComponent,
     TopBlockComponent,
     FooterComponent,
+    CommonModule,
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })
 export class HomepageComponent implements OnInit {
   eventService = inject(EventsService);
-  eventList!: EventInterface[];
+  eventList: ApiEvent[] = [];
+  coupDeCoeurList: CoupDeCoeur[] = [];
+  event!: ApiEvent;
+  size = 20;
+  page = 0;
 
   ngOnInit() {
-    this.eventService.getAllEvents().subscribe(data => {
-      this.eventList = data;
+    this.eventService.getRandomEvent().subscribe(data => {
+      this.event = data;
+    });
+    this.eventService.getCoupDeCoeur().subscribe(data => {
+      this.coupDeCoeurList = data;
     });
   }
 }

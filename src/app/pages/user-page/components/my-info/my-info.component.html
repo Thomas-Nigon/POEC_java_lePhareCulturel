@@ -1,125 +1,110 @@
 <section class="myInfo">
-  <img
-    class="myInfo-image"
-    src="{{ userList ? userList[userId].picture : '' }}"
-    alt="la photo de profil d'un utilisateur" />
-  <h5 class="myInfo__pseudo">{{ userList ? userList[userId].first_name : '' }}</h5>
-  <ul class="myInfo__list">
-    <li class="myInfo-item">
-      <h5 class="myInfo__item__title">
-        <span class="material-symbols-outlined"> id_card </span>
-        Nom:
-      </h5>
-      <div class="myInfo__item__container">
-        @if (edit) {
-          <form [formGroup]="editUserForm">
-            <input
-              class="myInfo__form__input"
-              [ngClass]="{
-                invalid: editUserForm.get('firstname')?.invalid,
-              }"
-              id="firstname"
-              type="text"
-              placeholder="{{ userList ? userList[userId].first_name : '' }}"
-              formControlName="firstname"
-              (blur)="onBlur()" />
-          </form>
-        } @else {
-          {{ userList ? userList[userId].first_name : '' }}
-          @if (editUserForm.dirty) {
-            <button type="button" class="editInfo__form__button" (click)="submitEditFirstname()">
-              <span class="material-symbols-outlined"> save </span>
-            </button>
+  @if (observableUser | async; as user) {
+    <div class="myInfo__edit__wrapper">
+      <button class="editInfo__form__button" *ngIf="!edit" (click)="edit = !edit">
+        <span class="material-symbols-outlined"> edit</span>
+      </button>
+      <button class="editInfo__form__button" *ngIf="edit" (click)="submitEditForm()">
+        <span class="material-symbols-outlined"> save</span>
+      </button>
+    </div>
+    <img class="myInfo-image" src="{{ user && user.avatar }}" alt="la photo de profil d'un utilisateur" />
+    @if (edit) {
+      <form [formGroup]="editUserForm">
+        <input
+          class="myInfo__form__input"
+          [ngClass]="{
+            invalid: editUserForm.get('nickname')?.invalid,
+          }"
+          id="nickname"
+          type="text"
+          placeholder="{{ user && user.nickname }}"
+          formControlName="nickname" />
+      </form>
+    } @else {
+      <h5 class="myInfo__pseudo">{{ user && user.nickname }}</h5>
+    }
+    <ul class="myInfo__list">
+      <li class="myInfo-item">
+        <h5 class="myInfo__item__title">
+          <span class="material-symbols-outlined"> id_card </span>
+          Nom :
+        </h5>
+        <div class="myInfo__item__container">
+          @if (edit) {
+            <form [formGroup]="editUserForm">
+              <input
+                class="myInfo__form__input"
+                [ngClass]="{
+                  invalid: editUserForm.get('firstname')?.invalid,
+                }"
+                id="firstname"
+                type="text"
+                placeholder="{{ user && user.firstname }}"
+                formControlName="firstname" />
+            </form>
           } @else {
-            <button class="editInfo__form__button" (click)="edit = true">
-              <span class="material-symbols-outlined"> edit </span>
-            </button>
+            {{ user && user.firstname }}
           }
-        }
-      </div>
-    </li>
-    <li class="myInfo-item">
-      <h5 class="myInfo__item__title">
-        <span class="material-symbols-outlined"> id_card </span>
-        Prénom:
-      </h5>
+        </div>
+      </li>
+      <li class="myInfo-item">
+        <h5 class="myInfo__item__title">
+          <span class="material-symbols-outlined"> id_card </span>
+          Prénom :
+        </h5>
 
-      <div class="myInfo__item__container">
-        @if (edit) {
-          <form [formGroup]="editUserForm">
-            <input
-              class="myInfo__form__input"
-              [ngClass]="{
-                invalid: editUserForm.get('firstname')?.invalid,
-              }"
-              id="lastname"
-              type="text"
-              placeholder="{{ userList ? userList[userId].last_name : '' }}"
-              formControlName="lastname"
-              (blur)="onBlur()" />
-          </form>
-        } @else {
-          {{ userList ? userList[userId].last_name : '' }}
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
-        }
-      </div>
-    </li>
-    <li class="myInfo-item">
-      <h5 class="myInfo__item__title">
-        <span class="material-symbols-outlined"> mail </span>
-        Email:
-      </h5>
-      <div class="myInfo__item__container">
-        @if (editEmail) {
-          <form [formGroup]="editUserForm">
-            <input
-              class="myInfo__form__input"
-              [ngClass]="{
-                invalid: editUserForm.get('firstname')?.invalid,
-              }"
-              id="email"
-              type="email"
-              placeholder="{{ userList ? userList[userId].email : '' }}"
-              formControlName="email"
-              (blur)="onBlur()" />
-          </form>
-        } @else {
-          {{ userList ? userList[userId].email : '' }}
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
-        }
-      </div>
-    </li>
-    <li class="myInfo-item__description">
-      <h5 class="myInfo__aboutMe__title">
-        <span class="material-symbols-outlined"> description </span>
-        A propos de moi:
-      </h5>
-      <div class="myInfo__item__container">
-        @if (edit) {
-          <form class="myInfo-item__descriptionForm" [formGroup]="editUserForm">
-            <textarea
-              class="myInfo__form__input textarea"
-              [ngClass]="{
-                invalid: editUserForm.get('description')?.invalid,
-              }"
-              id="description"
-              type="textarea"
-              placeholder="{{ userList ? userList[userId].description : '' }}"
-              formControlName="description"
-              (blur)="onBlur()">
-            </textarea>
-          </form>
-        } @else {
-          <p>{{ userList ? userList[userId].description : '' }}</p>
-          <button class="editInfo__form__button" (click)="edit = true">
-            <span class="material-symbols-outlined"> edit </span>
-          </button>
-        }
-      </div>
-    </li>
-  </ul>
+        <div class="myInfo__item__container">
+          @if (edit) {
+            <form [formGroup]="editUserForm">
+              <input
+                class="myInfo__form__input"
+                [ngClass]="{
+                  invalid: editUserForm.get('firstname')?.invalid,
+                }"
+                id="lastname"
+                type="text"
+                placeholder="{{ user && user.lastname }}"
+                formControlName="lastname" />
+            </form>
+          } @else {
+            {{ user && user.lastname }}
+          }
+        </div>
+      </li>
+      <li class="myInfo-item">
+        <h5 class="myInfo__item__title">
+          <span class="material-symbols-outlined"> mail </span>
+          Email:
+        </h5>
+        <div class="myInfo__item__container">
+          {{ user && user.email }}
+        </div>
+      </li>
+      <li class="myInfo-item__description">
+        <h5 class="myInfo__aboutMe__title">
+          <span class="material-symbols-outlined"> description </span>
+          A propos de moi :
+        </h5>
+        <div class="myInfo__item__container">
+          @if (edit) {
+            <form class="myInfo-item__descriptionForm" [formGroup]="editUserForm">
+              <textarea
+                class="myInfo__form__input textarea"
+                [ngClass]="{
+                  invalid: editUserForm.get('description')?.invalid,
+                }"
+                id="description"
+                type="textarea"
+                placeholder="{{ user && user.description }}"
+                formControlName="description">
+              </textarea>
+            </form>
+          } @else {
+            <p>{{ user && user.description }}</p>
+          }
+        </div>
+      </li>
+    </ul>
+  }
 </section>

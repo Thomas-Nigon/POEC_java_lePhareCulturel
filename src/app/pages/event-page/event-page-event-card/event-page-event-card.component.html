@@ -1,30 +1,66 @@
 <div class="event-card">
-  <img
-    class="event-image"
-    src="{{ eventList && eventList[eventId].event_pic }}"
-    alt="{{ eventList && eventList[eventId].event_desc }}" />
-  <section class="eventCard__descriptionContainer" [ngClass]="{ hidden: hidden }">
-    <article class="eventCard__descriptionContainer__participants">
-      <div class="eventCard__participant__container">
-        <img
-          class="eventCard__participants__avatar"
-          *ngFor="let user of userList"
-          src="{{ userList && user.picture }}"
-          alt="the avatar of the user" />
-        <p>158 participants</p>
-      </div>
-    </article>
-    <h3 class="eventCard__eventDate">
-      {{ eventList && eventList[eventId].event_date }}
-    </h3>
-    <h2 class="event-title">{{ eventList && eventList[eventId].event_name }}</h2>
-    <p class="eventCard__eventDesc">
-      {{ eventList && eventList[eventId].event_desc }}
-    </p>
-    <article class="eventCard__descriptionContainer__price">
-      <h3 class="event__price">Tarif:</h3>
-      <p>Gratuit</p>
-    </article>
-    <button (click)="onClick()" class="event-button">Je participe</button>
-  </section>
+  @if (event | async; as e) {
+    <div class="event__card__main">
+      <img class="event-image" src="{{ event && e.images.base }}" alt="{{ event && e.description }}" />
+
+      <section class="eventCard__descriptionContainer">
+        <article class="eventCard__descriptionContainer__participants"></article>
+        <h2 class="event-title">{{ e.title }}</h2>
+        <p class="eventCard__eventDesc">
+          @if (event && e.longDescription) {
+            {{ event && e.longDescription }}
+          } @else {
+            {{ event && e.description }}
+          }
+        </p>
+
+        <button (click)="onClick()" class="button-57" role="button">
+          <span class="text">Je participe !</span><span>Je participe !</span>
+        </button>
+      </section>
+    </div>
+
+    <div class="event__card__info">
+      <article class="event__card__info__group">
+        <span class="material-symbols-outlined"> group </span>
+        <h5 class="event__card__info__subTitle">{{ event && e.groups.length }}</h5>
+        <p class="event__card__info__text">Groupe(s) pour cet évènement</p>
+      </article>
+      <article class="event__card__info__group">
+        <span class="material-symbols-outlined"> confirmation_number </span>
+        <h5>Tarifs:</h5>
+
+        <p class="event__card__info__text">
+          @if (e.tarifs === null) {
+            non disponible
+          } @else {
+            {{ event && e.tarifs }}
+          }
+        </p>
+      </article>
+      <h3 class="eventCard__title">{{ event && e.title }}</h3>
+      <article class="event__card__info__group">
+        <span class="material-symbols-outlined">schedule</span>
+        @if (e.first_timing.begin !== e.last_timing.begin) {
+          <p class="eventCard__date">A partir du {{ localeStartDateString }}, jusqu'au {{ localeEndDateString }}</p>
+        } @else {
+          <p class="eventCard__date">{{ localeStartDateString }}</p>
+        }
+      </article>
+      <article class="row">
+        <span class="material-symbols-outlined"> location_on </span>
+        <div class="col">
+          <p class="event__card__info__subTitle">{{ e.location.name }}</p>
+          <p class="event__card__info__subTitle">{{ e.location.address }}</p>
+          <p class="event__card__info__subTitle">{{ e.location.city }}</p>
+        </div>
+      </article>
+      <div
+        class="event__card__info__map"
+        style="height: 300px"
+        leaflet
+        [leafletOptions]="mapOptions"
+        (leafletMapReady)="onMapReady($event)"></div>
+    </div>
+  }
 </div>

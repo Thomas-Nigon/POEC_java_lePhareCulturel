@@ -2,13 +2,13 @@
   <article class="avatar">
     <div class="avatar__title__wrapper">
       <h3>Mon avatar:</h3>
-      <img class="avatar__thumbnail" src="{{ avatarList ? avatarList[selectedId].url : '' }}" alt="" />
+      <img class="avatar__thumbnail" src="{{ selectedId ? avatarList[selectedId].url : '' }}" alt="" />
     </div>
     <p>Choisissez un avatar pour votre profil.</p>
   </article>
   <section class="avatar__list">
     <button type="button" (click)="onClick($event)" class="avatar__list__button" *ngFor="let avatar of avatarList">
-      <img class="avatar__list__image" id="{{ avatar.id }}" [src]="avatar.url" alt="Avatar" />
+      <img class="avatar__list__image" id="{{ avatar.id }}" [src]="avatar.url" alt="Avatar" [name]="avatar.url" />
     </button>
   </section>
 </article>

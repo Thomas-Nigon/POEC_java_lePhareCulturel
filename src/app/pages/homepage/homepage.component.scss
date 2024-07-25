@@ -16,6 +16,10 @@
 .homepage__favorite {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+.homepage__main__event {
+  width: 100%;
 }
 
 .container {
@@ -27,6 +31,12 @@
   justify-content: center;
   width: 100%;
 }
+@media (max-width: 900px) {
+  .homepage__main__event {
+    border-radius: 0;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .homepage {
     padding-bottom: 0px;

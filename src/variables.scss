@@ -6,6 +6,7 @@
 
 $text: #110307;
 $background: #f3e8eb;
+$backgroundT: hsla(344, 31%, 93%, 0.6);
 $primary: #df3462;
 $primaryT: hsla(344, 73%, 54%, 0.8);
 $secondary: #e0e1a6;
@@ -29,12 +30,17 @@ body {
   font-weight: 400;
   background-color: $background;
 }
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+} /* 16px */
 
 h1,
 h2,
 h3 {
   font-family: $titleFont;
   font-weight: 700;
+  letter-spacing: 2px;
 }
 h4,
 h5 {
@@ -108,6 +114,7 @@ small {
   }
   html {
     font-size: 100%;
+    scroll-behavior: smooth;
   } /* 16px */
 
   h1 {

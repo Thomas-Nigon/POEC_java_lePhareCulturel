@@ -29,7 +29,9 @@
         <span class="material-symbols-outlined">{{ pwdHidden ? 'visibility' : 'visibility_off' }}</span>
       </button>
     </div>
-    <button class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">Connexion</button>
-    <p>Pas encore de compte? <a routerLink="/register"> cliquez ici</a></p>
+    <button type="button" class="loginForm__submitButton" type="submit" [disabled]="!loginForm.valid">
+      <span class="text">Connexion </span><span>Connexion</span>
+    </button>
+    <p>Pas encore de compte ? <a routerLink="/register"> Cliquez ici</a></p>
   </form>
 </main>
